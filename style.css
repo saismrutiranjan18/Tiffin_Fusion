@@ -937,34 +937,34 @@ html {
 
 /**************************/
 
-/* Scroll to Top Button */
+ /* Scroll to Top Button */
 #scrollToTopBtn {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 50px;  /* Position it 50px above the bottom */
+  right: 40px;   /* Position it 40px from the right edge */
   z-index: 99;
-  background-color: red;
+  background-color: red;  /* Button color */
   color: white;
   border: none;
   outline: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 50px;   /* Size of the button */
+  height: 50px;  
+  border-radius: 50%;   /* Circular shape */
   cursor: pointer;
-  display: none; /* Hidden by default */
+  display: none;  /* Hidden by default */
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);   /* Subtle shadow */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
 #scrollToTopBtn:hover {
-  background-color: red;
-  transform: scale(1.1);
+  background-color: red;  /* Darker red on hover */
+  transform: scale(1.1);  /* Slight zoom on hover */
 }
 
 #scrollToTopBtn i {
-  font-size: 20px;
+  font-size: 20px;   /* Icon size */
 }
 
 /* Responsive Adjustments */
@@ -972,30 +972,31 @@ html {
 /* Tablets and below */
 @media (max-width: 992px) {
   #scrollToTopBtn {
-      bottom: 30px;
-      right: 30px;
-      width: 45px;
-      height: 45px;
+    bottom: 30px;  /* Shift upwards */
+    right: 30px;
+    width: 45px;
+    height: 45px;
   }
 
   #scrollToTopBtn i {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
 /* Mobile Phones */
 @media (max-width: 576px) {
   #scrollToTopBtn {
-      bottom: 20px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
+    bottom: 100px;   /* Shift further upwards */
+    right: 20px;
+    width: 40px;
+    height: 40px;
   }
 
   #scrollToTopBtn i {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
+
 
 /***********************************************************/
 /* Blog section styling */
