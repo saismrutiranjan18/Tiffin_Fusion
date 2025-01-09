@@ -1,14 +1,64 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  section {
+section {
     padding: 60px 0;
     text-align: center;
   }
   
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.header {
+    background-color: #ff4d4d; /* Red background */
+    color: white;
+    padding: 10px 0; /* Reduced padding */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+}
+.header .logo {
+    font-size: 36px; /* Increased font size for logo */
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Dancing Script', cursive; /* Changed font to cursive */
+}
+.header nav {
+    text-align: center;
+    margin-top: 5px; /* Reduced margin */
+}
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold; /* Make links bold */
+    padding: 10px 15px; /* Add padding for button-like effect */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+.header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    color: #fff; /* Keep text color white on hover */
+}
+.header .btn {
+    background-color: grey; /* Grey button */
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+    border-radius: 5px; /* Rounded corners for button */
+}
+.header .btn:hover {
+    background-color: #ff4d4d; /* Red on hover */
+}
+@media (max-width: 768px) {
+    .header nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .header nav a {
+        margin: 10px 0;
+    }
+}
+=======
  /* Navbar General Styles */
 .navbar {
   background-color: #f8f9fa;
