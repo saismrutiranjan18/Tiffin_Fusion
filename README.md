@@ -145,6 +145,10 @@ A: Yes, we offer a variety of vegetarian and vegan meal plans.
 
 Want to run **Tiffin Fusion** locally? Follow these steps:
 
+## Backend Setup
+
+Detailed backend setup instruction can be found in `Server` folder
+
 ## Installation
 
 Follow these steps to get the Tiffin Fusion project up and running on your local machine:
