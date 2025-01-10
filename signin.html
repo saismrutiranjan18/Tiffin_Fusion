@@ -1,38 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" href="Utils\20240921_154411.png">
-  <title>Tiffin Fusion - Sign In</title>
-  <link rel="stylesheet" href="signin.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiffin Fusion - Auth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+        }
+
+        .auth-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: #ff4d4d;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .input-group input:focus {
+            border-color: #ff4d4d;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.1);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 45px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 15px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .auth-btn:hover {
+            background: #ff3333;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+        }
+
+        .auth-btn:active {
+            transform: translateY(0);
+        }
+
+        .alternate-auth {
+            text-align: center;
+            margin-top: 25px;
+            color: #666;
+        }
+
+        .alternate-auth a {
+            color: #ff4d4d;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        .alternate-auth a:hover {
+            text-decoration: underline;
+        }
+
+        .social-auth {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .social-auth p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            padding: 12px 25px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-btn:hover {
+            background: #f8f8f8;
+            transform: translateY(-2px);
+        }
+
+        .social-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .auth-box {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .validation-message {
+            color: #ff4d4d;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .input-group input:invalid:focus ~ .validation-message {
+            display: block;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: -20px;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            color: #666;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            color: #ff4d4d;
+        }
+
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="auth-box">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,3L4,9V21H20V9L12,3M12,7.5L16,10.5V11.5L12,8.5L8,11.5V10.5L12,7.5M6,19V12.5L12,9.5L18,12.5V19H6Z"/>
+                    </svg>
+                </div>
+                <h2>Welcome to Tiffin Fusion</h2>
+            </div>
+            
+            <form id="authForm">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required 
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                           placeholder="Enter your email">
+                    <span class="validation-message">Please enter a valid email address</span>
+                </div>
 
-  
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required
+                           minlength="8"
+                           placeholder="Enter your password">
+                    <span class="password-toggle">👁️</span>
+                    <span class="validation-message">Password must be at least 8 characters long</span>
+                </div>
 
-  <!-- Sign In Form -->
-  <section id="signin-section" class="auth-container">
-    <div class="auth-box signin-box">
-      <h2>Sign In</h2>
-      <form id="signinform">
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required>
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="auth-btn">Sign In</button>
+            </form>
+
+            <div class="social-auth">
+                <p>Or continue with</p>
+                <div class="social-buttons">
+                    <button class="social-btn">
+                        <img src="Utils/google.png" alt="Google">
+                        Google
+                    </button>
+                    <button class="social-btn">
+                        <img src="Utils/facebook.png" alt="Facebook">
+                        Facebook
+                    </button>
+                </div>
+            </div>
+
+            <div class="alternate-auth">
+                <span>Don't have an account?</span>
+                <a href="signup.html">Sign up</a>
+            </div>
         </div>
-        <div class="input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required>
-        </div>
-        <button type="submit" class="auth-btn">Sign In</button>
-      </form>
-      <div class="signup-option">
-        <p>New here? <a href="signup.html">Create an account</a></p>
-      </div>
     </div>
-  </section>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script type="module" src="./signin.js"></script>
+
+    <script>
+        // Toggle password visibility
+        document.querySelector('.password-toggle').addEventListener('click', function() {
+            const passwordInput = document.querySelector('#password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                this.textContent = '👁️‍🗨️';
+            } else {
+                passwordInput.type = 'password';
+                this.textContent = '👁️';
+            }
+        });
+
+        // Form validation
+        document.getElementById('authForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                // Add your authentication logic here
+                console.log('Form submitted:', { email, password });
+            }
+        });
+
+        // Add loading state to button
+        document.querySelector('.auth-btn').addEventListener('click', function() {
+            this.innerHTML = '<span class="loading">Signing in...</span>';
+            setTimeout(() => {
+                this.innerHTML = 'Sign In';
+            }, 2000);
+        });
+    </script>
 </body>
 </html>

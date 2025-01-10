@@ -36,11 +36,16 @@ const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 // Show or hide the button based on scroll position
 function scrollFunction() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.style.display = "flex";
+        scrollToTopBtn.style.display = "block"; // Changed 'flex' to 'block'
     } else {
         scrollToTopBtn.style.display = "none";
     }
 }
+
+// Add the event listener to trigger the scrollFunction when the user scrolls
+window.onscroll = function() {
+    scrollFunction();
+};
 
 
 

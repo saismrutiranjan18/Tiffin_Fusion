@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    overflow-x: hidden;
+  }
+  
+  #menu-section {
+    padding: 0;
+  }
+  
+  .men-head {
+    text-align: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    font-family: 'Cosmic Sans MS', cursive, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: -20px;
+    padding: 10px 0;
+  }
+  
+  .menu-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px 145px;
+    background-color: #f9f9f9;
+  }
+  
+  .menu-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateX(0px);
+    filter: blur(10px);
+    transition: all 0.8s ease-out;
+    padding: 15px;
+  }
+  
+  .menu-item.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  
+  .menu-item:nth-child(odd).visible {
+    transform: translateX(-50px);
+  }
+  
+  .menu-item:nth-child(even).visible {
+    transform: translateX(50px);
+  }
+  
+  .menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensures it stays within the box */
+    box-sizing: border-box; /* Prevents content overflow due to padding */
+  }
+  
+  .menu-text {
+    flex: 0 0 70%; /* Fixed width percentage */
+    padding-right: 10px; /* Adds spacing between text and image */
+    box-sizing: border-box; /* Ensures it respects the parent box */
+  }
+  
+  .menu-image {
+    flex: 0 0 30%; /* Fixed width percentage */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 120px; /* Prevents the image from overflowing */
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-header h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .menu-header .price {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-left: 20px;
+  }
+  
+  .menu-text p {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 5px 0 0;
+    text-align: left;
+  }
+  
+  .menu-text h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #484b4e;
+    margin: 10px 0 0;
+    text-align: left;
+  }
+  
+  .back-clr {
+    background-color: #f9f9f9;
+    margin-top: -30px;
+    padding: 20px 0;
+  }
+  
+  /* Full Menu Button - Centered below the menu items */
+  .full-menu-button {
+    display: block;
+    margin: 30px auto; /* Center the button and add space above it */
+    width: 150px;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #fc0635;
+    color: white;
+    font-size: 16px;
+    border-radius: 12px;
+    text-decoration: none; /* Remove underline */
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .full-menu-button:hover {
+    background-color: #007bff;
+  }
+  
+  /* Make the menu section responsive */
+  @media (max-width: 900px) {
+    .menu-image img {
+      width: 100%; /* Ensures the image fills the available width */
+      height: 100%; /* Ensures the image fills the available height */
+      max-width: 150px; /* Fixed width for square aspect */
+      max-height: 150px; /* Fixed height for square aspect */
+      object-fit: cover; /* Ensures the image covers the area without stretching */
+      border-radius: 10px;
+    }
+    .menu-section {
+      grid-template-columns: 1fr;
+      padding: 20px 70px;
+    }
+  
+    .menu-item {
+      height: auto;
+    }
+    .full-menu-button {
+      width: 180px;
+    }
+  }
+  
+  /* Media Query for screens below 500px */
+  @media (max-width: 500px) {
+    /* Reducing font size */
+    .menu-header h3 {
+      font-size: 16px; /* Smaller font size for the item name */
+    }
+  
+    .menu-header .price {
+      font-size: 14px; /* Smaller font size for the price */
+    }
+  
+    .menu-text p {
+      font-size: 12px; /* Smaller font size for description */
+    }
+  
+    .menu-text h4 {
+      font-size: 14px; /* Slightly smaller font size for serving options */
+    }
+  
+    /* Adjusting image size */
+    .menu-image img {
+      max-width: 130px; /* Smaller image width */
+      max-height: 130px; /* Smaller image height */
+    }
+  
+    /* Adjusting the translateX length for nth-child(even) */
+    .menu-item:nth-child(even).visible {
+      transform: translateX(50px); /* Reduced translateX length */
+    }
+  
+    /* Menu item layout adjustments */
+    .menu-section {
+      grid-template-columns: 1fr; /* Keep single column layout */
+      padding: 20px 70px; /* Slight margin on the left and right for smaller screens */
+    }
+  
+    .menu-item {
+      padding: 10px; /* Reduce padding to save space */
+    }
+  }
+
+
+
+  /* add button 
+   */
+
+    
+     
+
+   .add-btn {
+    position: absolute;
+     
+   right: 150px;
+   bottom: 5px;
+ align-items: center;
+ justify-content: center;
+ padding: 8px 16px;
+ font-size: 14px;
+ font-weight: bold;
+ color: #fcfcfc;
+ background-color: #7fd153; 
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+   }
+   .add-btn:hover {
+ background-color: #0baa64; 
+}
+
+.add-btn:focus {
+ outline: none;
+ box-shadow: 0 0 0 2px rgba(13, 200, 115, 0.5); 
+}
+.add-btn:active {
+ background-color: #0a9554; 
+}
+
+   
