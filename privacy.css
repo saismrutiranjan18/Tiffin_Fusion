@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    background-color: #F40B0F ;
+    padding: 20px;
+}
+
+.container{
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+ul li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+section{
+    padding: 10px;
+}
+
+h2{
+    font-size: 25px;
+}
+
+p{
+    font-size: 15px;
+}
