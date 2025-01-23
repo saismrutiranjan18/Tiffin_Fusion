@@ -479,7 +479,7 @@ body.dark {
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   text-decoration: none;
   font-size: 16px;
   transition: background-color 0.3s;
@@ -487,6 +487,9 @@ body.dark {
 
 .hero-content .btn-primary:hover {
   background-color: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgb(236, 81, 15);
+ 
 }
 
 form {
@@ -697,13 +700,15 @@ body {
   background-color: #fc0635;
   color: white;
   font-size: 16px;
-  border-radius: 12px;
+  border-radius: 25px;
   text-decoration: none; /* Remove underline */
   transition: all 0.4s ease-in-out;
 }
 
 .full-menu-button:hover {
-  background-color: #007bff;
+  background-color: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgb(236, 81, 15);
 }
 
 /* Make the menu section responsive */
@@ -1133,12 +1138,14 @@ body {
   text-decoration: none;
   padding: 10px 20px;
   font-size: 1.2rem;
-  border-radius: 5px;
+  border-radius: 25px;
   transition: background-color 0.3s;
 }
 
 .view-more-button:hover {
-  background-color: #d32f2f;
+  background-color: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgb(236, 81, 15);
 }
 
 /* RESPONSIVE MEDIA QUERIES */
