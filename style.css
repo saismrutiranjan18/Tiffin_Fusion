@@ -326,6 +326,11 @@ body.dark {
   .dropdown-menu {
     width: 100%; /* Full width for mobile dropdowns */
   }
+
+  .navbar-brand{
+    position: relative;
+    left: -70px;
+  }
 }
 
 /* Meal Plan Link */
