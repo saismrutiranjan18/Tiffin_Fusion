@@ -79,13 +79,14 @@ body.dark {
   transform: scale(1.1);
 }
 .signinbtn {
+  position: relative;
   background-color: #f44336;
   color: white !important;
   padding: 15px 20px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 3px;
+  margin-top: 0px;
 }
 
 /* Loader CSS */
@@ -248,7 +249,7 @@ body.dark {
 }
 
 .navbar-toggler {
-  margin-left: auto; /* Align toggler to the right for mobile view */
+  margin-left: -10px; /* Align toggler to the right for mobile view */
 }
 
 /* Navbar Links */
