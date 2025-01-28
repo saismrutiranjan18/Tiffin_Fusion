@@ -12,12 +12,20 @@ body {
     color: #333;
     padding: 20px;
 }
-
+/*back button*/
+.head{
+    display: flex;
+}
 /* Header */
-h2 {
+
+.head h2{
     font-size: 28px;
     margin-bottom: 20px;
     color: #444;
+    margin-left: 40%;
+}
+.head a img{
+    margin-top: 20px;
 }
 
 /* Table Styling */
