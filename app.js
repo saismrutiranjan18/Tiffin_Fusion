@@ -45,22 +45,22 @@ const observer = new IntersectionObserver((entries) => {
 // Observe each menu item
 menuItems.forEach((item) => observer.observe(item));
 
-// Get the button
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+// // Get the button
+// const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// Show or hide the button based on scroll position
-function scrollFunction() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.style.display = "block"; // Changed 'flex' to 'block'
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
-}
+// // Show or hide the button based on scroll position
+// function scrollFunction() {
+//     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+//         scrollToTopBtn.style.display = "block"; // Changed 'flex' to 'block'
+//     } else {
+//         scrollToTopBtn.style.display = "none";
+//     }
+// }
 
-// Add the event listener to trigger the scrollFunction when the user scrolls
-window.onscroll = function() {
-    scrollFunction();
-};
+// // Add the event listener to trigger the scrollFunction when the user scrolls
+// window.onscroll = function() {
+//     scrollFunction();
+// };
 
 
 
@@ -116,14 +116,14 @@ document.addEventListener('DOMContentLoaded', function () {
   
   
 
-// Attach the debounced scroll function to the window scroll event
-window.addEventListener('scroll', debounce(scrollFunction, 20));
+// // Attach the debounced scroll function to the window scroll event
+// window.addEventListener('scroll', debounce(scrollFunction, 20));
 
-// Scroll to top smoothly when the button is clicked
-scrollToTopBtn.addEventListener("click", function(){
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+// // Scroll to top smoothly when the button is clicked
+// scrollToTopBtn.addEventListener("click", function(){
+//     window.scrollTo({
+//         top: 0,
+//         behavior: 'smooth'
+//     });
+// });
 

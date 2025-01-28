@@ -347,33 +347,61 @@ html {
 /**************************/
 
 /* Scroll to Top Button */
-#scrollToTopBtn {
+#scrollButton {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 99;
-  background-color: red;
-  color: white;
-  border: none;
-  outline: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none; /* Hidden by default */
+  bottom: 50px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in effect */
 }
 
-#scrollToTopBtn:hover {
-  background-color: red;
-  transform: scale(1.1);
+#scrollButton.visible {
+  opacity: 1; /* Fully visible */
+  pointer-events: auto; /* Enable interaction */
 }
 
-#scrollToTopBtn i {
-  font-size: 20px;
+.outer-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #fc0635 0deg, /* Red */
+    #fc0635 var(--scroll-progress, 0deg),
+    #ffffff var(--scroll-progress, 0deg), /* White */
+    #ffffff 360deg
+  );
+  transform: rotate(-90deg); /* Start animation from top */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.inner-circle {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgb(0 0 0);
+}
+
+.arrow {
+  font-size: 30px;
+  color: #fc0635; /* Red arrow */
+  font-weight: 600;
+  transform: rotate(90deg); /* Fixed direction to the right */
 }
 
 /* Responsive Adjustments */
