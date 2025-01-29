@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -16,6 +21,8 @@
             background-color: #f9f9f9;
         }
         .blog-detail {
+           
+            align-items: center;
             max-width: 800px;
             margin: 0 auto;
             background: #fff;
@@ -24,12 +31,16 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .header {
+            flex-direction: column;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             margin-bottom: 20px;
+           
         }
         h1 {
+           
+            
             font-size: 2rem;
             color: #e94c3d;
             margin: 0;
