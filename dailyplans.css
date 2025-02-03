@@ -175,3 +175,103 @@ body {
         height: 380px; /* Highlighted: Adjusted height for better layout on mobile */
     }
 }
+
+.navbar {
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #e67e22 !important;
+      transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #e67e22;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .daily-plan-card {
+      perspective: 1000px;
+      transition: transform 0.6s ease, box-shadow 0.3s ease;
+    }
+
+    .daily-plan-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .daily-plan-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-image {
+      transition: transform 0.5s ease;
+    }
+
+    .daily-plan-card:hover .card-image {
+      transform: scale(1.05);
+    }
+
+    footer {
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .social-icons a {
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: #e67e22 !important;
+    }
+
+    .footer-section {
+      transition: all 0.3s ease;
+    }
+
+    .footer-section:hover {
+      transform: translateX(10px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .daily-plan-section {
+      animation: fadeIn 1s ease-out;
+    }
+
+    .section-title {
+      position: relative;
+      animation: titleUnderline 1.5s ease-out forwards;
+    }
+
+    @keyframes titleUnderline {
+      to {
+        text-shadow: 0 0 15px rgba(230, 126, 34, 0.5);
+      }
+    }
+  
+
