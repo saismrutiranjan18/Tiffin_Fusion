@@ -1,6 +1,18 @@
+
 let cartCount = 0;
+
+// Function to check if user is logged in
+function isLoggedIn() {
+  return localStorage.getItem('authToken') !== null; // Assuming authToken is stored in localStorage after login
+}
+
 // Function to add item to cart (localStorage)
 function addToCart(itemName, price) {
+  if (!isLoggedIn()) {
+    alert("You must be logged in to add items to the cart.");
+    return;
+  }
+
   // Update cart count
   cartCount++;
   document.getElementById("cart-count").textContent = `(${cartCount})`;
