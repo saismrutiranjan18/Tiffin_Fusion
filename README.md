@@ -172,27 +172,30 @@ We welcome contributions to the Tiffin Fusion project! Whether it's fixing bugs,
 
 2. **Clone Your Fork**  
    Clone your forked repository to your local machine:
-
-   ```bash
-   git clone https://github.com/your-username/tiffin-fusion.git
+   ```
+      git clone https://github.com/your-username/tiffin-fusion.git
 3. **Create a New Branch**  
 Create a new branch for the changes you want to make:
 
-```bash
-git checkout -b feature-name
+   ```
+      git checkout -b feature-name
+   ```
 4. **Make Your Changes**
 Implement the feature or fix the bug. Make sure to add tests if necessary and update the documentation as needed.
+
 5. **Commit Your Changes**
 Commit your changes with a clear and concise message:
-bash
-Copy code
-git add .
-git commit -m "Description of the changes you made"
+   ```
+      git add .
+      git commit -m "Description of the changes you made"
+   ```
+
 6. Push to Your Fork
 Push the changes to your forked repository:
-bash
-Copy code
-git push origin feature-name
+   ```
+      git push origin feature-name
+   ```
+
 7. **Submit a Pull Request**
 Go to the original repository on GitHub and click on "Pull Requests". Click the "New Pull Request" button and submit your changes.
 
