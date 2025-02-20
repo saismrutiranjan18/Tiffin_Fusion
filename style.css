@@ -1997,6 +1997,10 @@ footer {
   color: #6c757d;
 }
 
+.social-icons li a:hover{
+  color: #e67e22 !important;
+}
+
 /* Newsletter Section Styling */
 .footer-section.newsletter {
   grid-column: span 4; /* span across all sections */
