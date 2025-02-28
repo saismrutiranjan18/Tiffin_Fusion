@@ -1024,22 +1024,188 @@ body {
 
 /* Service Section */
 .section-menu {
-  background-color: white;
+  padding: 80px 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
-.section-menu h2 {
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-menu-h2 {
   font-size: 2.5rem;
+  font-weight: 700;
   color: #333;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
 }
 
-/* Dark mode */
+.section-menu-h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff4b2b, #ff416c);
+  border-radius: 2px;
+}
+
 .dark-mode .section-menu {
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: #1a1a1a;
 }
 
-.dark-mode .section-menu h2 {
-  color: #ffdd57;
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.dark-mode .section-subtitle {
+  color: #aaa;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dark-mode .feature-card {
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .feature-card:hover {
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon {
+  margin-bottom: 20px;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .circle {
+  transform: scale(1.1);
+}
+
+.circle i {
+  font-size: 32px;
+  color: white;
+}
+
+.feature-card h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dark-mode .feature-card h3 {
+  color: #fff;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 300px;
+}
+
+.dark-mode .feature-card p {
+  color: #ccc;
+}
+
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    padding: 20px;
+  }
+  
+  .circle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .circle i {
+    font-size: 28px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    padding: 10px;
+  }
+  
+  .feature-card {
+    padding: 15px;
+  }
+  
+  .circle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .circle i {
+    font-size: 24px;
+  }
 }
 
 /* Student Plan Section */
@@ -1083,10 +1249,6 @@ body {
 }
 
 /************************************************************************/
-
-.section-menu {
-  padding: 40px 0;
-}
 
 /* Font styles for the headings */
 #menu h2 {
