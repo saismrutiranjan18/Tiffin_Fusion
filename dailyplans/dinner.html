@@ -179,9 +179,79 @@ body {
 <body>
     <!-- Header -->
     <header class="navbar">
-      <a href="../dailyplans.html" class="nav-link">Back </a>
+      <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
+        <div class="container-fluid">
+    
+          <!-- Logo -->
+          <a class="navbar-brand text-black" href="./index.html">
+            <img src="../Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
+            Tiffin Fusion
+          </a>
+    
+          <!-- Mobile Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <!-- Home Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="index.html">Home</a>
+              </li>
+    
+              <!-- View Menu Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#menu-section">View Menu</a>
+              </li>
+    
+              <!-- Meal Plan Dropdown -->
+              <li class="nav-item dropdown meal-plan">
+                <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
+                  Meal Plans
+                </a>
+                <ul class="dropdown-menu" id="mealPlanMenu">
+                  <li><a class="dropdown-item" href="studentplan.html">Student Plan</a></li>
+                  <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
+                  <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
+                </ul>
+              </li>
+    
+              <!-- About Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#who-we-are">About</a>
+              </li>
+    
+              <!-- Contact Us Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
+              </li>
+    
+              <!-- Contributors Link -->
+              <li class="nav-item">
+                <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
+              </li>
+    
+              <!-- Sign In Link -->
+              <li class="nav-item">
+                <a href="./signin.html" class="nav-link mx-2">Sign In </a>
+              </li>
+    
+              <!-- Cart Icon in Navbar -->
+              <li class="nav-item">
+                <a href="../menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+                  <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </nav>
     </header>
-  
+
+    <a href="../dailyplans.html" class="nav-link">Back </a>
+    
     <!-- Daily Meal Plans -->
     <section id="meal-plans" class="daily-plan-section">
       <h2 class="section-title">DINNER PLAN</h2>
@@ -203,7 +273,7 @@ body {
               <p>A traditional platter featuring a variety of flavorful dishes, including rice, chapati, dal, sabzi, bhakri, and pickles, offering a wholesome and authentic taste of Maharashtra</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Maharashtrain Thali', 330)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/dinner1.jpg','Maharashtrain Thali', 'Dinner Meal' ,330)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -221,7 +291,7 @@ body {
               <p>A delightful spread of signature dishes, including rice, sambar, rasam, curd, appalam, and a variety of vegetable preparations, served on a banana leaf for an authentic experience</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('South Indian Thali', 400)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/Dinner2.jpg','South Indian Thali','Dinner Meal' , 400)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -229,7 +299,7 @@ body {
             <div class="card-front">
               <img src="Dinner3.jpg" alt="Dinner Plan" class="card-image">
               <div class="card-overlay">
-                <h3 class="meal-name">Gujrathi Thali</h3>
+                <h3 class="meal-name">Gujarati Thali</h3>
               </div>
             </div>
             <div class="card-back">
@@ -239,7 +309,7 @@ body {
               <p> A wholesome assortment of sweet, sour, and savory dishes, including dal, roti, rice, sabzi, kadhi, and a variety of pickles, offering a perfect balance of flavors unique to Gujarat.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Gujarati Thali', 350)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/Dinner3.jpg','Gujarati Thali','Dinner Meal' , 350)">Add +</button>
         </div>
       </div>
   
@@ -260,7 +330,7 @@ body {
               <p> A hearty and flavorful spread featuring rich curries, tandoori roti, dal, rice, raita, and pickles, capturing the bold and vibrant flavors of Punjab.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Punjabi Thali', 380)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/dinner4.jpeg','Punjabi Thali','Dinner Meal' , 380)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -278,7 +348,7 @@ body {
               <p> A grand feast featuring an assortment of breads, rice, vegetables, proteins, desserts, condiments, and drinks, perfect for sharing with loved ones.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Bahubali Thali', 1110)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/dinner5.jpg','Bahubali Thali','Dinner Meal' , 1110)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -296,7 +366,7 @@ body {
               <p>A multi-course meal that typically includes rice, vegetables, lentils, and accompaniments</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Normal Thali', 110)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/dinner6.jpg','Normal Thali','Dinner Meal' , 110)">Add +</button>
         </div>
       </div>
     </section>

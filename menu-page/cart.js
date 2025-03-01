@@ -1,6 +1,6 @@
 let cartCount = 0;
 // Function to add item to cart (localStorage)
-function addToCart(itemName, price) {
+function addToCart(Image,itemName, type ,price) {
   // Update cart count
   cartCount++;
   document.getElementById("cart-count").textContent = `(${cartCount})`;
@@ -8,7 +8,9 @@ function addToCart(itemName, price) {
   let cart = JSON.parse(localStorage.getItem('cartItems')) || []; // Get existing cart items or initialize as empty array
 
   const item = {
+    image: Image,
     name: itemName,
+    meal_type: type,
     price: price,
     quantity: 1 // Initially set quantity to 1
   };

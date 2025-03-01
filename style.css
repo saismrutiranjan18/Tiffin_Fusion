@@ -90,8 +90,17 @@ body.dark {
   opacity: 1;
 }
 
+.dark-mode .head h2{
+  color: #fff;
+}
 
+.dark-mode tr{
+  background-color: #333333;
+}
 
+.dark-mode table td {
+  color:#fff
+}
 
 .checkbox {
   opacity: 0;

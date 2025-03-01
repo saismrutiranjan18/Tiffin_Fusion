@@ -37,7 +37,9 @@ function displayCartItems() {
         const itemTotalPrice = item.price * item.quantity;
         const row = document.createElement('tr');
         row.innerHTML = `
+            <td><img src="${item.image}" alt="${item.name}" width="75" height="50" class="cart-item-image"></td>
             <td>${item.name}</td>
+            <td>${item.meal_type}</td>
             <td>₹${itemTotalPrice}</td>
             <td>
                 <button class="quantity-btn" onclick="decrementQuantity(${index})">-</button>

@@ -67,7 +67,7 @@ window.onscroll = function() {
 
 
 
-//navbar meal plan seciton 
+//navbar meal plan section 
 document.addEventListener('DOMContentLoaded', function () {
     // Get all dropdown toggles
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');

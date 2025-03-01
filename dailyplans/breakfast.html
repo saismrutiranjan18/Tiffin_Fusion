@@ -181,8 +181,78 @@ body {
   
     <!-- Header -->
     <header class="navbar">
-      <a href="../dailyplans.html" class="nav-link">Back</a>
+      <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
+        <div class="container-fluid">
+    
+          <!-- Logo -->
+          <a class="navbar-brand text-black" href="./index.html">
+            <img src="../Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
+            Tiffin Fusion
+          </a>
+    
+          <!-- Mobile Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <!-- Home Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="index.html">Home</a>
+              </li>
+    
+              <!-- View Menu Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#menu-section">View Menu</a>
+              </li>
+    
+              <!-- Meal Plan Dropdown -->
+              <li class="nav-item dropdown meal-plan">
+                <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
+                  Meal Plans
+                </a>
+                <ul class="dropdown-menu" id="mealPlanMenu">
+                  <li><a class="dropdown-item" href="studentplan.html">Student Plan</a></li>
+                  <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
+                  <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
+                </ul>
+              </li>
+    
+              <!-- About Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#who-we-are">About</a>
+              </li>
+    
+              <!-- Contact Us Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
+              </li>
+    
+              <!-- Contributors Link -->
+              <li class="nav-item">
+                <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
+              </li>
+    
+              <!-- Sign In Link -->
+              <li class="nav-item">
+                <a href="./signin.html" class="nav-link mx-2">Sign In </a>
+              </li>
+    
+              <!-- Cart Icon in Navbar -->
+              <li class="nav-item">
+                <a href="../menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+                  <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </nav>
     </header>
+
+    <a href="../dailyplans.html" class="nav-link">Back</a>
   
     <!-- Daily Meal Plans -->
     <section id="meal-plans" class="daily-plan-section">
@@ -205,7 +275,7 @@ body {
               <p> A savory, fluffy omelette made with beaten eggs and spices, served between slices of toasted bread for a satisfying meal.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Bread Omlete', 190)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/break1.jpg','Bread Omelette', 'Breakfast Meal' ,190)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -223,7 +293,7 @@ body {
               <p> Fluffy, deep-fried puris served with a spiced potato curry, offering a delightful combination of textures and flavors.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Puri Bhaji', 200)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/break2.jpg','Puri Bhaji','Breakfast Meal', 200)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -240,7 +310,7 @@ body {
               <hr style="height: 2px; background-color: white; border-radius: 10px;">
               <p> Soft, fluffy rice pancakes with a delicate, crispy edge, traditionally served with coconut milk or a spicy curry for a delicious meal.</p>
             </div>
-          </div><button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Appam', 70)">Add +</button>
+          </div><button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/break3.jpg','Appam','Breakfast Meal', 70)">Add +</button>
         </div>
         
       </div>
@@ -262,7 +332,7 @@ body {
               <p>Steamed, soft, and spongy rice cakes, served with sambhar and chutney for a light and flavorful South Indian breakfast.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Idli', 80)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/break4.jpg','Idli','Breakfast Meal', 80)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -280,7 +350,7 @@ body {
               <p>A savory semolina dish, sautéed with vegetables and spices, creating a warm and comforting breakfast or snack option.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Upma', 65)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/break5.jpg','Upma','Breakfast Meal', 65)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -298,7 +368,7 @@ body {
               <p> A crispy, thin crepe made from semolina, served hot with coconut chutney and sambhar for a deliciously satisfying meal.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Rava Dosa', 110)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/break6.jpg','Rava Dosa','Breakfast Meal', 110)">Add +</button>
         </div>
       </div>
     </section>

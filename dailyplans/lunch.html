@@ -179,8 +179,78 @@ body {
 <body>
     <!-- Header -->
     <header class="navbar">
-      <a href="../dailyplans.html" class="nav-link"> Back</a>
+      <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
+        <div class="container-fluid">
+    
+          <!-- Logo -->
+          <a class="navbar-brand text-black" href="./index.html">
+            <img src="../Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
+            Tiffin Fusion
+          </a>
+    
+          <!-- Mobile Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <!-- Home Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="index.html">Home</a>
+              </li>
+    
+              <!-- View Menu Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#menu-section">View Menu</a>
+              </li>
+    
+              <!-- Meal Plan Dropdown -->
+              <li class="nav-item dropdown meal-plan">
+                <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
+                  Meal Plans
+                </a>
+                <ul class="dropdown-menu" id="mealPlanMenu">
+                  <li><a class="dropdown-item" href="studentplan.html">Student Plan</a></li>
+                  <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
+                  <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
+                </ul>
+              </li>
+    
+              <!-- About Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#who-we-are">About</a>
+              </li>
+    
+              <!-- Contact Us Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
+              </li>
+    
+              <!-- Contributors Link -->
+              <li class="nav-item">
+                <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
+              </li>
+    
+              <!-- Sign In Link -->
+              <li class="nav-item">
+                <a href="./signin.html" class="nav-link mx-2">Sign In </a>
+              </li>
+    
+              <!-- Cart Icon in Navbar -->
+              <li class="nav-item">
+                <a href="../menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+                  <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+      </nav>
     </header>
+
+    <a href="../dailyplans.html" class="nav-link"> Back</a>
   
     <!-- Daily Meal Plans -->
     <section id="meal-plans" class="daily-plan-section">
@@ -203,7 +273,7 @@ body {
               <p> A hearty dish of yellow lentils cooked to perfection, tempered with ghee, cumin, garlic, and aromatic spices for a rich, flavorful finish.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Dal Tadka', 190)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch1.jpg','Dal Tadka', 'Lunch Meal', 190)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -221,7 +291,7 @@ body {
               <p> Fragrant basmati rice cooked with cumin seeds, offering a simple yet aromatic side dish to complement any curry.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Jeera Rice', 200)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch2.jpg','Jeera Rice','Lunch Meal', 200)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -239,7 +309,7 @@ body {
               <p> A flavorful medley of assorted vegetables, cooked in a savory blend of spices for a wholesome and satisfying dish.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Mix Veg', 220)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch3.jpg','Mix Veg','Lunch Meal', 220)">Add +</button>
         </div>
       </div>
   
@@ -260,7 +330,7 @@ body {
               <p> Soft, whole wheat flatbread, freshly cooked on a hot griddle, perfect for pairing with curries and gravies.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Roti', 80)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch4.jpg','Roti','Lunch Meal', 80)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -278,7 +348,7 @@ body {
               <p> Soft paneer cubes simmered in a rich, creamy tomato-based gravy with butter and aromatic spices, offering a luxurious, flavorful experience.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Paneer Butter Masala', 250)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch5.jpg','Paneer Butter Masala','Lunch Meal', 250)">Add +</button>
         </div>
   
         <div class="daily-plan-card">
@@ -296,7 +366,7 @@ body {
               <p> A fresh and vibrant mix of crisp vegetables, tossed together with a light dressing for a healthy and refreshing accompaniment.</p>
             </div>
           </div>
-          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('Salad', 110)">Add +</button>
+          <button class="add-btn" style="margin-bottom: 40px;" onclick="addToCart('../dailyplans/lunch6.jpg','Salad','Lunch Meal', 110)">Add +</button>
         </div>
       </div>
     </section>
