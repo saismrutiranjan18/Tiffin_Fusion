@@ -177,81 +177,78 @@ body {
 
 </style>
 <body>
-    <!-- Header -->
-    <header class="navbar">
-      <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
-        <div class="container-fluid">
-    
-          <!-- Logo -->
-          <a class="navbar-brand text-black" href="./index.html">
-            <img src="../Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
-            Tiffin Fusion
-          </a>
-    
-          <!-- Mobile Toggler -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <!-- Navbar Links -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <!-- Home Link -->
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="index.html">Home</a>
-              </li>
-    
-              <!-- View Menu Link -->
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="#menu-section">View Menu</a>
-              </li>
-    
-              <!-- Meal Plan Dropdown -->
-              <li class="nav-item dropdown meal-plan">
-                <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
-                  Meal Plans
-                </a>
-                <ul class="dropdown-menu" id="mealPlanMenu">
-                  <li><a class="dropdown-item" href="studentplan.html">Student Plan</a></li>
-                  <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
-                  <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
-                </ul>
-              </li>
-    
-              <!-- About Link -->
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="#who-we-are">About</a>
-              </li>
-    
-              <!-- Contact Us Link -->
-              <li class="nav-item">
-                <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
-              </li>
-    
-              <!-- Contributors Link -->
-              <li class="nav-item">
-                <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
-              </li>
-    
-              <!-- Sign In Link -->
-              <li class="nav-item">
-                <a href="./signin.html" class="nav-link mx-2">Sign In </a>
-              </li>
-    
-              <!-- Cart Icon in Navbar -->
-              <li class="nav-item">
-                <a href="../menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
-                  <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-      </nav>
-    </header>
+  <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
+    <div class="container-fluid">
 
-    <a href="../dailyplans.html" class="nav-link">Back </a>
-    
+      <!-- Logo -->
+      <a class="navbar-brand text-black" href="../index.html">
+        <img src="../Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
+        Tiffin Fusion
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Home Link -->
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="../index.html#home">Home</a>
+          </li>
+
+          <!-- View Menu Link -->
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="../index.html#menu-section">View Menu</a>
+          </li>
+
+          <!-- Meal Plan Dropdown -->
+          <li class="nav-item dropdown meal-plan">
+            <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
+              Meal Plans
+            </a>
+            <ul class="dropdown-menu" id="mealPlanMenu">
+              <li><a class="dropdown-item" href="../index.html#student-plan">Student Plan</a></li>
+              <li><a class="dropdown-item" href="../corporateplans.html">Corporate Plan</a></li>
+              <li><a class="dropdown-item" href="../dailyplans.html">Daily Plan</a></li>
+            </ul>
+          </li>
+
+          <!-- About Link -->
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="../index.html#who-we-are">About</a>
+          </li>
+
+          <!-- Contact Us Link -->
+          <li class="nav-item">
+            <a class="nav-link mx-2" href="../index.html#contact-us">Contact Us</a>
+          </li>
+
+          <!-- Contributors Link -->
+          <li class="nav-item">
+            <a href="../contributors/contributor.html" class="nav-link mx-2">Contributors</a>
+          </li>
+
+          
+
+          
+          <!-- Cart Icon in Navbar -->
+        <li class="nav-item">
+          <a href="../menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+            <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
+          </a>
+        </li>
+
+          <!-- Sign In Link -->
+          <li class="nav-item">
+            <a href="../signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
+          </li>
+        </ul>
+      </div>
+  </nav>
     <!-- Daily Meal Plans -->
     <section id="meal-plans" class="daily-plan-section">
       <h2 class="section-title">DINNER PLAN</h2>
@@ -427,7 +424,7 @@ body {
             <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.transform='scale(1.2)'; this.style.display='inline-block'" onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.transform='scale(1.2)'; this.style.display='inline-block'" onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-facebook"></i></a></li>
             <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.transform='scale(1.2)'; this.style.display='inline-block'" onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.transform='scale(1.2)'; this.style.display='inline-block'" onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.transform='scale(1.2)'; this.style.display='inline-block'" onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-x-twitter"></i></a></li>
             <li><a href="#" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.transform='scale(1.2)'; this.style.display='inline-block'" onmouseout="this.style.color='black'; this.style.transform='scale(1)'"><i class="fab fa-youtube"></i></a></li>
           </ul>
         </div>

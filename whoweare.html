@@ -31,12 +31,12 @@
   }
 
   .section-box {
-    background-color: rgba(255, 255, 255, 0.7);
+    /* background-color: rgba(255, 255, 255, 0.7); */
     backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    color: #333;
+    color: var(--h3-color);
     max-width: 800px;
     margin: 20px auto;
     box-sizing: border-box;
@@ -97,8 +97,28 @@
     padding: 40px 20px;
 }
 
+:root{
+  --background-color: rgba(255, 255, 255, 0.7);
+  --section-desc: #555;
+  --box-bg: rgba(255, 255, 255, 0.7);
+  --h3-color: #444;
+  --p-color: #666;
+  --border-color: #171616;
+  --testimonial-bg: #f1f1f1;
+}
+
+.dark-mode{
+    --background-color: rgba(0, 0, 0, 0.7);
+    --section-desc: #e3dfdf;
+    --box-bg: #06062f;
+    --h3-color: #d2c9c9;
+    --p-color: #b3a8a8;
+    --border-color: #ddd;
+    --testimonial-bg: rgb(61, 61, 74);
+}
+
 .section-box {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--background-color);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -113,7 +133,7 @@
 
 .section-description {
     font-size: 18px;
-    color: #555;
+    color: var(--section-desc);
     margin-bottom: 40px;
 }
 
@@ -124,7 +144,7 @@
 }
 
 .box {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--box-bg);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -132,6 +152,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    border: 2px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -142,13 +163,13 @@
 
 h3 {
     font-size: 24px;
-    color: #444;
+    color: var(--h3-color);
     margin-bottom: 15px;
 }
 
 p {
     font-size: 16px;
-    color: #666;
+    color: var(--p-color);
     line-height: 1.6;
 }
 
@@ -163,23 +184,23 @@ ul li {
 }
 
 strong {
-    color: #333;
+    color: var(--section-desc);
 }
 
 .testimonials {
-    background-color: #f1f1f1;
+    background-color: var(--testimonial-bg);
     padding: 20px;
     border-radius: 10px;
 }
 
 .testimonials p {
     font-size: 16px;
-    color: #555;
+    color: var(--h3-color);
     margin-bottom: 10px;
 }
 
 .team {
-    background-color: #e9ecef;
+    background-color: var(--testimonial-bg);
     padding: 20px;
     border-radius: 10px;
 }
@@ -191,13 +212,13 @@ strong {
 
 .cta h3 {
     font-size: 24px;
-    color: #333;
+    color: var(--section-desc);
     margin-bottom: 15px;
 }
 
 .cta p {
     font-size: 16px;
-    color: #555;
+    color: var(--section-desc);
     margin-bottom: 20px;
 }
 
@@ -262,7 +283,7 @@ strong {
               Meal Plans
             </a>
             <ul class="dropdown-menu" id="mealPlanMenu">
-              <li><a class="dropdown-item" href="studentplan.html">Student Plan</a></li>
+              <li><a class="dropdown-item" href="#student-plan">Student Plan</a></li>
               <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
               <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
             </ul>
@@ -283,9 +304,24 @@ strong {
             <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
           </li>
 
+          <!-- Dark Mode Toggle Button -->
+            <li class="nav-item">
+              <button id="dark-mode-toggle" class="btn btn-outline-dark mx-2">
+                <i class="fas fa-moon"></i> <!-- Dark mode icon -->
+              </button>
+            </li>
+
+          
+          <!-- Cart Icon in Navbar -->
+        <li class="nav-item">
+          <a href="./menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+            <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
+          </a>
+        </li>
+
           <!-- Sign In Link -->
           <li class="nav-item">
-            <a href="./signin.html" class="nav-link mx-2">Sign In </a>
+            <a href="./signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
           </li>
         </ul>
       </div>
@@ -472,7 +508,7 @@ strong {
                 aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://x.com/sai_smruti18" target="_blank" rel="noopener noreferrer"
                 style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-                aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                aria-label="Twitter"><i class="fab fa-x-twitter"></i></a></li>
             <li><a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer"
                 style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
                 aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
@@ -488,6 +524,7 @@ strong {
     </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="dark-mode.js"></script>
 </body>
 
 </html>

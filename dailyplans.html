@@ -35,7 +35,7 @@
         <ul class="navbar-nav ms-auto">
           <!-- Home Link -->
           <li class="nav-item">
-            <a class="nav-link mx-2" href="index.html">Home</a>
+            <a class="nav-link mx-2" href="#home">Home</a>
           </li>
 
           <!-- View Menu Link -->
@@ -49,7 +49,7 @@
               Meal Plans
             </a>
             <ul class="dropdown-menu" id="mealPlanMenu">
-              <li><a class="dropdown-item" href="studentplan.html">Student Plan</a></li>
+              <li><a class="dropdown-item" href="#student-plan">Student Plan</a></li>
               <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
               <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
             </ul>
@@ -70,9 +70,24 @@
             <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
           </li>
 
+          <!-- Dark Mode Toggle Button -->
+            <li class="nav-item">
+              <button id="dark-mode-toggle" class="btn btn-outline-dark mx-2">
+                <i class="fas fa-moon"></i> <!-- Dark mode icon -->
+              </button>
+            </li>
+
+          
+          <!-- Cart Icon in Navbar -->
+        <li class="nav-item">
+          <a href="./menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+            <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
+          </a>
+        </li>
+
           <!-- Sign In Link -->
           <li class="nav-item">
-            <a href="./signin.html" class="nav-link mx-2">Sign In </a>
+            <a href="./signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
           </li>
 
           <!-- Cart Icon in Navbar -->
@@ -215,7 +230,7 @@
           <li><a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
           <li><a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
           <li><a href="https://www.linkedin.com/in/saismrutiranjan/" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="https://x.com/sai_smruti18" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://x.com/sai_smruti18" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a></li>
           <li><a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
         </ul>
       </div>
@@ -229,6 +244,7 @@
   
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="dark-mode.js"></script>
 
 </body>
 

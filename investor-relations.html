@@ -15,67 +15,85 @@
 </head>
 <body>
     <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
         <div class="container-fluid">
-        
-        <!-- Logo -->
-        <a class="navbar-brand text-black" href="./index.html">
+  
+          <!-- Logo -->
+          <a class="navbar-brand text-black" href="./index.html">
             <img src="Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
             Tiffin Fusion
-        </a>
-    
-        <!-- Mobile Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          </a>
+  
+          <!-- Mobile Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
+          </button>
+  
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-            <!-- Home Link -->
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="./index.html#home">Home</a>
-            </li>
-            
-            <!-- View Menu Link -->
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="./index.html#menu-section">View Menu</a>
-            </li>
-    
-            <!-- Meal Plan Dropdown -->
-            <li class="nav-item dropdown meal-plan">
+              <!-- Home Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#home">Home</a>
+              </li>
+  
+              <!-- View Menu Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#menu-section">View Menu</a>
+              </li>
+  
+              <!-- Meal Plan Dropdown -->
+              <li class="nav-item dropdown meal-plan">
                 <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
-                Meal Plans
+                  Meal Plans
                 </a>
                 <ul class="dropdown-menu" id="mealPlanMenu">
-                <li><a class="dropdown-item" href="./index.html#student-plan">Student Plan</a></li>
-                <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
-                <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
+                  <li><a class="dropdown-item" href="#student-plan">Student Plan</a></li>
+                  <li><a class="dropdown-item" href="corporateplans.html">Corporate Plan</a></li>
+                  <li><a class="dropdown-item" href="dailyplans.html">Daily Plan</a></li>
                 </ul>
-            </li>
-    
-            <!-- About Link -->
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="./index.html#who-we-are">About</a>
-            </li>
-            
-            <!-- Contact Us Link -->
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="./index.html#contact-us">Contact Us</a>
-            </li>
-    
-            <!-- Contributors Link -->
-            <li class="nav-item">
+              </li>
+  
+              <!-- About Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#who-we-are">About</a>
+              </li>
+  
+              <!-- Contact Us Link -->
+              <li class="nav-item">
+                <a class="nav-link mx-2" href="#contact-us">Contact Us</a>
+              </li>
+  
+              <!-- Contributors Link -->
+              <li class="nav-item">
                 <a href="./contributors/contributor.html" class="nav-link mx-2">Contributors</a>
-            </li>
-    
-            <!-- Sign In Link -->
+              </li>
+  
+              <!-- Dark Mode Toggle Button -->
+                <li class="nav-item">
+                  <button id="dark-mode-toggle" class="btn btn-outline-dark mx-2">
+                    <i class="fas fa-moon"></i> <!-- Dark mode icon -->
+                  </button>
+                </li>
+  
+              
+              <!-- Cart Icon in Navbar -->
             <li class="nav-item">
-                <a href="./signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
+              <a href="./menu-page/checkout.html" id="cart-icon" class="nav-link mx-2">
+                <i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">(0)</span>
+              </a>
             </li>
+  
+              <!-- Sign In Link -->
+              <li class="nav-item">
+                <a href="./signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
+              </li>
             </ul>
-        </div>
-    </nav>
+          </div>
+      </nav>
+  
     <main>
         <div class="top">
         <h1>Investor Relations</h1>
@@ -201,7 +219,7 @@
                   aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
               <li><a href="https://x.com/sai_smruti18" target="_blank" rel="noopener noreferrer"
                   style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-                  aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                  aria-label="Twitter"><i class="fab fa-x-twitter"></i></a></li>
               <li><a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer"
                   style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
                   aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
@@ -215,5 +233,8 @@
             onmouseout="this.style.color='black'">© 2025 Tiffin Fusion. All rights reserved.</p>
         </div>
       </footer>
+
+    <script src="dark-mode.js"></script>
+
    </body>
 </html>

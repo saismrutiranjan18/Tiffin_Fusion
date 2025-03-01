@@ -74,6 +74,91 @@ body.dark {
   border-color: #ffffff;
 }
 
+
+/* Dark mode for the entire footer */
+.dark-mode footer {
+  background-color: black !important; /* Ensure the entire footer has a black background */
+  color: white !important; /* Ensure default text is white */
+}
+
+/* Dark mode for footer content */
+.dark-mode footer .footer-content {
+  background-color: black !important; /* Force dark background */
+  color: white !important; /* Force white text */
+}
+
+/* Dark mode for footer sections (e.g., about, services, learn-more, social-links) */
+.dark-mode footer .footer-section {
+  background-color: black !important; /* Force dark background for all sections */
+  color: white !important; /* Force white text */
+}
+
+/* Dark mode for footer links */
+.dark-mode footer .footer-section a {
+  color: white !important; /* White links */
+}
+
+.dark-mode footer .footer-section a:hover {
+  color: #e67e22; /* Orange hover effect */
+}
+
+/* Dark mode for footer headings (h2) */
+.dark-mode footer .footer-section h2 {
+  color: white !important; /* White headings */
+}
+
+.dark-mode footer .footer-section h2:hover {
+  color: #e67e22; /* Orange hover effect */
+}
+
+/* Dark mode for footer bottom */
+.dark-mode footer .footer-bottom {
+  background-color: black !important; /* Force dark background */
+  color: white !important; /* White copyright text */
+}
+
+.dark-mode footer .footer-bottom p {
+  color: white !important; /* White copyright text */
+}
+
+.dark-mode footer .footer-bottom p:hover {
+  color: #e67e22; /* Orange hover effect */
+}
+
+/* Dark mode for social icons */
+.dark-mode footer .social-icons {
+  background-color: black !important; /* Force dark background */
+  color: white !important; /* White social icons */
+}
+
+.dark-mode footer .social-icons a {
+  color: white !important; /* White social icons */
+}
+
+.dark-mode footer .social-icons a:hover {
+  color: #e67e22; /* Orange hover effect */
+}
+
+/* Dark mode for dropdown items (if applicable in the footer) */
+.dark-mode footer .dropdown-item {
+  background-color: #333333 !important; /* Darker background for dropdown */
+  color: white !important; /* White text for dropdown */
+}
+
+/* Dark mode for payment icons or specific footer elements (if needed) */
+.dark-mode footer .payments {
+  background-color: black !important; /* Force dark background */
+  color: white !important; /* White text */
+}
+
+.dark-mode footer .payments a {
+  color: white !important; /* White payment icons/links */
+}
+
+.dark-mode footer .payments a:hover {
+  color: #e67e22; /* Orange hover effect */
+}
+
 /* Toggle Button Adjustments */
 .dark-mode #dark-mode-toggle i {
   color: #ffffff;
