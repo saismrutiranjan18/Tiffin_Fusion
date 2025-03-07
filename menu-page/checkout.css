@@ -138,4 +138,8 @@ button#checkout:hover{
         font-size: 16px;
         margin-bottom: 10px;
     }
+    button#clear-cart{
+        width: 5rem;
+        height: 2.5rem;
+    }
 }
