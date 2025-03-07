@@ -15,6 +15,8 @@ body {
 /*back button*/
 .head{
     display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
 }
 /* Header */
 
@@ -22,7 +24,7 @@ body {
     font-size: 28px;
     margin-bottom: 20px;
     color: #444;
-    margin-left: 40%;
+    /* margin-left: 40%; */
 }
 .head a img{
     margin-top: 20px;
@@ -97,15 +99,30 @@ button.remove-btn:hover {
 }
 
 /* Cart Buttons */
-button#clear-cart, button#checkout {
+button#clear-cart {
     background-color: #2196F3;
     margin-top: 20px;
+    margin-bottom: 20px;
+    /* transition: background-color 0.3s ease ; */
+}
+button#checkout{
+    background: rgb(17,144,227);
+    margin-top: 20px;
+}
+#payment_button{
+    display: flex;
+    justify-content: space-around;
 }
 
-button#clear-cart:hover, button#checkout:hover {
-    background-color: #1976D2;
+button#clear-cart:hover  {
+    background: rgb(180,52,13);
+    transition: all 0.5s ease ;
 }
-
+button#checkout:hover{
+    background: rgb(91, 101, 91);
+    transition: all 0.5s ease ;
+    transform: scale(1.24);
+}
 /* Responsive Design */
 @media (max-width: 600px) {
     h2 {
