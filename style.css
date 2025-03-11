@@ -399,6 +399,105 @@ body.dark {
   top: 0;
   z-index: 1;
 }
+/* Navbar General Styles */
+.navbar {
+  background-color: #f8f9fa; /* Light gray background */
+  border-bottom: 1px solid #ccc; /* Light gray border */
+  padding: 0.5rem 1rem; /* Padding for navbar */
+  font-family: "Arial", sans-serif; /* Font family */
+  position: sticky; /* Sticky positioning */
+  top: 0; /* Stick to the top */
+  z-index: 1; /* Ensure it stays above other content */
+}
+
+.navbar-brand {
+  display: flex; /* Flexbox for brand alignment */
+  align-items: center; /* Center items vertically */
+  color: black; /* Brand text color */
+  font-weight: bold; /* Bold font weight */
+  text-transform: uppercase; /* Uppercase text */
+  font-size: 16px; /* Font size */
+}
+
+.navbar-nav {
+  display: flex; /* Flexbox for nav items */
+  justify-content: flex-end; /* Align items to the right */
+  width: 100%; /* Full width */
+  align-items: center; /* Vertically center items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-item {
+  margin: 0 5px; /* Space between items */
+  padding: 0; /* Remove padding */
+}
+
+.nav-item a {
+  color: black; /* Default link color */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: 600; /* Bold font weight */
+  font-size: 14px; /* Font size */
+  position: relative; /* Position for underline effect */
+  padding: 8px 12px; /* Consistent padding */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-item a::after {
+  content: ""; /* Underline effect */
+  position: absolute; /* Positioning */
+  width: 0; /* Initial width */
+  height: 2px; /* Underline height */
+  left: 50%; /* Center it */
+  bottom: 0; /* Position at the bottom */
+  background-color: red; /* Underline color */
+  transition: width 0.3s ease, left 0.3s ease; /* Smooth transition */
+}
+
+.nav-item a:hover::after {
+  width: 100%; /* Full width on hover */
+  left: 0; /* Align to the left */
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding-left: 1rem; /* Padding for mobile view */
+  }
+
+  .nav-item {
+    margin: 5px 0; /* Vertical spacing for mobile view */
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode .navbar {
+  background-color: #222222 !important; /* Dark gray background */
+  border-bottom: 1px solid #444 !important; /* Darker border */
+}
+
+.dark-mode .navbar a {
+  color: #ffffff !important; /* White text color */
+}
+
+.dark-mode .navbar a:hover {
+  color: #e67e22; /* Orange hover effect */
+}
+/* Dark Mode Styles */
+.dark-mode .navbar {
+  background-color: #222222 !important; /* Dark gray background */
+  border-bottom: 1px solid #444 !important; /* Darker border */
+}
+
+.dark-mode .navbar a {
+  color: #ffffff !important; /* White text color */
+}
+
+.dark-mode .navbar a:hover {
+  color: #e67e22; /* Orange hover effect */
+}
 
 .navbar-brand {
   display: flex;
