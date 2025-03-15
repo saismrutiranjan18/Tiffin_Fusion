@@ -399,6 +399,139 @@ body.dark {
   top: 0;
   z-index: 1;
 }
+/* Navbar General Styles */
+.navbar {
+  background-color: #f8f9fa; /* Light gray background */
+  position: sticky; /* Sticky positioning */
+  top: 0; /* Stick to the top */
+  z-index: 1; /* Ensure it stays above other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+    justify-content: space-between; /* Space between items */
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #f5f5f5, #e0e0e0);
+    border-bottom: 2px solid #ddd;
+}
+.nav-link
+{
+text-decoration: none;
+    color: #E53935;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 15px; /* Spacing between links */
+    transition: color 0.3s, transform 0.3s; /* Added transform for scale effect */
+}
+
+.nav-link:hover {
+  color: #d32f2f;
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+.navbar-brand {
+  display: flex; /* Flexbox for brand alignment */
+  align-items: center; /* Center items vertically */
+  color: black; /* Brand text color */
+  font-weight: bold; /* Bold font weight */
+  text-transform: uppercase; /* Uppercase text */
+  font-size: 16px; /* Font size */
+}
+
+.navbar-nav {
+  display: flex; /* Flexbox for nav items */
+  justify-content: flex-end; /* Align items to the right */
+  width: 100%; /* Full width */
+  align-items: center; /* Vertically center items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-item {
+  margin: 0 5px; /* Space between items */
+  padding: 0; /* Remove padding */
+}
+
+.nav-item a {
+  color: #fff; /* Default link color */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: 600; /* Bold font weight */
+  font-size:1.2em; /* Font size */
+  position: relative; /* Position for underline effect */
+  padding: 8px 12px; /* Consistent padding */
+  transition: color 0.3s ease; /* Smooth color transition */
+  margin: 0 15px; /* Spacing between links */
+  text-decoration: none; /* Remove underline */
+  
+}
+
+.navbar a:hover {
+  color:#ffd700; /* Change color on hover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+}
+
+.navbar i {
+  margin-right: 8px; /* Space between icon and text */
+  transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+.navbar i:hover {
+  transform: scale(1.2); /* Scale effect on hover */
+}
+
+.nav-item a::after {
+  content: ""; /* Underline effect */
+  position: absolute; /* Positioning */
+  width: 0; /* Initial width */
+  height: 2px; /* Underline height */
+  left: 50%; /* Center it */
+  bottom: 0; /* Position at the bottom */
+  background-color: red; /* Underline color */
+  transition: width 0.3s ease, left 0.3s ease; /* Smooth transition */
+}
+
+.nav-item a:hover::after {
+  width: 100%; /* Full width on hover */
+  left: 0; /* Align to the left */
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding-left: 1rem; /* Padding for mobile view */
+  }
+
+  .nav-item {
+    margin: 5px 0; /* Vertical spacing for mobile view */
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode .navbar {
+  background-color: #222222 !important; /* Dark gray background */
+  border-bottom: 1px solid #444 !important; /* Darker border */
+}
+
+.dark-mode .navbar a {
+  color: #ffffff !important; /* White text color */
+}
+
+.dark-mode .navbar a:hover {
+  color: #e67e22; /* Orange hover effect */
+}
+/* Dark Mode Styles */
+.dark-mode .navbar {
+  background-color: #222222 !important; /* Dark gray background */
+  border-bottom: 1px solid #444 !important; /* Darker border */
+}
+
+.dark-mode .navbar a {
+  color: #ffffff !important; /* White text color */
+}
+
+.dark-mode .navbar a:hover {
+  color: #e67e22; /* Orange hover effect */
+}
 
 .navbar-brand {
   display: flex;
@@ -515,6 +648,37 @@ body.dark {
   background-color: white;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.dropdown {
+  position: relative; /* Positioning for dropdown */
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.dropdown-content a {
+  color: #333; /* Text color for dropdown items */
+  padding: 12px 16px; /* Padding for dropdown items */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Block display */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Background color on hover */
 }
 
 /* Show dropdown on hover */
@@ -937,6 +1101,18 @@ body {
   font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
+.navbar .cta-button {
+  background-color: #e03e00; /* CTA button color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.navbar .cta-button:hover {
+  background-color: #ff4500; /* Change color on hover */
+}
 .back-btn:hover {
   background-color: #c9382e;
 }
@@ -980,6 +1156,16 @@ body {
   .menu-item {
     padding: 10px; /* Reduce padding to save space */
   }
+  @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align */
+    }
+
+    .navbar a {
+        margin: 10px 0; /* Adjust margin for vertical layout */
+    }
+}
 
   /* Button adjustments */
   .full-menu-button {
@@ -2062,10 +2248,30 @@ html {
 /**********************************************************/
 /* Footer Styling */
 footer {
-  background-color: #f8f9fa;
-  padding: 40px 0;
+  padding: 20px 0;
   font-family: "Arial", sans-serif;
   color: #6c757d;
+  background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.footer p {
+  margin: 10px 0;
+}
+
+.footer .social-icons {
+  margin-top: 10px;
+}
+
+.footer .social-icons i {
+  color: #fff;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+.footer .social-icons i:hover {
+  transform: scale(1.2); /* Scale effect on hover */
 }
 
 .footer-content {
