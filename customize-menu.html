@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Menu</title>
+    <style>
+        :root {
+            --primary: #f40009;
+            --secondary: #fff5f5;
+            --accent: #ff6b6b;
+            --text: #2d2d2d;
+            --light-bg: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+        }
+        
+        .tab-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .tab {
+            background-color: white;
+            padding: 15px;
+            cursor: pointer;
+            flex-grow: 1;
+            text-align: center;
+            border: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .tab:hover {
+            background-color: var(--secondary);
+        }
+        
+        .tab.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .content {
+            display: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .meal-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--light-bg);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        h3 {
+            color: var(--primary);
+            margin: 15px 0 10px 0;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .item-name {
+            font-weight: 500;
+        }
+        
+        .item-description {
+            color: #777;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .item-price {
+            font-weight: bold;
+            color: var(--primary);
+            margin-left: 20px;
+        }
+        
+        .special-tag {
+            display: inline-block;
+            font-size: 0.7em;
+            padding: 3px 8px;
+            margin-left: 10px;
+            border-radius: 20px;
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #777;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .tab-container {
+                flex-direction: column;
+            }
+            
+            .tab {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Our Weekly Menu</h1>
+            <p>Fresh ingredients, delicious meals every day</p>
+        </header>
+        
+        <div class="tab-container">
+            <button class="tab active" onclick="openDay(event, 'monday')">Monday</button>
+            <button class="tab" onclick="openDay(event, 'tuesday')">Tuesday</button>
+            <button class="tab" onclick="openDay(event, 'wednesday')">Wednesday</button>
+            <button class="tab" onclick="openDay(event, 'thursday')">Thursday</button>
+            <button class="tab" onclick="openDay(event, 'friday')">Friday</button>
+            <button class="tab" onclick="openDay(event, 'saturday')">Saturday</button>
+            <button class="tab" onclick="openDay(event, 'sunday')">Sunday</button>
+        </div>
+        
+        <!-- Monday Menu -->
+        <div id="monday" class="content active">
+            <div class="meal-section">
+                <h2>Breakfast <span style="font-size: 0.8em;">(7:00 AM - 10:30 AM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Avocado Toast</div>
+                        <div class="item-description">Sourdough bread, smashed avocado, cherry tomatoes, and poached eggs</div>
+                    </div>
+                    <div class="item-price">12.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Greek Yogurt Parfait <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Greek yogurt, fresh berries, honey, and homemade granola</div>
+                    </div>
+                    <div class="item-price">9.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Classic Eggs Benedict</div>
+                        <div class="item-description">English muffin, Canadian bacon, poached eggs, and hollandaise sauce</div>
+                    </div>
+                    <div class="item-price">14.75</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Lunch <span style="font-size: 0.8em;">(11:30 AM - 3:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Grilled Chicken Caesar Salad</div>
+                        <div class="item-description">Romaine lettuce, grilled chicken breast, parmesan cheese, croutons, and Caesar dressing</div>
+                    </div>
+                    <div class="item-price">15.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Mediterranean Wrap <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Whole wheat wrap, hummus, roasted vegetables, and tahini sauce</div>
+                    </div>
+                    <div class="item-price">13.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Soup of the Day</div>
+                        <div class="item-description">Served with artisan bread and butter</div>
+                    </div>
+                    <div class="item-price">8.95</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Dinner <span style="font-size: 0.8em;">(5:00 PM - 10:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Grilled Salmon <span class="special-tag">Signature</span></div>
+                        <div class="item-description">Atlantic salmon, lemon butter sauce, asparagus, and wild rice</div>
+                    </div>
+                    <div class="item-price">24.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Mushroom Risotto <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Arborio rice, wild mushrooms, parmesan cheese, and truffle oil</div>
+                    </div>
+                    <div class="item-price">18.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Beef Tenderloin</div>
+                        <div class="item-description">8oz beef tenderloin, mashed potatoes, seasonal vegetables, and red wine sauce</div>
+                    </div>
+                    <div class="item-price">32.95</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tuesday Menu -->
+        <div id="tuesday" class="content">
+            <div class="meal-section">
+                <h2>Breakfast <span style="font-size: 0.8em;">(7:00 AM - 10:30 AM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Belgian Waffles</div>
+                        <div class="item-description">Homemade waffles, mixed berries, maple syrup, and whipped cream</div>
+                    </div>
+                    <div class="item-price">11.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Vegetable Frittata <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Eggs, bell peppers, spinach, onions, and feta cheese</div>
+                    </div>
+                    <div class="item-price">13.50</div>
+                </div>
+            </div>
+            
+            <!-- Add lunch and dinner for Tuesday -->
+            <div class="meal-section">
+                <h2>Lunch <span style="font-size: 0.8em;">(11:30 AM - 3:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Quinoa Bowl <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Quinoa, roasted sweet potatoes, avocado, black beans, and cilantro lime dressing</div>
+                    </div>
+                    <div class="item-price">14.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Turkey Club Sandwich</div>
+                        <div class="item-description">Roasted turkey, bacon, lettuce, tomato, and aioli on toasted sourdough</div>
+                    </div>
+                    <div class="item-price">16.50</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Dinner <span style="font-size: 0.8em;">(5:00 PM - 10:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Herb Roasted Chicken</div>
+                        <div class="item-description">Half chicken, roasted potatoes, glazed carrots, and natural jus</div>
+                    </div>
+                    <div class="item-price">22.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Eggplant Parmesan <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Breaded eggplant, marinara sauce, mozzarella, parmesan, and spaghetti</div>
+                    </div>
+                    <div class="item-price">19.50</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content for other days would follow the same pattern -->
+        <div id="wednesday" class="content">
+            <h2>Wednesday's Menu Coming Soon</h2>
+            <p>We're updating our menu for Wednesday. Please check back later!</p>
+        </div>
+        
+        <div id="thursday" class="content">
+            <h2>Thursday's Menu Coming Soon</h2>
+            <p>We're updating our menu for Thursday. Please check back later!</p>
+        </div>
+        
+        <div id="friday" class="content">
+            <h2>Friday's Menu Coming Soon</h2>
+            <p>We're updating our menu for Friday. Please check back later!</p>
+        </div>
+        
+        <div id="saturday" class="content">
+            <h2>Saturday's Menu Coming Soon</h2>
+            <p>We're updating our menu for Saturday. Please check back later!</p>
+        </div>
+        
+        <div id="sunday" class="content">
+            <h2>Sunday's Menu Coming Soon</h2>
+            <p>We're updating our menu for Sunday. Please check back later!</p>
+        </div>
+        
+        <footer>
+            <p>Our menu uses locally sourced ingredients when possible. Please inform your server of any allergies or dietary restrictions.</p>
+        </footer>
+    </div>
+    
+    <script>
+        function openDay(evt, dayName) {
+            // Hide all content
+            var content = document.getElementsByClassName("content");
+            for (var i = 0; i < content.length; i++) {
+                content[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tabs
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class
+            document.getElementById(dayName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
