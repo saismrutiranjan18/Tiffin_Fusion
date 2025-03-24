@@ -590,51 +590,84 @@
 
 
   <!-- Google Maps Section -->
-<section class="tiffin-map-section">
-  <div class="tiffin-map-container">
-    <div class="tiffin-map-row">
-      <div class="tiffin-map-col-full">
-        <div class="tiffin-map-title">
-          <h2>Find Us in Indore</h2>
-          <p>Visit our restaurant at the heart of Indore</p>
-        </div>
+ <section class="map-section">
+      <div class="container">
+          <!-- Title Section -->
+          <div class="title-container">
+              <h2>Find Tiffin Centers Nearby</h2>
+              <p>Search for tiffin services in your area</p>
+          </div>
+    
+          <!-- Search Box -->
+          <div class="search-container">
+              <input 
+                  type="text" 
+                  id="locationSearch" 
+                  placeholder="Enter location (e.g., Delhi, Mumbai, Kolkata)"
+                  class="search-input"
+              >
+              <button onclick="searchLocation()" class="search-btn">
+                  Search
+              </button>
+          </div>
+    
+          <!-- Map Container -->
+          <div class="map-container">
+              <iframe 
+                  id="mapFrame"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3683.9571239045325!2d75.8577259!3d22.7195689!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcc5e02a6b91%3A0x9c70fbb81f5c5f94!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710825163749!5m2!1sen!2sin"
+                  width="100%" 
+                  height="450" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+          </div>
+    
+          <!-- Info Grid -->
+          <div class="info-grid">
+              <!-- Contact Info -->
+              <div class="info-card">
+                  <h3>Popular Tiffin Centers</h3>
+                  <div class="contact-info">
+                      <div class="info-item">
+                          <span class="icon">📍</span>
+                          <div>
+                              <p class="name">Sharma's Tiffin Service</p>
+                              <p>56, Vijay Nagar, Indore, MP 452010</p>
+                          </div>
+                      </div>
+                      <div class="info-item">
+                          <span class="icon">📞</span>
+                          <p>+91 98765-43210</p>
+                      </div>
+                      <div class="info-item">
+                          <span class="icon">🕒</span>
+                          <p>Open: 8:00 AM - 8:00 PM</p>
+                      </div>
+                  </div>
+              </div>
+    
+              <!-- Search Tips -->
+              <div class="info-card">
+                  <h3>Search Tips</h3>
+                  <ul class="tips-list">
+                      <li>Enter a specific area or landmark for better results</li>
+                      <li>Click on markers to see contact details and reviews</li>
+                      <li>Compare prices and menu options</li>
+                      <li>Check delivery radius for home delivery services</li>
+                  </ul>
+                  <a href="https://www.google.com/maps/search/tiffin+centers" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="view-map-btn">
+                      View Larger Map
+                  </a>
+              </div>
+          </div>
       </div>
-    </div>
-    <div class="tiffin-map-row">
-      <div class="tiffin-map-col-full">
-        <div class="tiffin-map-iframe-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59370.13183517131!2d75.83903739738444!3d22.72391576864878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710817114558!5m2!1sen!2sin" 
-            width="100%" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </div>
-    <div class="tiffin-map-info-row">
-      <div class="tiffin-map-info-col">
-        <div class="tiffin-contact-info">
-          <h3>Tiffin Fusion</h3>
-          <p><i class="fa fa-map-marker"></i> 123 Vijay Nagar, Indore, Madhya Pradesh 452010</p>
-          <p><i class="fa fa-phone"></i> +91 123-456-7890</p>
-          <p><i class="fa fa-envelope"></i> info@tiffinfusion.com</p>
-          <p><i class="fa fa-clock-o"></i> Open: 11:00 AM - 10:00 PM</p>
-        </div>
-      </div>
-      <div class="tiffin-map-info-col">
-        <div class="tiffin-directions-info">
-          <h3>How to Reach Us</h3>
-          <p>We're located near Vijay Nagar Square, easily accessible from the main road. Ample parking space available for our customers.</p>
-          <a href="https://goo.gl/maps/1eXqA5LtJn2QyBFZ9" class="tiffin-direction-btn" target="_blank">Get Directions</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
@@ -860,6 +893,41 @@
   <script src="./menu-page/checkout.js"></script>
   <script src="dark-mode.js"></script>
   <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mapButton = document.querySelector('.view-map-btn');
+        const searchInput = document.getElementById('locationSearch');
+        
+        mapButton.addEventListener('click', function(e) {
+            console.log('Opening larger map view...');
+        });
+
+        // Allow search on Enter key
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchLocation();
+            }
+        });
+    });
+
+    function searchLocation() {
+        const location = document.getElementById('locationSearch').value;
+        if (location.trim() === '') {
+            alert('Please enter a location to search');
+            return;
+        }
+
+        const encodedLocation = encodeURIComponent(location);
+        
+        // Update the "View Larger Map" link
+        const viewMapBtn = document.querySelector('.view-map-btn');
+        viewMapBtn.href = `https://www.google.com/maps/search/tiffin+centers+in+${encodedLocation}`;
+        
+        // Open the search in a new tab
+        window.open(`https://www.google.com/maps/search/tiffin+centers+in+${encodedLocation}`, '_blank');
+    }
+</script>
 
 </body>
 
