@@ -8,10 +8,49 @@
     <title>Payments page</title>
     <link rel="stylesheet" href="payments.css">
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .btn {
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #E64A19;
+        }
+        .hidden {
+            display: none;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+        .payment-option i {
+            font-size: 24px;
+            color: #333;
+            transition: 0.3s;
+        }
+        .payment-option:hover {
+            background-color: #f1f1f1;
+        }
+        .payment-option:hover i {
+            color: #FF5733;
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="container">
         <form id="paymentForm">
             <div class="row">
@@ -43,20 +82,56 @@
                             <input type="number" id="zip" placeholder="123 456" required>
                         </div>
                     </div>
+                    <div class="input-box">
+                        <span>Coupon Code :</span>
+                        <input type="text" id="coupon" placeholder="Enter Coupon Code">
+                        <button type="button" class="btn" onclick="applyCoupon()">Apply</button>
+                        <p id="discountMessage" style="color: green;"></p>
+                    </div>
                 </div>
 
                 <div class="column">
                     <h3 class="title">Payment</h3>
                     <div class="input-box">
+                        <span>Select Payment Method:</span>
+                        <div class="payment-option" onclick="selectPayment('card')">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Credit/Debit Card</span>
+                        </div>
+                        <div class="payment-option" onclick="selectPayment('upi')">
+                            <i class="fas fa-university"></i>
+                            <span>UPI</span>
+                        </div>
+                        <div class="payment-option" onclick="selectPayment('wallet')">
+                            <i class="fas fa-wallet"></i>
+                            <span>Wallet</span>
+                        </div>
+                        <div class="payment-option" onclick="selectPayment('cod')">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Cash on Delivery</span>
+                        </div>
+                    </div>
+
+                    <div id="card-details">
                         <span>Cards Accepted :</span>
-                        <img src="imgcards.png" alt="Image not available">
+                        <img src="Utils/Card Accepted.png" alt="Image not available">
+                        <div id="card-element"></div>
+                        <div id="card-errors" role="alert"></div>
                     </div>
 
-                    <div id="card-element">
-                        <!-- A Stripe Element will be inserted here. -->
+                    <div id="upi-details" class="hidden">
+                        <span>Enter UPI ID :</span>
+                        <input type="text" id="upiId" placeholder="example@upi">
                     </div>
-                    <div id="card-errors" role="alert"></div>
 
+                    <div id="wallet-details" class="hidden">
+                        <span>Select Wallet :</span>
+                        <select id="walletType">
+                            <option value="paytm">Paytm</option>
+                            <option value="phonepe">PhonePe</option>
+                            <option value="googlepay">Google Pay</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -65,72 +140,11 @@
     </div>
 
     <script>
-        // Here we set up Stripe.js and create the elements of the form
-        const stripe = Stripe('');//Add your stripe account key here
-        const elements = stripe.elements();
-
-        const cardElements = elements.create('card');
-
-        cardElements.mount('#card-element');
-
-        // Here we handle the form submission
-        const form = document.getElementById('paymentForm');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            //Here we collect the payment information
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const address = document.getElementById('address').value;
-            const city = document.getElementById('city').value;
-            const state = document.getElementById('state').value;
-            const zip = document.getElementById('zip').value;
-
-            // Creating a payment intent which will use the server-side 
-            const paymentIntent = await createPaymentIntent();
-
-            const { paymentIntent : confirmedPaymentIntent, error } = await stripe.confirmCardPayment(paymentIntent.client_secret, {
-                payment_method: {
-                    card: cardElements,
-                    billing_details: {
-                        name: name,
-                        email: email,
-                        address: {
-                            city: city,
-                            line1: address,
-                            state: state,
-                            postal_code: zip
-                        }
-                    }
-                }
-            });
-
-        if (error) {
-            const errorElement = document.getElementById('card-errors');
-            errorElement.textContent = error.message;
-        } else if (confirmedPaymentIntent.status === 'succeeded') {
-            // Here we handle the payment success
-            alert('Payment successful');
-            localStorage.removeItem('cart');
-            window.location.href = 'index.html';
+        function selectPayment(method) {
+            document.getElementById("card-details").classList.toggle("hidden", method !== "card");
+            document.getElementById("upi-details").classList.toggle("hidden", method !== "upi");
+            document.getElementById("wallet-details").classList.toggle("hidden", method !== "wallet");
         }
-    });
-
-    async function createPaymentIntent() {
-        const response = await fetch('/payment/create-payment-intent', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                amount: 5000, // Here we add the real amount
-                currency: 'INR'
-            })
-        });
-        return await response.json();
-    }
     </script>
-
 </body>
-
 </html>
