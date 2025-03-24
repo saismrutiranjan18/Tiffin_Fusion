@@ -2547,3 +2547,9 @@ footer {
   }
 }
 
+.dark-mode .tiffin-directions-info{
+    color: black;
+}
+.dark-mode .tiffin-contact-info{
+  color: black;
+}
