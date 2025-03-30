@@ -2609,3 +2609,16 @@ footer {
       width: 100%;
   }
 }
+
+ .dark-mode .info-card{
+  background: black;
+  color: white;
+}
+
+.dark-mode .info-card  h3{
+  color: white;
+} 
+
+.dark-mode .tips-list li {
+   color: white;
+}
