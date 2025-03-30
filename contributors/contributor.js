@@ -11,7 +11,7 @@ async function fetchContributors() {
 
   try {
     const response = await fetch(
-      `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contributors?per_page=100`,
+      `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contributors?per_page=200`, 
       { headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {} }
     );
 
