@@ -1443,7 +1443,7 @@ body {
 .view-more-container {
   grid-column: 1 / -1; /* Makes the container span the full width */
   text-align: center;
-  margin-top: 30px;
+  margin-top: 26px;
 }
 
 .view-more-button {
@@ -1455,10 +1455,11 @@ body {
   font-size: 1.2rem;
   border-radius: 5px;
   transition: background-color 0.3s;
+  border:none;
 }
 
 .view-more-button:hover {
-  background-color: #146eeb;
+  background-color: #ff4500;
   box-shadow: 0 4px 8px black;
 }
 
@@ -1469,6 +1470,43 @@ body {
 
 .dark-mode .view-more-button:hover {
   background-color: #ff4500;
+}
+
+/* Default Customize Menu Button Styling */
+.customize-menu-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dark Mode Styling */
+.dark-mode .customize-menu-button {
+  background-color: #ff5733; /* Different color for better dark mode contrast */
+  color: #121212;
+}
+
+/* Hover Effects */
+.customize-menu-button:hover {
+  background-color: #3d8b40;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Light shadow effect */
+}
+
+.dark-mode .customize-menu-button:hover {
+  background-color: #d94326; /* Darker red for hover effect */
+  color: white; /* White for better visibility */
+  box-shadow: 0 4px 8px rgba(255, 87, 51, 0.5); /* Soft reddish glow in dark mode */
+}
+
+/* Active (Click) Effects */
+.customize-menu-button:active,
+.dark-mode .customize-menu-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slightly reduced shadow on click */
 }
 
 /* RESPONSIVE MEDIA QUERIES */
