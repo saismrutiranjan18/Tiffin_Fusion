@@ -2100,10 +2100,10 @@ html {
 /**********************************************************/
 /* Footer Styling */
 footer {
-  background-color: #f8f9fa;
-  padding: 40px 0;
   font-family: "Arial", sans-serif;
-  color: #6c757d;
+  background: linear-gradient(135deg, #343a40, #495057);
+  color: #f8f9fa;
+  padding: 40px 20px;
 }
 
 .footer-content {
@@ -2112,15 +2112,17 @@ footer {
   gap: 20px;
   /* max-width: 1200px; */
   margin: auto 20px;
-  padding: 20px;
+  padding:40px  20px;
   box-sizing: border-box;
   border-radius: 8px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-}
-
-.footer-section {
-  margin: 20px;
-}
+  }
+  
+  .footer-section {
+    margin: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    padding-top: 20px; 
+  }
 
 .footer-section h2 {
   font-size: 18px;
@@ -2138,13 +2140,14 @@ footer {
 }
 
 .footer-section ul li a {
+  transition: color 0.3s ease;
   text-decoration: none;
   color: #6c757d;
   font-size: 14px;
 }
 
 .footer-section ul li a:hover {
-  color: #000;
+    color: #ffdd57;
 }
 
 .social-icons {
@@ -2157,12 +2160,14 @@ footer {
 }
 
 .social-icons li a {
-  font-size: 20px;
   color: #6c757d;
+  font-size: 24px; 
+  transition: transform 0.3s ease;
 }
 
 .social-icons li a:hover{
   color: #e67e22 !important;
+  transform: scale(1.2); 
 }
 
 /* Newsletter Section Styling */
@@ -2199,11 +2204,10 @@ footer {
 }
 
 .footer-section.newsletter .newsletter-form input {
-  padding: 10px;
+  padding: 12px;
   font-size: 14px;
   width: 250px;
   border: 2px solid #ddd;
-  border-radius: 4px;
   transition: border-color 0.3s ease;
 }
 
@@ -2229,7 +2233,18 @@ footer {
     #ff0000,
     #ff5722
   ); /* Reverse gradient on hover */
-  transform: translateY(-3px); /* Button hover animation */
+    background: linear-gradient(90deg, #e67e22, #f39c12); /* Gradient on hover */
+    transform: translateY(-3px); /* Button lift effect */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 20px; /* Less padding on mobile */
+  }
+
+  .footer-section {
+    text-align: center; /* Center text on mobile */
+  }
 }
 
 .footer-bottom {
@@ -2238,6 +2253,7 @@ footer {
   background-color: rgba(248, 249, 250, 1);
   font-size: 14px;
 }
+
 
 /* Add Button */
 .add-btn {
@@ -2311,7 +2327,7 @@ footer {
 
 /* Mobile Phones */
 @media (max-width: 576px) {
-  #contributorsBtn {
+  #contributorsBtn{
     bottom: 95px; /* Adjusted for mobile */
     right: 20px;
     width: 40px;
