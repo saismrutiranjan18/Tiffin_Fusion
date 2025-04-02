@@ -764,7 +764,10 @@ body {
 }
 
 #menu-section {
-  padding: 0;
+  background: linear-gradient(to right, #f9f9f9, #ffffff);
+  padding: 40px 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .men-head {
@@ -792,12 +795,22 @@ body {
   height: 150px;
   display: flex;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transform: translateX(0px);
   filter: blur(10px);
   transition: all 0.8s ease-out;
   padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 150px;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
 .menu-item.visible {
@@ -853,13 +866,19 @@ body {
   font-weight: bold;
   margin: 0;
   text-align: left;
+  font-size: 1.8rem;
+  color: #e6504a;
 }
 
 .menu-header .price {
-  font-weight: bold;
-  font-size: 16px;
   color: #333;
   margin-left: 20px;
+  font-weight: bold;
+  font-size: 1.4rem; 
+  color: #333; 
+  background-color: #ffeb3b;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .menu-text p {
@@ -887,20 +906,22 @@ body {
 /* Full Menu Button - Centered below the menu items */
 .full-menu-button {
   display: block;
-  margin: 30px auto; /* Center the button and add space above it */
-  width: 150px;
+  margin: 30px auto; 
   padding: 10px 20px;
   text-align: center;
-  background-color: #fc0635;
   color: white;
   font-size: 16px;
   border-radius: 12px;
   text-decoration: none; /* Remove underline */
   transition: all 0.4s ease-in-out;
+  width: 180px; 
+  padding: 12px 20px;
+  background: linear-gradient(to right, #fc0635, #ff5722); /* Gradient background */
 }
 
 .full-menu-button:hover {
-  background-color: #007bff;
+  background: linear-gradient(to right, #fb501d, #fc0635); /* Reverse gradient on hover */
+  transform: scale(1.05);
 }
 
 /* Make the menu section responsive */
@@ -923,6 +944,20 @@ body {
   }
   .full-menu-button {
     width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-section {
+    padding: 20px; 
+  }
+
+  .menu-item {
+    height: auto; 
+  }
+
+  .full-menu-button {
+    width: 150px; 
   }
 }
 
