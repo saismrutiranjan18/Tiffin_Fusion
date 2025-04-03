@@ -765,6 +765,10 @@ body {
 
 #menu-section {
   padding: 0;
+  background: linear-gradient(to right, #f9f9f9, #ffffff);
+  padding: 40px 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .men-head {
@@ -784,6 +788,7 @@ body {
   gap: 20px;
   padding: 20px 145px;
   background-color: #f9f9f9;
+  
 }
 
 .menu-item {
@@ -798,12 +803,21 @@ body {
   filter: blur(10px);
   transition: all 0.8s ease-out;
   padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s; 
 }
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
 
 .menu-item.visible {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
+  font-size: 1.8rem;
+  color: #e6504a;
 }
 
 .menu-item:nth-child(odd).visible {
@@ -860,6 +874,12 @@ body {
   font-size: 16px;
   color: #333;
   margin-left: 20px;
+  font-weight: bold;
+  font-size: 1.4rem; 
+  color: #333; 
+  background-color: #ffeb3b;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .menu-text p {
@@ -867,6 +887,7 @@ body {
   color: #6c757d;
   margin: 5px 0 0;
   text-align: left;
+  font-weight: 600;
 }
 
 .menu-text h4 {
@@ -923,6 +944,20 @@ body {
   }
   .full-menu-button {
     width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-section {
+    padding: 20px; 
+  }
+
+  .menu-item {
+    height: auto; 
+  }
+
+  .full-menu-button {
+    width: 150px; 
   }
 }
 
