@@ -28,6 +28,33 @@ body {
     margin-top: 20px;
 }
 
+/* Make navbar-toggler visible in both light and dark mode */
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.dark-mode .navbar-toggler {
+    background-color: rgba(80, 80, 80, 0.9);
+    border: 1px solid #666;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+
 /* Table Styling */
 table {
     width: 100%;
