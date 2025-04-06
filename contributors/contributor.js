@@ -59,8 +59,8 @@ async function fetchContributors() {
       card.appendChild(img);
       card.appendChild(name);
       card.appendChild(githubIcon);
-      card.appendChild(prCount);  // पहले PR Count
-      card.appendChild(button);  // फिर Certificate button
+      card.appendChild(prCount);  
+      card.appendChild(button);  
       contributorsContainer.appendChild(card);
     }
   } catch (error) {
@@ -71,8 +71,14 @@ async function fetchContributors() {
 
 async function getMergedPRCount(username) {
   try {
+    // Define the date range (March 7, 2025 to April 6, 2025)
+    const startDate = "2025-03-07";
+    const endDate = "2025-04-06";
+    const dateRange = `${startDate}..${endDate}`;
+
+    // Fetch merged PRs within the specified date range
     const response = await fetch(
-      `https://api.github.com/search/issues?q=repo:${REPO_OWNER}/${REPO_NAME}+is:pr+author:${username}+is:merged`,
+      `https://api.github.com/search/issues?q=repo:${REPO_OWNER}/${REPO_NAME}+is:pr+author:${username}+is:merged+created:${dateRange}`,
       { headers: GITHUB_TOKEN ? { Authorization: `token ${GITHUB_TOKEN}` } : {} }
     );
 
@@ -126,21 +132,20 @@ function generateCertificate(username, avatarUrl, mergedPRCount) {
     ctx.font = "bold 50px Arial";
     ctx.fillText(username, canvas.width / 2, 500);
 
-   // Certificate content
-ctx.font = "35px Arial";
-const content = `This certificate is proudly presented to ${username} for their valuable 
-contribution to Tiffin_Fusion in Social Winter of Code (SWoC) 
-from January 1, 2025 to March 1, 2025.`;
+    // Certificate content
+    ctx.font = "35px Arial";
+    const content = `This certificate is proudly presented to ${username} for their valuable 
+contribution to Tiffin_Fusion in Apertre 2.0 
+from March 7, 2025 to April 6, 2025.`;
 
-const contentLines = content.split("\n");
-contentLines.forEach((line, index) => {
-  ctx.fillText(line.trim(), canvas.width / 2, 600 + index * 40);
-});
+    const contentLines = content.split("\n");
+    contentLines.forEach((line, index) => {
+      ctx.fillText(line.trim(), canvas.width / 2, 600 + index * 40);
+    });
 
-// Add space before "Total Merged PRs" line
-const spaceBetween = 20; // Adjust this value to set the desired space
-ctx.fillText(`Total Merged PRs: ${mergedPRCount}`, canvas.width / 2, 600 + contentLines.length * 40 + spaceBetween);
-
+    // Add space before "Total Merged PRs" line
+    const spaceBetween = 20; // Adjust this value to set the desired space
+    ctx.fillText(`Total Merged PRs: ${mergedPRCount}`, canvas.width / 2, 600 + contentLines.length * 40 + spaceBetween);
 
     // Signature
     ctx.font = "italic 30px Georgia";
@@ -213,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
 
 // Fetch contributors on page load
 fetchContributors();
