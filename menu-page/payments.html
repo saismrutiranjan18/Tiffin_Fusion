@@ -47,6 +47,23 @@
         .payment-option:hover i {
             color: #FF5733;
         }
+        #loading {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .success-message {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
     </style>
 </head>
 
@@ -115,7 +132,7 @@
                     <div id="card-details">
                         <span>Cards Accepted :</span>
                         <img src="Utils/Card Accepted.png" alt="Image not available">
-                        <div id="card-element"></div>
+                        <div id="card-element" class="form-control"></div>
                         <div id="card-errors" role="alert"></div>
                     </div>
 
@@ -136,15 +153,144 @@
             </div>
 
             <button type="submit" id="submitButton" class="btn">Submit Payment</button>
+            <div id="loading">Processing payment...</div>
+            <div id="success-message" class="success-message">Payment successful! Thank you for your order.</div>
+            <div id="error-message" class="error-message">Payment failed. Please try again.</div>
         </form>
     </div>
 
     <script>
+        // Track selected payment method
+        let selectedPaymentMethod = 'card'; // Default to card
+        
         function selectPayment(method) {
+            selectedPaymentMethod = method;
             document.getElementById("card-details").classList.toggle("hidden", method !== "card");
             document.getElementById("upi-details").classList.toggle("hidden", method !== "upi");
             document.getElementById("wallet-details").classList.toggle("hidden", method !== "wallet");
         }
+        
+        // Initialize Stripe
+        let stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx'); // Replace with your publishable key
+        let elements = stripe.elements();
+        
+        // Create and mount the Card Element
+        let cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+        
+        // Handle real-time validation errors from the card Element
+        cardElement.addEventListener('change', function(event) {
+            let displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+        
+        // Apply coupon code
+        function applyCoupon() {
+            const couponCode = document.getElementById('coupon').value.trim();
+            const discountMessage = document.getElementById('discountMessage');
+            
+            if (couponCode === 'DISCOUNT10') {
+                discountMessage.textContent = '10% discount applied!';
+                // Here you would apply the discount to the total
+            } else if (couponCode === 'FREESHIP') {
+                discountMessage.textContent = 'Free shipping applied!';
+                // Here you would apply free shipping
+            } else {
+                discountMessage.textContent = 'Invalid coupon code';
+            }
+        }
+        
+        // Handle form submission
+        document.getElementById('paymentForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const submitButton = document.getElementById('submitButton');
+            const loadingIndicator = document.getElementById('loading');
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+            
+            // Hide messages and disable button
+            submitButton.disabled = true;
+            loadingIndicator.style.display = 'block';
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Handle different payment methods
+            if (selectedPaymentMethod === 'card') {
+                // For credit card payment with Stripe
+                try {
+                    // This would normally fetch client_secret from your server
+                    // const response = await fetch('/api/payment/create-payment-intent', {
+                    //     method: 'POST',
+                    //     headers: { 'Content-Type': 'application/json' },
+                    //     body: JSON.stringify({ amount: 1000, currency: 'usd' })
+                    // });
+                    // const { client_secret } = await response.json();
+                    
+                    // Since we don't have a server endpoint, simulate success
+                    setTimeout(() => {
+                        // Show success message
+                        loadingIndicator.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        submitButton.disabled = false;
+                    }, 2000);
+                    
+                    // With actual Stripe, you would do:
+                    // const result = await stripe.confirmCardPayment(client_secret, {
+                    //     payment_method: { card: cardElement }
+                    // });
+                    
+                    // if (result.error) {
+                    //     throw new Error(result.error.message);
+                    // }
+                } catch (error) {
+                    loadingIndicator.style.display = 'none';
+                    errorMessage.textContent = error.message;
+                    errorMessage.style.display = 'block';
+                    submitButton.disabled = false;
+                }
+            } else if (selectedPaymentMethod === 'upi') {
+                // Handle UPI payment
+                const upiId = document.getElementById('upiId').value.trim();
+                if (!upiId) {
+                    loadingIndicator.style.display = 'none';
+                    errorMessage.textContent = 'Please enter a valid UPI ID';
+                    errorMessage.style.display = 'block';
+                    submitButton.disabled = false;
+                    return;
+                }
+                
+                // Simulate UPI payment success
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    submitButton.disabled = false;
+                }, 2000);
+            } else if (selectedPaymentMethod === 'wallet') {
+                // Handle wallet payment
+                const walletType = document.getElementById('walletType').value;
+                
+                // Simulate wallet payment success
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    submitButton.disabled = false;
+                }, 2000);
+            } else if (selectedPaymentMethod === 'cod') {
+                // Handle cash on delivery
+                // Simulate COD confirmation
+                setTimeout(() => {
+                    loadingIndicator.style.display = 'none';
+                    successMessage.textContent = 'Your order has been placed successfully for Cash on Delivery!';
+                    successMessage.style.display = 'block';
+                    submitButton.disabled = false;
+                }, 1000);
+            }
+        });
     </script>
 </body>
 </html>

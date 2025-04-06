@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const stripe = require('stripe')(''); // Add your stripe secret key here
+const stripe = require('stripe')('sk_test_51OuYfuKdDRRQlCdmUg7rlvnvJuRLf2bGwuZIhfUQvzWWA4hzSnpkGnC1ZhzKH2ljOeXpuuClzngF3UWVihWDcV0400HGhJcfFi'); // Using a test key
 
 router.post('/create-payment-intent', async (req, res) => {
     const { amount, currency} = req.body;
