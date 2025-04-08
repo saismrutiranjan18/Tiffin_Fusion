@@ -493,6 +493,7 @@ text-decoration: none;
 .navbar a:hover {
   color:#94151a; /* Change color on hover */
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.225); 
+  font-weight: 700;
 }
 
 .navbar i {
