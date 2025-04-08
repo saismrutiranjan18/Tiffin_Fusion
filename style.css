@@ -852,6 +852,7 @@ body {
 {
   background-color: yellow;
   color: #000;
+  border-radius: 5px;
 }
 .menu-image img {
   width: 100%;
