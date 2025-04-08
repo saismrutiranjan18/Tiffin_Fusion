@@ -2531,22 +2531,23 @@ footer {
 
 .search-input:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #0652f6;
 }
 
 .search-btn {
-  padding: 12px 24px;
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    padding: 12px 24px;
+    background-color: #157affcb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .search-btn:hover {
-  background-color: #4338ca;
+    background-color: #4338ca; /* Darker shade on hover */
+    transform: scale(1.05); 
 }
 
 /* Map Container */
