@@ -450,8 +450,10 @@ body.dark {
   height: 2px;
   left: 50%;
   bottom: 0;
-  background-color: red;
+  background-color: rgb(255, 115, 0);
+  line-height: 5px;
   transition: width 0.3s ease, left 0.3s ease;
+  box-shadow: 3px solid;
 }
 
 .nav-item a:hover::after {
@@ -495,7 +497,8 @@ body.dark {
   height: 2px;
   left: 50%;
   bottom: 0;
-  background-color: red;
+  background-color: rgb(255, 115, 0);
+  line-height: 5px;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
