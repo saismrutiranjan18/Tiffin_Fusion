@@ -398,6 +398,10 @@ body.dark {
   position: sticky;
   top: 0;
   z-index: 1;
+  justify-content: space-between; /* Space between items */
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #f5f5f5, #e0e0e0);
+    border-bottom:
 }
 
 .navbar-brand {
@@ -407,6 +411,29 @@ body.dark {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 16px;
+}
+.nav-link
+{
+text-decoration: none;
+    color: #E53935;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 15px; /* Spacing between links */
+    transition: color 0.3s, transform 0.3s; /* Added transform for scale effect */
+}
+
+.nav-link:hover {
+  color: #d32f2f;
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+.navbar-brand {
+  display: flex; /* Flexbox for brand alignment */
+  align-items: center; /* Center items vertically */
+  color: black; /* Brand text color */
+  font-weight: bold; /* Bold font weight */
+  text-transform: uppercase; /* Uppercase text */
+  font-size: 16px; /* Font size */
 }
 
 .navbar-brand img {
@@ -434,13 +461,15 @@ body.dark {
 }
 
 .nav-item a {
-  color: black;
+  color: #0b0b0b;
   text-transform: uppercase;
   font-weight: 600; /* Lighten the font weight */
   font-size: 14px; /* Ensure uniform font size for all links */
   position: relative;
   padding: 8px 12px; /* Consistent padding for each link */
   transition: color 0.3s ease;
+  margin: 0 15px; /* Spacing between links */
+  text-decoration:none;
 }
 
 .nav-item a::after {
@@ -461,6 +490,15 @@ body.dark {
   left: 0;
 }
 
+.navbar a:hover {
+  color:#94151a; /* Change color on hover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+}
+
+.navbar i {
+  margin-right: 8px; /* Space between icon and text */
+  transition: transform 0.3s ease; /* Smooth scaling */
+}
 /* Mobile View Adjustments */
 @media (max-width: 768px) {
   .navbar-nav {
