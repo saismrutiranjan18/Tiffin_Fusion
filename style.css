@@ -786,6 +786,7 @@ body {
   background-color: #f9f9f9;
 }
 
+
 .menu-item {
   background-color: #ffffff;
   border-radius: 10px;
@@ -798,6 +799,12 @@ body {
   filter: blur(10px);
   transition: all 0.8s ease-out;
   padding: 15px;
+}
+
+.menu-item:hover{
+  color: white;
+  background-color: #891440;
+  box-shadow: 0 4px 8px black;
 }
 
 .menu-item.visible {
