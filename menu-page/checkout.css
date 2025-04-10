@@ -1,151 +1,137 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-    padding: 20px;
-}
-/*back button*/
-.head{
-    display: flex;
-}
-/* Header */
-
-.head h2{
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #444;
-    margin-left: 40%;
-}
-.head a img{
-    margin-top: 20px;
-}
-
-/* Make navbar-toggler visible in both light and dark mode */
-.navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #ccc;
-    padding: 0.5rem;
-    border-radius: 4px;
-}
-
-.dark-mode .navbar-toggler {
-    background-color: rgba(80, 80, 80, 0.9);
-    border: 1px solid #666;
-}
-
-.navbar-toggler-icon {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-}
-
-.dark-mode .navbar-toggler-icon {
-    filter: invert(1);
-}
-
-/* Table Styling */
-table {
+.cart-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-th, td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
+.cart-table th, .cart-table td {
+    padding: 1rem;
+    text-align: left;
 }
-
-th {
-    background-color: #4CAF50;
-    color: #fff;
-    font-size: 16px;
-}
-
-td {
-    font-size: 14px;
-}
-
-#total-price {
-    background-color: #4CAF50; 
-    padding: 10px 10px;
-    color: #f9f9f9;
-    font-weight: bold; 
-    text-align: center; 
-    font-size: 1em; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-/* Button Styling */
-button {
-    background-color: #4CAF50;
+.cart-table thead {
+    background: #dc2626; /* Tailwind red-600 */
     color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-    margin-top: 10px;
 }
-
-button:hover {
-    background-color: #45a049;
+.cart-table tbody tr {
+    border-bottom: 1px solid #e5e7eb; /* Tailwind gray-200 */
+    transition: background 0.3s ease;
 }
-
-button:focus {
-    outline: none;
+.cart-table tbody tr:hover {
+    background: #f9fafb; /* Tailwind gray-50 */
 }
-
-/* Remove Button */
-button.remove-btn {
-    background-color: #f44336;
-    padding: 5px 10px;
-    font-size: 12px;
+.btn-anim {
+    transition: all 0.3s ease;
 }
-
-button.remove-btn:hover {
-    background-color: #e53935;
+.btn-anim:hover {
+    transform: scale(1.05);
 }
-
-/* Cart Buttons */
-button#clear-cart, button#checkout {
-    background-color: #2196F3;
-    margin-top: 20px;
-}
-
-button#clear-cart:hover, button#checkout:hover {
-    background-color: #1976D2;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    h2 {
-        font-size: 24px;
+/* Responsive table adjustments */
+@media (max-width: 768px) {
+    .cart-table thead {
+        display: none;
     }
-
-    table th, table td {
-        padding: 10px;
+    .cart-table tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
     }
-
-    button {
-        width: 100%;
-        font-size: 16px;
-        margin-bottom: 10px;
+    .cart-table tbody td {
+        flex: 1 1 50%;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+    .cart-table tbody td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 0.5rem;
+        flex: 0 0 auto;
+    }
+    .cart-table tbody td img {
+        max-width: 50px;
+        height: auto;
     }
 }
+@media (max-width: 480px) {
+    .cart-table tbody td {
+        flex: 1 1 100%;
+    }
+    .cart-table tbody td img {
+        max-width: 40px;
+    }
+}
+
+/* Dark Mode Styles (excluding navbar) */
+body.dark {
+background-color: #000000;
+} /* #9b59b6 */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #F44336;
+border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+background-color: #f1f1f1;
+border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background-color: #F44336;
+}
+
+.dark-mode {
+background-color: #121212;
+color: #ffffff;
+}
+.dark-mode .container {
+    background-color: transparent; /* Keep container transparent */
+}
+.dark-mode h2 {
+    color: #ffffff; /* White text for heading */
+}
+.dark-mode .bg-white {
+    background-color: #333333; /* Darker gray for cards */
+    border: 1px solid #444444; /* Darker border */
+}
+.dark-mode .shadow-lg {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Darker shadow */
+}
+.dark-mode .cart-table tbody tr {
+    border-bottom: 1px solid #444444; /* Darker gray border */
+}
+.dark-mode .cart-table tbody tr:hover {
+    background: #444444; /* Slightly lighter gray on hover */
+}
+.dark-mode #total-price {
+    color: #ffffff; /* White text for total */
+}
+.dark-mode #clear-cart {
+    background-color: #f44336; /* Red background */
+    color: #ffffff; /* White text */
+}
+.dark-mode #clear-cart:hover {
+    background-color: #d32f2f; /* Slightly darker red on hover */
+}
+.dark-mode #checkout {
+    background-color: #f44336; /* Red background */
+    color: #ffffff; /* White text */
+}
+.dark-mode #checkout:hover {
+    background-color: #d32f2f; /* Slightly darker red on hover */
+}
+.dark-mode a.text-red-600 {
+    color: #f44336; /* Red remains consistent */
+}
+.dark-mode a.text-red-600:hover {
+    color: #d32f2f; /* Slightly darker red on hover */
+}
+/* Toggle Button Adjustments */
+.dark-mode .navbar-toggler-icon {
+    color: #ffffff !important;
+  }
