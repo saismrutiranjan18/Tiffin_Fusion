@@ -786,6 +786,7 @@ body {
   background-color: #f9f9f9;
 }
 
+
 .menu-item {
   background-color: #ffffff;
   border-radius: 10px;
@@ -798,6 +799,12 @@ body {
   filter: blur(10px);
   transition: all 0.8s ease-out;
   padding: 15px;
+}
+
+.menu-item:hover{
+  color: white;
+  background-color: #891440;
+  box-shadow: 0 4px 8px black;
 }
 
 .menu-item.visible {
@@ -901,7 +908,14 @@ body {
 
 .full-menu-button:hover {
   background-color: #007bff;
+  box-shadow: 0 4px 8px black;
 }
+
+.dark-mode .full-menu-button:hover {
+  background-color: #007bff;
+  box-shadow: 0 2px 4px white;
+}
+
 
 /* Make the menu section responsive */
 @media (max-width: 900px) {
