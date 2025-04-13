@@ -2580,7 +2580,7 @@ footer {
 }
 
 .search-btn:hover {
-    background-color: #4338ca; /* Darker shade on hover */
+    background-color: #6457f3; /* Darker shade on hover */
     transform: scale(1.05); 
 }
 
@@ -2600,6 +2600,7 @@ footer {
   margin-top: 32px;
 }
 
+.view-map-btn
 /* Info Cards */
 .info-card {
   background-color: white;
@@ -2660,15 +2661,18 @@ footer {
 .view-map-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4f46e5;
+  background-color:rgb(6, 74, 246);
   color: white;
   text-decoration: none;
   border-radius: 6px;
   transition: background-color 0.3s ease;
+  box-shadow: 0 5px 10px solid black;
 }
 
 .view-map-btn:hover {
-  background-color: #4338ca;
+  background-color: #6006f0;
+  color: #000;
+  font-weight: 500;
 }
 
 /* Responsive Design */
