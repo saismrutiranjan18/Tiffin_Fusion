@@ -40,9 +40,26 @@
     document.getElementById("add-to-cart-btn13").addEventListener("click", addToCart);
     document.getElementById("add-to-cart-btn14").addEventListener("click", addToCart);
   </script>
+
+
+
 </head>
 
 <body>
+
+   <!-- Loader -->
+   <div id="loader" class="loader">
+    <div class="panWrapper">
+        <div class="pan">
+            <div class="food"></div>
+            <div class="panBase"></div>
+            <div class="panHandle"></div>
+        </div>
+        <div class="panShadow"></div>
+    </div>
+</div>
+
+
   <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
     <div class="container-fluid">
 
@@ -122,262 +139,145 @@
   </nav>
 
   <!-- Corporate Meal Plans Section -->
-  <section id="meal-plans" class="daily-plan-section">
-    <h2 class="section-title">Corporate Meal Plans</h2>
-
-    <!-- Vegetarian Options Section -->
-    <div class="meal-section">
-      <h2 class="meal-category">Vegetarian Options</h2>
-      <div class="daily-plan-container">
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/veg1.jpg" alt="Vegetarian Pasta" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Paneer Butter Masala</h4>
-                <p class="price">₹600</p>
-              </div>
-            </div>
-            <div class="card-back">
-              <h4>Paneer Butter masala</h4>
-            </div>
-          </div>
-          <button id="add-to-cart-btn" class="add-btn" onclick="addToCart('Paneer Butter Masala', 600)">Add +</button>
-        </div>
-        <!-- Additional cards -->
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/veg2.jpg" alt="Vegetable Stir-fry" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Paneer Tikka Masala</h4>
-                <p class="price">₹580</p>
-              </div>
-            </div>
-            <div class="card-back">
-              <h4>Paneer Tikka Masala</h4>
-            </div>
-          </div>
-          <button id="add-to-cart-btn1" class="add-btn" onclick="addToCart('Paneer Tikka Masala', 580)">Add +</button>
-        </div>
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/veg3.jpg" alt="Stuffed Bell Peppers" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Palak Paneer</h4>
-                <p class="price">₹620</p>
-              </div>
-            </div>
-            <div class="card-back">
-              <h4>Palak Paneer</h4>
-            </div>
-          </div>
-          <button id="add-to-cart-btn2" class="add-btn" onclick="addToCart('Palak Paneer', 620)">Add +</button>
-        </div>
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/veg4.jpg" alt="Spinach and Ricotta Rolls" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Mix Veg</h4>
-                <p class="price">₹650</p>
-              </div>
-            </div>
-            <div class="card-back">
-              <h4>Mix Veg</h4>
-            </div>
-          </div>
-          <button id="add-to-cart-btn3" class="add-btn" onclick="addToCart('Mix Veg', 650)">Add +</button>
-        </div>
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/veg5.jpg" alt="Zucchini Noodles" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Vegetable Rice</h4>
-                <p class="price">₹590</p>
-              </div>
-            </div>
-            <div class="card-back">
-              <h4>Vegetable Rice</h4>
-            </div>
-          </div><button id="add-to-cart-btn4" class="add-btn" onclick="addToCart('Vegetable Rice', 590)">Add +</button>
-        </div>
+ <!-- Main Content -->
+<div class="content" id="content">
+  <section id="meal-plans" class="animate__animated animate__fadeInUp">
+      <h2 class="section-title">Corporate Meal Plans</h2>
+      <div class="meal-tabs">
+          <button class="tab-button active" onclick="showTab('veg')">Vegetarian</button>
+          <button class="tab-button" onclick="showTab('nonveg')">Non-Vegetarian</button>
+          <button class="tab-button" onclick="showTab('vegan')">Vegan</button>
       </div>
-      
-    </div>
-
-    <!-- Non-Vegetarian Options Section -->
-    <div class="meal-section">
-      <h2 class="meal-category">Non-Vegetarian Options</h2>
-      <div class="daily-plan-container">
-        <!-- First card -->
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/nonveg1.jpg" alt="Chicken Curry with Rice" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Chicken Curry with Naan/Roti</h4>
-                <p class="price">₹750</p>
+      <div id="veg" class="daily-plan-container">
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/veg1.jpg" alt="Paneer Butter Masala" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Paneer Butter Masala</h4>
+                  <p class="price">₹600</p>
+                  <button id="add-to-cart-btn" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Chicken Curry with Rice</h4>
-            </div>
           </div>
-          <button id="add-to-cart-btn5" class="add-btn" onclick="addToCart('Chicken Curry with Naan/Roti', 750)">Add +</button>
-        </div>
-        <!-- Second card -->
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/nonveg2.jpg" alt="Grilled Fish with Veggies" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Mutton Curry with Appam</h4>
-                <p class="price">₹800</p>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/veg2.jpg" alt="Paneer Tikka Masala" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Paneer Tikka Masala</h4>
+                  <p class="price">₹580</p>
+                  <button id="add-to-cart-btn1" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Grilled Fish with Veggies</h4>
-            </div>
           </div>
-          <button id="add-to-cart-btn6" class="add-btn" onclick="addToCart('Mutton Curry with Appam', 800)">Add +</button>
-        </div>
-        <!-- Third card -->
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/nonveg3.jpg" alt="Pork Chop with Vegetables" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta</h4>
-                <p class="price">₹850</p>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/veg3.jpg" alt="Palak Paneer" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Palak Paneer</h4>
+                  <p class="price">₹620</p>
+                  <button id="add-to-cart-btn2" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta</h4>
-            </div>
           </div>
-          <button id="add-to-cart-btn7" class="add-btn" onclick="addToCart('Grilled Prawns with Herb Butter Sauce or Spicy Chicken Alfredo Pasta', 850)">Add +</button>
-        </div>
-        <!-- Fourth card -->
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/nonveg4.png" alt="Grilled Fish with Quinoa and Roasted Veggies"
-                class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Grilled Fish with Quinoa and Roasted Veggies</h4>
-                <p class="price">₹950</p>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/veg4.jpg" alt="Mix Veg" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Mix Veg</h4>
+                  <p class="price">₹650</p>
+                  <button id="add-to-cart-btn3" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Grilled Fish with Quinoa and Roasted Veggies</h4>
-            </div>
           </div>
-          <button id="add-to-cart-btn8" class="add-btn" onclick="addToCart('Grilled Fish with Quinoa and Roasted Veggies', 950)">Add +</button>
-        </div>
-        <!-- Fifth card -->
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/nonveg5.jpg" alt="Chicken Skewers" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Chicken Curry with Rice</h4>
-                <p class="price">₹700</p>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/veg5.jpg" alt="Vegetable Rice" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Vegetable Rice</h4>
+                  <p class="price">₹590</p>
+                  <button id="add-to-cart-btn4" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Chicken Curry with Rice</h4>
-            </div>
-          </div><button id="add-to-cart-btn9" class="add-btn" onclick="addToCart('Chicken Curry with Rice', 700)">Add +</button>
-        </div>
-        
+          </div>
       </div>
-    </div>
-
-    <!-- Vegan Alternatives Section -->
-    <div class="meal-section">
-      <h2 class="meal-category">Vegan Alternatives</h2>
-      <div class="daily-plan-container">
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/vegan1.jpg" alt="Quinoa Bowl with Veggies" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Lentil Curry with Steamed Brown Rice and Vegan Raita</h4>
-                <p class="price">₹550</p>
+      <div id="nonveg" class="daily-plan-container hidden">
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/nonveg1.jpg" alt="Chicken Curry with Naan/Roti" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Chicken Curry with Naan/Roti</h4>
+                  <p class="price">₹750</p>
+                  <button id="add-to-cart-btn5" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Lentil Curry with Steamed Brown Rice and Vegan Raita</h4>
-            </div>
           </div>
-          <button id="add-to-cart-btn10" class="add-btn" onclick="addToCart('Lentil Curry with Steamed Brown Rice and Vegan Raita', 550)">Add +</button>
-        </div>
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/vegan2.jpg" alt="Lentil Curry with Rice" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Tofu Masala Curry with Coconut Rice</h4>
-                <p class="price">₹580</p>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/nonveg2.jpg" alt="Mutton Curry with Appam" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Mutton Curry with Appam</h4>
+                  <p class="price">₹800</p>
+                  <button id="add-to-cart-btn6" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Tofu Masala Curry with Coconut Rice</h4>
-            </div>
           </div>
-          <button id="add-to-cart-btn11" class="add-btn" onclick="addToCart('Tofu Masala Curry with Coconut Rice', 580)">Add +</button>
-        </div>
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/vegan3.jpeg" alt="Tofu Stir-fry" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies</h4>
-                <p class="price">₹560</p>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/nonveg3.jpg" alt="Grilled Prawns" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Grilled Prawns</h4>
+                  <p class="price">₹850</p>
+                  <button id="add-to-cart-btn7" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies</h4>
-            </div>
           </div>
-          <button id="add-to-cart-btn12" class="add-btn" onclick="addToCart('Quinoa Buddha Bowl with Tofu, Avocado, and Roasted Veggies', 560)">Add +</button>
-        </div>
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/vegan4.jpg" alt="Eggplant Parmesan" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Lentil & Spinach Soup with Quinoa</h4>
-                <p class="price">₹600</p>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/nonveg4.png" alt="Grilled Fish with Quinoa" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Grilled Fish with Quinoa</h4>
+                  <p class="price">₹950</p>
+                  <button id="add-to-cart-btn8" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Lentil & Spinach Soup with Quinoa</h4>
-            </div>
           </div>
-          <button id="add-to-cart-btn13" class="add-btn" onclick="addToCart('Lentil & Spinach Soup with Quinoa', 600)">Add +</button>
-        </div>
-        <div class="daily-plan-card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="./corporateplans/vegan5.jpg" alt="Vegan Tacos" class="card-image">
-              <div class="card-overlay">
-                <h4 class="meal-name">Chickpea and Vegetable Curry with Basmati Rice</h4>
-                <p class="price">₹570</p>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/nonveg5.jpg" alt="Chicken Curry with Rice" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Chicken Curry with Rice</h4>
+                  <p class="price">₹700</p>
+                  <button id="add-to-cart-btn9" class="add-btn">Add +</button>
               </div>
-            </div>
-            <div class="card-back">
-              <h4>Chickpea and Vegetable Curry with Basmati Rice</h4>
-            </div>
           </div>
-        <button id="add-to-cart-btn14" class="add-btn" onclick="addToCart('Chickpea and Vegetable Curry with Basmati Rice', 570)">Add +</button>
-        </div>
       </div>
-    </div>
+      <div id="vegan" class="daily-plan-container hidden">
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/vegan1.jpg" alt="Lentil Curry" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Lentil Curry</h4>
+                  <p class="price">₹550</p>
+                  <button id="add-to-cart-btn10" class="add-btn">Add +</button>
+              </div>
+          </div>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/vegan2.jpg" alt="Tofu Masala Curry" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Tofu Masala Curry</h4>
+                  <p class="price">₹580</p>
+                  <button id="add-to-cart-btn11" class="add-btn">Add +</button>
+              </div>
+          </div>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/vegan3.jpeg" alt="Quinoa Buddha Bowl" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Quinoa Buddha Bowl</h4>
+                  <p class="price">₹560</p>
+                  <button id="add-to-cart-btn12" class="add-btn">Add +</button>
+              </div>
+          </div>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/vegan4.jpg" alt="Lentil & Spinach Soup" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Lentil & Spinach Soup</h4>
+                  <p class="price">₹600</p>
+                  <button id="add-to-cart-btn13" class="add-btn">Add +</button>
+              </div>
+          </div>
+          <div class="daily-plan-card animate__animated animate__fadeIn">
+              <img src="./corporateplans/vegan5.jpg" alt="Chickpea Curry" class="card-image">
+              <div class="card-content">
+                  <h4 class="meal-name">Chickpea Curry</h4>
+                  <p class="price">₹570</p>
+                  <button id="add-to-cart-btn14" class="add-btn">Add +</button>
+              </div>
+          </div>
+      </div>
   </section>
+</div>
+
+
 
   <footer>
     <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 20px; background-color: white; color: black;">
@@ -447,6 +347,25 @@
       <p style="margin: 0; color: black; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">© 2025 Tiffin Fusion. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Loader handling
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('content').classList.add('visible');
+        }, 1500);
+    });
+  
+    // Tab switching
+    function showTab(tab) {
+        document.querySelectorAll('.daily-plan-container').forEach(container => container.classList.add('hidden'));
+        document.getElementById(tab).classList.remove('hidden');
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`button[onclick="showTab('${tab}')"]`).classList.add('active');
+    }
+  </script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

@@ -398,6 +398,10 @@ body.dark {
   position: sticky;
   top: 0;
   z-index: 1;
+  justify-content: space-between; /* Space between items */
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #f5f5f5, #e0e0e0);
+    border-bottom:
 }
 
 .navbar-brand {
@@ -407,6 +411,29 @@ body.dark {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 16px;
+}
+.nav-link
+{
+text-decoration: none;
+    color: #E53935;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 15px; /* Spacing between links */
+    transition: color 0.3s, transform 0.3s; /* Added transform for scale effect */
+}
+
+.nav-link:hover {
+  color: #d32f2f;
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+.navbar-brand {
+  display: flex; /* Flexbox for brand alignment */
+  align-items: center; /* Center items vertically */
+  color: black; /* Brand text color */
+  font-weight: bold; /* Bold font weight */
+  text-transform: uppercase; /* Uppercase text */
+  font-size: 16px; /* Font size */
 }
 
 .navbar-brand img {
@@ -434,13 +461,15 @@ body.dark {
 }
 
 .nav-item a {
-  color: black;
+  color: #0b0b0b;
   text-transform: uppercase;
   font-weight: 600; /* Lighten the font weight */
   font-size: 14px; /* Ensure uniform font size for all links */
   position: relative;
   padding: 8px 12px; /* Consistent padding for each link */
   transition: color 0.3s ease;
+  margin: 0 15px; /* Spacing between links */
+  text-decoration:none;
 }
 
 .nav-item a::after {
@@ -450,8 +479,10 @@ body.dark {
   height: 2px;
   left: 50%;
   bottom: 0;
-  background-color: red;
+  background-color: rgb(255, 115, 0);
+  line-height: 5px;
   transition: width 0.3s ease, left 0.3s ease;
+  box-shadow: 3px solid;
 }
 
 .nav-item a:hover::after {
@@ -459,6 +490,16 @@ body.dark {
   left: 0;
 }
 
+.navbar a:hover {
+  color:#94151a; /* Change color on hover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.225); 
+  font-weight: 700;
+}
+
+.navbar i {
+  margin-right: 8px; /* Space between icon and text */
+  transition: transform 0.3s ease; /* Smooth scaling */
+}
 /* Mobile View Adjustments */
 @media (max-width: 768px) {
   .navbar-nav {
@@ -495,7 +536,8 @@ body.dark {
   height: 2px;
   left: 50%;
   bottom: 0;
-  background-color: red;
+  background-color: rgb(255, 115, 0);
+  line-height: 5px;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -766,7 +808,11 @@ body {
 #menu-section {
   padding: 0;
   background: linear-gradient(to right, #f9f9f9, #ffffff);
+
   padding: 40px 20px; 
+
+  padding: 20px 20px; 
+
   border-radius: 10px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -786,6 +832,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+
   padding: 20px 145px;
   background-color: #f9f9f9;
   
@@ -804,6 +851,13 @@ body {
   transition: all 0.8s ease-out;
   padding: 15px;
   transition: transform 0.3s, box-shadow 0.3s; 
+
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+
 }
 
 .menu-item:hover {
@@ -822,6 +876,8 @@ body {
 
 .menu-item:nth-child(odd).visible {
   transform: translateX(-50px);
+  font-weight: bold;
+  border-radius: 5px;
 }
 
 .menu-item:nth-child(even).visible {
@@ -849,6 +905,11 @@ body {
   justify-content: center;
 }
 
+.price
+{
+  background-color: yellow;
+  color: #000;
+}
 .menu-image img {
   width: 100%;
   height: 100%;
@@ -923,6 +984,21 @@ body {
 .full-menu-button:hover {
   background-color: #007bff;
 }
+
+@media (max-width: 768px) {
+  .menu-section {
+    padding: 20px; 
+  }
+
+  .menu-item {
+    height: auto; 
+  }
+
+  .full-menu-button {
+    width: 150px; 
+  }
+}
+
 
 /* Make the menu section responsive */
 @media (max-width: 900px) {
@@ -2135,10 +2211,10 @@ html {
 /**********************************************************/
 /* Footer Styling */
 footer {
-  background-color: #f8f9fa;
-  padding: 40px 0;
   font-family: "Arial", sans-serif;
-  color: #6c757d;
+  background: linear-gradient(135deg, #343a40, #495057);
+  color: #f8f9fa;
+  padding: 40px 20px;
 }
 
 .footer-content {
@@ -2147,15 +2223,17 @@ footer {
   gap: 20px;
   /* max-width: 1200px; */
   margin: auto 20px;
-  padding: 20px;
+  padding:40px  20px;
   box-sizing: border-box;
   border-radius: 8px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-}
-
-.footer-section {
-  margin: 20px;
-}
+  }
+  
+  .footer-section {
+    margin: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    padding-top: 20px; 
+  }
 
 .footer-section h2 {
   font-size: 18px;
@@ -2173,13 +2251,14 @@ footer {
 }
 
 .footer-section ul li a {
+  transition: color 0.3s ease;
   text-decoration: none;
   color: #6c757d;
   font-size: 14px;
 }
 
 .footer-section ul li a:hover {
-  color: #000;
+    color: #ffdd57;
 }
 
 .social-icons {
@@ -2192,12 +2271,14 @@ footer {
 }
 
 .social-icons li a {
-  font-size: 20px;
   color: #6c757d;
+  font-size: 24px; 
+  transition: transform 0.3s ease;
 }
 
 .social-icons li a:hover{
   color: #e67e22 !important;
+  transform: scale(1.2); 
 }
 
 /* Newsletter Section Styling */
@@ -2234,11 +2315,10 @@ footer {
 }
 
 .footer-section.newsletter .newsletter-form input {
-  padding: 10px;
+  padding: 12px;
   font-size: 14px;
   width: 250px;
   border: 2px solid #ddd;
-  border-radius: 4px;
   transition: border-color 0.3s ease;
 }
 
@@ -2264,7 +2344,18 @@ footer {
     #ff0000,
     #ff5722
   ); /* Reverse gradient on hover */
-  transform: translateY(-3px); /* Button hover animation */
+    background: linear-gradient(90deg, #e67e22, #f39c12); /* Gradient on hover */
+    transform: translateY(-3px); /* Button lift effect */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 20px; /* Less padding on mobile */
+  }
+
+  .footer-section {
+    text-align: center; /* Center text on mobile */
+  }
 }
 
 .footer-bottom {
@@ -2273,6 +2364,7 @@ footer {
   background-color: rgba(248, 249, 250, 1);
   font-size: 14px;
 }
+
 
 /* Add Button */
 .add-btn {
@@ -2346,7 +2438,7 @@ footer {
 
 /* Mobile Phones */
 @media (max-width: 576px) {
-  #contributorsBtn {
+  #contributorsBtn{
     bottom: 95px; /* Adjusted for mobile */
     right: 20px;
     width: 40px;
@@ -2550,22 +2642,23 @@ footer {
 
 .search-input:focus {
   outline: none;
-  border-color: #4f46e5;
+  border-color: #0652f6;
 }
 
 .search-btn {
-  padding: 12px 24px;
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    padding: 12px 24px;
+    background-color: #157affcb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .search-btn:hover {
-  background-color: #4338ca;
+    background-color: #4338ca; /* Darker shade on hover */
+    transform: scale(1.05); 
 }
 
 /* Map Container */
