@@ -221,7 +221,7 @@ body {
     }
 
     .student-plan-card {
-        width: 90%; 
+        width: 90%; /* Highlighted: Adjusted width for mobile screens */
         height: 380px; /* Highlighted: Adjusted height for better layout on mobile */
     }
 }
