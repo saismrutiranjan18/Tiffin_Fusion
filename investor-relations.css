@@ -1,79 +1,238 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.top{
-    color: white;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFFFF;
+    color: #4A4A4A;
+    overflow-x: hidden;
+}
+
+/* Loader Styles */
+.loaderr {
+  
+    width: 48px ;
+    height: 48px;
+    margin: auto;
+    position: relative;
+}
+.loaderr:before {
+    content: '';
+    width: 48px;
+    height: 5px;
+    background: #F40B0F50;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-radius: 50%;
+    animation: shadow324 0.5s linear infinite;
+}
+.loaderr:after {
+    content: '';
     width: 100%;
-    height: 50vh;
-    background-color: #F40B0F;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    height: 100%;
+    background: #F40B0F;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    animation: jump7456 0.5s linear infinite;
 }
-
-.stock-card{
-    background-color: white;
-    color: rgb(36, 36, 36);
-    width: 18vw;
-    height: 30vh;
-    padding: 20px;
+@keyframes jump7456 {
+    15% { border-bottom-right-radius: 3px; }
+    25% { transform: translateY(9px) rotate(22.5deg); }
+    50% { transform: translateY(18px) scale(1, .9) rotate(45deg); border-bottom-right-radius: 40px; }
+    75% { transform: translateY(9px) rotate(67.5deg); }
+    100% { transform: translateY(0) rotate(90deg); }
+}
+@keyframes shadow324 {
+    0%, 100% { transform: scale(1, 1); }
+    50% { transform: scale(1.2, 1); }
+}
+.loaderr-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    border-radius: 3px;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+.loaderr-container.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
-.stock-card p{
-    font-size: 12px;
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: none; /* Hidden until loader fades */
 }
 
-.green{
-    color: rgb(3, 207, 3);
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #F40B0F 50%, #FFFFFF 50%);
+    padding: 60px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    animation: slideIn 1s ease-out;
 }
-
-h1{
-    font-size: 50px;
+.hero-text {
+    max-width: 50%;
+    color: #FFFFFF;
+}
+.hero-text h1 {
+    font-size: 48px;
     font-weight: 700;
+    margin-bottom: 20px;
 }
-
-.bottom{
-    height: 30vh;
-    text-align: center;
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+.stock-card {
+    background: #FFFFFF;
+    color: #4A4A4A;
+    width: 300px;
     padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.stock-card:hover {
+    transform: translateY(-5px);
+}
+.stock-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.stock-card h2 {
+    font-size: 32px;
+    color: #F40B0F;
+    margin: 10px 0;
+}
+.stock-card .green {
+    color: #28A745;
+    font-size: 16px;
+    margin: 5px 0;
+}
+.stock-card p {
+    font-size: 12px;
+    margin: 5px 0;
+    color: #4A4A4A;
 }
 
-@media (max-width:670px) {
-    .top{
-        color: white;
+/* Overview Section */
+.overview {
+    padding: 40px 20px;
+    text-align: center;
+    background: #FFE6E6;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    animation: fadeIn 1.2s ease-out;
+}
+.overview h2 {
+    font-size: 36px;
+    color: #F40B0F;
+    margin-bottom: 20px;
+}
+.overview p {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Highlights Section */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    animation: fadeIn 1.4s ease-out;
+}
+.highlight-card {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.highlight-card i {
+    font-size: 40px;
+    color: #F40B0F;
+    margin-bottom: 15px;
+}
+.highlight-card h3 {
+    font-size: 20px;
+    color: #4A4A4A;
+    margin-bottom: 10px;
+}
+.highlight-card p {
+    font-size: 14px;
+    color: #4A4A4A;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        background: linear-gradient(180deg, #F40B0F 50%, #FFFFFF 50%);
+        padding: 40px 20px;
+    }
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    .stock-card {
         width: 100%;
-        height: 50vh;
-        background-color: #F40B0F;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+        max-width: 300px;
     }
-
-    .top h1{
-        font-size: 30px;
+    .overview h2 {
+        font-size: 28px;
     }
-
-    .stock-card{
-        background-color: white;
-        color: rgb(36, 36, 36);
-        width: 60vw;
-        height: 30vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 3px;
-    }
-    
 }
+
+.dark-mode .overview p{
+  color: black !important;
+}
+
+.dark-mode .navbar-toggler-icon {
+filter: invert(1); /* Makes the icon white */
+}
+
+
