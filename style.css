@@ -49,7 +49,7 @@ body.dark {
 }
 
 .dark-mode .navbar a {
-  color: #ffffff !important;
+  color: #111111 !important;
 }
 
 /*These will ensure that the meal plans are visible in dark mode*/
@@ -446,13 +446,16 @@ body.dark {
   }
 
 .nav-item a {
-  color: black;
+  color: rgb(26, 24, 24);
   text-transform: uppercase;
   font-weight: 600; /* Lighten the font weight */
   font-size: 14px; /* Ensure uniform font size for all links */
   position: relative;
   padding: 8px 12px; /* Consistent padding for each link */
   transition: color 0.3s ease;
+}
+.dark-mode .nav-item a{
+  color: #000;
 }
 
 .nav-item a::after {
@@ -718,6 +721,10 @@ body.dark {
   background-image: url("Utils/food-compressed.jpg"); /* Add a darker version of your background image */
 }
 
+.dark-mode .nav-item a
+{
+  color: #000;
+}
 .dark-mode .hero-overlay {
   background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
 }
@@ -731,7 +738,7 @@ body.dark {
 }
 
 .dark-mode .hero-content p {
-  color: #bbb; /* Light gray text */
+  color: #b0acac; /* Light gray text */
 }
 
 .dark-mode .hero-content .btn-primary {
