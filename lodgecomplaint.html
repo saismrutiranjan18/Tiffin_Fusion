@@ -19,8 +19,34 @@
             background-color: #f8f9fa;
         }
 
+        .lodge-complaint-section {
+          background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+          padding: 3rem 1rem;
+        }
+
+        .complaint-container {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 2rem;
+          border-radius: 10px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          background-color: #ffffff; /* White background for contrast */
+        }
+
+        input, textarea, select {
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 10px;
+          font-size: 16px;
+          transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+          border-color: #FE5E68; /* Highlight border on focus */
+          box-shadow: 0 0 5px rgba(254, 94, 104, 0.5);
+        }
         header {
-            background-color: #FE5E68;
+            background-color: #030303;
             color: white;
             padding: 20px;
             text-align: center;
@@ -43,7 +69,17 @@
 
         h2 {
             text-align: center;
-            color: #FE5E68;
+            color: #4071ed;
+        }
+        h2 {
+          font-size: 1.5rem; /* Larger font for headings */
+          color: #403df0; /* Accent color for headings */
+          text-align: center;
+        }
+        
+        label {
+          font-weight: bold; /* Bold labels for clarity */
+          margin-top: 15px;
         }
 
         form {
@@ -72,8 +108,8 @@
 
         input:focus, textarea:focus, select:focus {
             outline: none;
-            border-color: #FE5E68;
-            box-shadow: 0 0 5px #FE5E68;
+            border-color: #eb1725;
+            box-shadow: 0 0 5px #ba0d18;
         }
 
         textarea {
@@ -89,15 +125,29 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            background-color: #df3b46; /* Main button color */
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.3s;
         }
-
+        
         button:hover {
-            background-color: #e74c57;
+          background-color: #eb0a19; /* Darker shade on hover */
+          transform: translateY(-2px); /* Slight lift effect */
         }
-
         .required {
             color: #FE5E68;
         }
+        .input-icon {
+          position: absolute;
+          margin-left: 10px;
+          margin-top: 10px;
+          color: #FE5E68; /* Icon color */
+        }
+
     </style>
 </head>
 <body>
