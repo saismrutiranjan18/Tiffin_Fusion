@@ -49,7 +49,7 @@ body.dark {
 }
 
 .dark-mode .navbar a {
-  color: #ffffff !important;
+  color: #111111 !important;
 }
 
 /*These will ensure that the meal plans are visible in dark mode*/
@@ -398,6 +398,9 @@ body.dark {
   position: sticky;
   top: 0;
   z-index: 1;
+  background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+  padding: 1rem;
+  text-align: center;
 }
 
 .navbar-brand {
@@ -431,16 +434,28 @@ body.dark {
 .nav-item {
   margin: 0 5px; /* Reduce the space between the items */
   padding: 0; /* Remove padding */
-}
+    font-size: 1.125rem;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar-item:hover {
+    background-color: #e02d39; /* Accent color on hover */
+    color: white;
+    box-shadow: 0 4px 10px red;
+  }
 
 .nav-item a {
-  color: black;
+  color: rgb(26, 24, 24);
   text-transform: uppercase;
   font-weight: 600; /* Lighten the font weight */
   font-size: 14px; /* Ensure uniform font size for all links */
   position: relative;
   padding: 8px 12px; /* Consistent padding for each link */
   transition: color 0.3s ease;
+}
+.dark-mode .nav-item a{
+  color: #000;
 }
 
 .nav-item a::after {
@@ -499,6 +514,11 @@ body.dark {
   transition: width 0.3s ease, left 0.3s ease;
 }
 
+.navbar-item.active {
+  background-color: #e43a46; /* Accent color for active item */
+  color: white;
+}
+
 .nav-item.meal-plan a:hover::after {
   width: 100%;
   left: 0;
@@ -523,8 +543,48 @@ body.dark {
 }
 
 .dropdown-menu {
-  min-width: 180px; /* Optional, you can adjust the width */
-}
+  min-width: 180px; 
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #ffffff; /* White background for dropdown */
+    border: 1px solid #FE5E68; /* Accent color border */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-menu li {
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #FE5E68; /* Accent color on hover */
+    color: white;
+  }
+
+
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.5rem;
+    }
+  
+    .navbar-item {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  .navbar {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 /* sign in css */
 
@@ -661,6 +721,10 @@ body.dark {
   background-image: url("Utils/food-compressed.jpg"); /* Add a darker version of your background image */
 }
 
+.dark-mode .nav-item a
+{
+  color: #000;
+}
 .dark-mode .hero-overlay {
   background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
 }
@@ -674,7 +738,7 @@ body.dark {
 }
 
 .dark-mode .hero-content p {
-  color: #bbb; /* Light gray text */
+  color: #b0acac; /* Light gray text */
 }
 
 .dark-mode .hero-content .btn-primary {
@@ -765,6 +829,12 @@ body {
 
 #menu-section {
   padding: 0;
+
+  background: linear-gradient(to right, #f3cbf2, #f4ab7d);
+  padding: 20px 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .men-head {
@@ -835,6 +905,13 @@ body {
   justify-content: center;
 }
 
+
+.price
+{
+  background-color: rgb(14, 192, 247);
+  color: #fbf5f5;
+}
+
 .menu-image img {
   width: 100%;
   height: 100%;
@@ -891,8 +968,8 @@ body {
   width: 150px;
   padding: 10px 20px;
   text-align: center;
-  background-color: #fc0635;
-  color: white;
+  background-color: rgb(239, 159, 67);
+  color: rgb(31, 30, 30);
   font-size: 16px;
   border-radius: 12px;
   text-decoration: none; /* Remove underline */
@@ -900,7 +977,7 @@ body {
 }
 
 .full-menu-button:hover {
-  background-color: #007bff;
+  background-color: #df6d10;
 }
 
 /* Make the menu section responsive */
@@ -1094,6 +1171,13 @@ body {
 
 .section-menu {
   padding: 40px 0;
+  background: linear-gradient(135deg,rgb(167, 213, 248), #4f99e2, #012b65);
+  padding: 3rem 1rem;
+  text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White background for contrast */
 }
 
 /* Font styles for the headings */
@@ -1102,16 +1186,20 @@ body {
   font-weight: 700;
   font-size: 28px;
   margin-bottom: 20px;
-  color: #333; /* Optional: Adjust heading color */
+  color: #333; 
+  font-size: 2.5rem; /* Section heading */
+  color: #2d0406; /* Accent color */
+  margin-bottom: 1rem;
 }
 
 /* Font styles for the circle descriptions (p tags) */
 #menu p {
   font-family: "Cosmic Sans MS", cursive, sans-serif; /* Use a clean font for descriptions */
-  font-weight: 500;
+  font-weight: 550;
   font-size: 14px;
   color: #000000; /* Optional: Adjust text color */
   margin-top: 10px;
+  margin-bottom: 1rem;
 }
 
 .dark-mode #menu p {
@@ -1155,7 +1243,8 @@ body {
   background: radial-gradient(
     circle,
     rgba(255, 0, 0, 0.4),
-    rgba(0, 123, 255, 0.2),
+    rgba(234, 197, 15, 0.2),
+    rgb(235, 157, 13),
     transparent
   );
   top: 50%;
@@ -1184,6 +1273,38 @@ body {
 
 .circle:hover i {
   animation: rotateAndScale 0.5s ease-in-out forwards;
+}
+
+.benefit-card {
+  background-color: #ffffff; /* White background for cards */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.cta-button {
+  background-color: #FE5E68; /* Main button color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block; /* Center button */
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #e74c57; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Dark mode for other sections */
@@ -2540,7 +2661,12 @@ footer {
 }
 
 .search-btn:hover {
+
+    background-color: #6457f3; /* Darker shade on hover */
+    transform: scale(1.05); 
+
   background-color: #4338ca;
+
 }
 
 /* Map Container */
@@ -2559,6 +2685,7 @@ footer {
   margin-top: 32px;
 }
 
+.view-map-btn
 /* Info Cards */
 .info-card {
   background-color: white;
@@ -2619,15 +2746,18 @@ footer {
 .view-map-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4f46e5;
+  background-color:rgb(6, 74, 246);
   color: white;
   text-decoration: none;
   border-radius: 6px;
   transition: background-color 0.3s ease;
+  box-shadow: 0 5px 10px solid black;
 }
 
 .view-map-btn:hover {
-  background-color: #4338ca;
+  background-color: #6006f0;
+  color: #000;
+  font-weight: 500;
 }
 
 /* Responsive Design */
