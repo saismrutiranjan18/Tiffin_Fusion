@@ -765,7 +765,12 @@ body {
 
 #menu-section {
   padding: 0;
-}
+
+  background: linear-gradient(to right, #f3cbf2, #f4ab7d);
+  padding: 20px 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 
 .men-head {
   text-align: center;
@@ -835,6 +840,13 @@ body {
   justify-content: center;
 }
 
+
+.price
+{
+  background-color: rgb(14, 192, 247);
+  color: #fbf5f5;
+}
+
 .menu-image img {
   width: 100%;
   height: 100%;
@@ -891,8 +903,8 @@ body {
   width: 150px;
   padding: 10px 20px;
   text-align: center;
-  background-color: #fc0635;
-  color: white;
+  background-color: rgb(239, 159, 67);
+  color: rgb(31, 30, 30);
   font-size: 16px;
   border-radius: 12px;
   text-decoration: none; /* Remove underline */
@@ -900,7 +912,7 @@ body {
 }
 
 .full-menu-button:hover {
-  background-color: #007bff;
+  background-color: #df6d10;
 }
 
 /* Make the menu section responsive */
