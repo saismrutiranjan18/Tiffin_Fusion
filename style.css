@@ -2488,11 +2488,17 @@ footer {
   font-size: 2rem;
   color: #1a1a1a;
   margin-bottom: 8px;
+  font-family: "Cosmic Sans MS",cursive,sans-serif;
+  font-weight: 700;
 }
 
 .title-container p {
   color: #666;
   font-size: 1.1rem;
+}
+
+.dark-mode .title-container h2{
+  color:white;
 }
 
 /* Search Container */
