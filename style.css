@@ -1128,6 +1128,13 @@ body {
 
 .section-menu {
   padding: 40px 0;
+  background: linear-gradient(135deg,rgb(167, 213, 248), #4f99e2, #012b65);
+  padding: 3rem 1rem;
+  text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White background for contrast */
 }
 
 /* Font styles for the headings */
@@ -1136,16 +1143,20 @@ body {
   font-weight: 700;
   font-size: 28px;
   margin-bottom: 20px;
-  color: #333; /* Optional: Adjust heading color */
+  color: #333; 
+  font-size: 2.5rem; /* Section heading */
+  color: #2d0406; /* Accent color */
+  margin-bottom: 1rem;
 }
 
 /* Font styles for the circle descriptions (p tags) */
 #menu p {
   font-family: "Cosmic Sans MS", cursive, sans-serif; /* Use a clean font for descriptions */
-  font-weight: 500;
+  font-weight: 550;
   font-size: 14px;
   color: #000000; /* Optional: Adjust text color */
   margin-top: 10px;
+  margin-bottom: 1rem;
 }
 
 .dark-mode #menu p {
@@ -1189,7 +1200,8 @@ body {
   background: radial-gradient(
     circle,
     rgba(255, 0, 0, 0.4),
-    rgba(0, 123, 255, 0.2),
+    rgba(234, 197, 15, 0.2),
+    rgb(235, 157, 13),
     transparent
   );
   top: 50%;
@@ -1218,6 +1230,38 @@ body {
 
 .circle:hover i {
   animation: rotateAndScale 0.5s ease-in-out forwards;
+}
+
+.benefit-card {
+  background-color: #ffffff; /* White background for cards */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.cta-button {
+  background-color: #FE5E68; /* Main button color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block; /* Center button */
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #e74c57; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Dark mode for other sections */
