@@ -387,3 +387,7 @@ body {
       color: #b0b0b0;
     }
   }
+  .dark-mode .navbar-toggler-icon {
+    filter: invert(1); /* Makes the icon white */
+  }
+  
