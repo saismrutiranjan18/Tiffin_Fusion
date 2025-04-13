@@ -1,0 +1,348 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  /* Meal Offers Section */
+  .meal-offers-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  }
+  
+  /* Main Heading */
+  .main-heading {
+    font-size: 2.5rem;
+    color: #E53935;
+    margin-bottom: 40px;
+    position: relative;
+    animation: slideIn 1s ease-out;
+  }
+  
+  .main-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 80px;
+    height: 4px;
+    background-color: #E53935;
+    transform: translateX(-50%);
+  }
+  
+  /* Meal Grid */
+  .meal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Meal Card */
+  .meal-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    width: 100%;
+    max-width: 320px;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  
+  .meal-card:nth-child(1) { animation-delay: 0.1s; }
+  .meal-card:nth-child(2) { animation-delay: 0.2s; }
+  .meal-card:nth-child(3) { animation-delay: 0.3s; }
+  .meal-card:nth-child(4) { animation-delay: 0.4s; }
+  .meal-card:nth-child(5) { animation-delay: 0.5s; }
+  .meal-card:nth-child(6) { animation-delay: 0.6s; }
+  
+  .meal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Meal Image Wrapper */
+  .meal-image-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  
+  .meal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .meal-card:hover .meal-image {
+    transform: scale(1.1);
+  }
+  
+  /* Meal Info Overlay */
+  .meal-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .meal-card:hover .meal-info {
+    transform: translateY(0);
+  }
+  
+  .meal-title {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  
+  /* Meal Details */
+  .meal-details {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Meal Description */
+  .meal-description {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+  
+  /* Meal Price */
+  .meal-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #E53935;
+  }
+  
+  /* Cart Button */
+  .cart-button {
+    width: 100%;
+    padding: 10px;
+    background: #E53935;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  
+  .cart-button:hover {
+    background: #d32f2f;
+    transform: scale(1.05);
+  }
+  
+  .cart-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main-heading {
+      font-size: 2rem;
+    }
+  
+    .meal-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 0 15px;
+      padding: 0 10px;
+    }
+  
+    .meal-card {
+      max-width: 300px;
+      min-height: 400px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-heading {
+      font-size: 1.8rem;
+    }
+  
+    .meal-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 0 10px;
+      padding: 0 5px;
+    }
+  
+    .meal-card {
+      width: 100%;
+      max-width: 350px;
+      min-height: 380px;
+    }
+  
+    .meal-image-wrapper {
+      height: 180px;
+    }
+  
+    .meal-title {
+      font-size: 1.2rem;
+    }
+  
+    .meal-description {
+      font-size: 0.85rem;
+    }
+  
+    .meal-price {
+      font-size: 1rem;
+    }
+  
+    .cart-button {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Dark Mode Styles */
+  .dark-mode body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
+  .dark-mode .meal-offers-section {
+    background: linear-gradient(135deg, #2c2c2c, #222222);
+  }
+  
+  .dark-mode .main-heading {
+    color: #ff4d4d;
+  }
+  
+  .dark-mode .main-heading::after {
+    background-color: #ff4d4d;
+  }
+  
+  .dark-mode .meal-grid {
+    margin: 0 20px;
+    padding: 0 10px;
+  }
+  
+  .dark-mode .meal-card {
+    background: #2c2c2c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .dark-mode .meal-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  }
+  
+  .dark-mode .meal-info {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #f5f5f5;
+  }
+  
+  .dark-mode .meal-title {
+    color: #ffffff;
+  }
+  
+  .dark-mode .meal-description {
+    color: #b0b0b0;
+  }
+  
+  .dark-mode .meal-price {
+    color: #ff4d4d;
+  }
+  
+  .dark-mode .cart-button {
+    background: #ff4d4d;
+    color: #ffffff;
+  }
+  
+  .dark-mode .cart-button:hover {
+    background: #e63939;
+  }
+  
+  .dark-mode .cart-button:active {
+    background: #cc3333;
+  }
+  
+  @media (max-width: 768px) {
+    .dark-mode .meal-grid {
+      margin: 0 15px;
+      padding: 0 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dark-mode .meal-grid {
+      margin: 0 10px;
+      padding: 0 5px;
+    }
+  
+    .dark-mode .main-heading {
+      color: #ff4d4d;
+    }
+  
+    .dark-mode .meal-title {
+      color: #ffffff;
+    }
+  
+    .dark-mode .meal-price {
+      color: #ff4d4d;
+    }
+  }
+
+
+  .dark-mode .navbar-toggler-icon {
+    filter: invert(1); /* Makes the icon white */
+  }
+  
