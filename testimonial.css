@@ -426,3 +426,18 @@ footer {
 .payments i:hover{
   transform: scale(1.2);
 }
+
+
+.dark-mode .testimonial-card{
+  background: rgb(39, 32, 32);
+  color: white !important;
+}
+
+.dark-mode .quote, .name, .role {
+  color: white  !important;
+}
+
+.dark-mode .navbar-toggler-icon {
+  filter: invert(1); /* Makes the icon white */
+}
+
