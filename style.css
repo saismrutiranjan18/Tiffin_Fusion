@@ -765,10 +765,12 @@ body {
 
 #menu-section {
   padding: 0;
+
   background: linear-gradient(to right, #f3cbf2, #f4ab7d);
   padding: 20px 20px; 
   border-radius: 10px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .men-head {
@@ -786,7 +788,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-
+  padding: 20px 145px;
+  background-color: #f9f9f9;
 }
 
 .menu-item {
@@ -801,26 +804,16 @@ body {
   filter: blur(10px);
   transition: all 0.8s ease-out;
   padding: 15px;
-  transition: transform 0.3s, box-shadow 0.3s; 
-}
-
-.menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
 .menu-item.visible {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
-  font-size: 1.8rem;
-  color: #e6504a;
 }
 
 .menu-item:nth-child(odd).visible {
   transform: translateX(-50px);
-  font-weight: bold;
-  border-radius: 5px;
 }
 
 .menu-item:nth-child(even).visible {
@@ -848,11 +841,13 @@ body {
   justify-content: center;
 }
 
+
 .price
 {
   background-color: rgb(14, 192, 247);
   color: #fbf5f5;
 }
+
 .menu-image img {
   width: 100%;
   height: 100%;
@@ -885,7 +880,6 @@ body {
   color: #6c757d;
   margin: 5px 0 0;
   text-align: left;
-  font-weight: 600;
 }
 
 .menu-text h4 {
@@ -921,21 +915,6 @@ body {
 .full-menu-button:hover {
   background-color: #df6d10;
 }
-
-@media (max-width: 768px) {
-  .menu-section {
-    padding: 20px; 
-  }
-
-  .menu-item {
-    height: auto; 
-  }
-
-  .full-menu-button {
-    width: 150px; 
-  }
-}
-
 
 /* Make the menu section responsive */
 @media (max-width: 900px) {
@@ -2134,10 +2113,10 @@ html {
 /**********************************************************/
 /* Footer Styling */
 footer {
+  background-color: #f8f9fa;
+  padding: 40px 0;
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #343a40, #495057);
-  color: #f8f9fa;
-  padding: 40px 20px;
+  color: #6c757d;
 }
 
 .footer-content {
@@ -2146,17 +2125,15 @@ footer {
   gap: 20px;
   /* max-width: 1200px; */
   margin: auto 20px;
-  padding:40px  20px;
+  padding: 20px;
   box-sizing: border-box;
   border-radius: 8px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  }
-  
-  .footer-section {
-    margin: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); 
-    padding-top: 20px; 
-  }
+}
+
+.footer-section {
+  margin: 20px;
+}
 
 .footer-section h2 {
   font-size: 18px;
@@ -2174,14 +2151,13 @@ footer {
 }
 
 .footer-section ul li a {
-  transition: color 0.3s ease;
   text-decoration: none;
   color: #6c757d;
   font-size: 14px;
 }
 
 .footer-section ul li a:hover {
-    color: #ffdd57;
+  color: #000;
 }
 
 .social-icons {
@@ -2194,14 +2170,12 @@ footer {
 }
 
 .social-icons li a {
+  font-size: 20px;
   color: #6c757d;
-  font-size: 24px; 
-  transition: transform 0.3s ease;
 }
 
 .social-icons li a:hover{
   color: #e67e22 !important;
-  transform: scale(1.2); 
 }
 
 /* Newsletter Section Styling */
@@ -2238,10 +2212,11 @@ footer {
 }
 
 .footer-section.newsletter .newsletter-form input {
-  padding: 12px;
+  padding: 10px;
   font-size: 14px;
   width: 250px;
   border: 2px solid #ddd;
+  border-radius: 4px;
   transition: border-color 0.3s ease;
 }
 
@@ -2267,18 +2242,7 @@ footer {
     #ff0000,
     #ff5722
   ); /* Reverse gradient on hover */
-    background: linear-gradient(90deg, #e67e22, #f39c12); /* Gradient on hover */
-    transform: translateY(-3px); /* Button lift effect */
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    padding: 20px; /* Less padding on mobile */
-  }
-
-  .footer-section {
-    text-align: center; /* Center text on mobile */
-  }
+  transform: translateY(-3px); /* Button hover animation */
 }
 
 .footer-bottom {
@@ -2287,7 +2251,6 @@ footer {
   background-color: rgba(248, 249, 250, 1);
   font-size: 14px;
 }
-
 
 /* Add Button */
 .add-btn {
@@ -2361,7 +2324,7 @@ footer {
 
 /* Mobile Phones */
 @media (max-width: 576px) {
-  #contributorsBtn{
+  #contributorsBtn {
     bottom: 95px; /* Adjusted for mobile */
     right: 20px;
     width: 40px;
@@ -2565,23 +2528,22 @@ footer {
 
 .search-input:focus {
   outline: none;
-  border-color: #0652f6;
+  border-color: #4f46e5;
 }
 
 .search-btn {
-    padding: 12px 24px;
-    background-color: #157affcb;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 12px 24px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .search-btn:hover {
-    background-color: #4338ca; /* Darker shade on hover */
-    transform: scale(1.05); 
+  background-color: #4338ca;
 }
 
 /* Map Container */
