@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekly Menu</title>
     <!-- favicon  -->
+
   
     <link rel="icon" href="/favicon.svg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="style.css"> -->
+
     <style>
         :root {
             --primary: #f40009;
@@ -169,149 +170,131 @@
             }
         }
 
- 
+        /* Loader Styles */
+        .loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 9999;
+        }
 
+        .panWrapper {
+            width: 200px;
+            height: fit-content;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-  /* Loader Styles */
-.loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    z-index: 9999;
-}
+        .pan {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            height: fit-content;
+            animation: cooking 1.7s infinite;
+        }
 
-.panWrapper {
-    width: 200px;
-    height: fit-content;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    flex-direction: column;
-    gap: 20px;
-}
+        @keyframes cooking {
+            0% {
+                transform: rotate(0deg);
+                transform-origin: top right;
+            }
+            10% {
+                transform: rotate(-4deg);
+                transform-origin: top right;
+            }
+            50% {
+                transform: rotate(20deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
 
-.pan {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-    height: fit-content;
-    animation: cooking 1.7s infinite;
-}
+        .food {
+            position: absolute;
+            width: 40%;
+            height: 6px;
+            background: linear-gradient(to bottom, rgb(82, 33, 33), rgb(200, 106, 106));
+            left: 10px;
+            border-radius: 50%;
+            animation: flip 1.7s infinite;
+            z-index: 2;
+        }
 
-@keyframes cooking {
-    0% {
-        transform: rotate(0deg);
-        transform-origin: top right;
-    }
-    10% {
-        transform: rotate(-4deg);
-        transform-origin: top right;
-    }
-    50% {
-        transform: rotate(20deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
+        @keyframes flip {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0px) rotate(360deg);
+            }
+        }
 
-.food {
-    position: absolute;
-    width: 40%;
-    height: 6px;
-    background: linear-gradient(to bottom, rgb(82, 33, 33), rgb(200, 106, 106));
-    left: 10px;
-    border-radius: 50%;
-    animation: flip 1.7s infinite;
-    z-index: 2;
-}
+        .panBase {
+            z-index: 3;
+            width: 50%;
+            height: 22px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            background: linear-gradient(to top, rgb(3, 156, 156), rgb(10, 191, 191));
+        }
 
-@keyframes flip {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-100px) rotate(180deg);
-    }
-    100% {
-        transform: translateY(0px) rotate(360deg);
-    }
-}
+        .panHandle {
+            width: 40%;
+            background: linear-gradient(to bottom, rgb(18, 18, 18), rgb(74, 74, 74));
+            height: 10px;
+            border-radius: 10px;
+        }
 
-.panBase {
-    z-index: 3;
-    width: 50%;
-    height: 22px;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    background: linear-gradient(to top, rgb(3, 156, 156), rgb(10, 191, 191));
-}
+        .panShadow {
+            width: 70px;
+            height: 8px;
+            background-color: rgba(0, 0, 0, 0.21);
+            margin-left: 15px;
+            border-radius: 10px;
+            animation: shadow 1.7s infinite;
+            filter: blur(5px);
+        }
 
-.panHandle {
-    width: 40%;
-    background: linear-gradient(to bottom, rgb(18, 18, 18), rgb(74, 74, 74));
-    height: 10px;
-    border-radius: 10px;
-}
-
-.panShadow {
-    width: 70px;
-    height: 8px;
-    background-color: rgba(0, 0, 0, 0.21);
-    margin-left: 15px;
-    border-radius: 10px;
-    animation: shadow 1.7s infinite;
-    filter: blur(5px);
-}
-
-@keyframes shadow {
-    0% {
-        transform: scaleX(0.7);
-    }
-    50% {
-        transform: scaleX(1);
-    }
-    100% {
-        transform: scaleX(0.7);
-    }
-}
-
-/* Main Content Styles */
-.content {
-    display: none;
-    padding: 20px;
-    text-align: center;
-}
-
-
-
-
-
+        @keyframes shadow {
+            0% {
+                transform: scaleX(0.7);
+            }
+            50% {
+                transform: scaleX(1);
+            }
+            100% {
+                transform: scaleX(0.7);
+            }
+        }
     </style>
 </head>
 <body>
-
-   <!-- Loader -->
-   <div id="loader" class="loader">
-    <div class="panWrapper">
-        <div class="pan">
-            <div class="food"></div>
-            <div class="panBase"></div>
-            <div class="panHandle"></div>
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="panWrapper">
+            <div class="pan">
+                <div class="food"></div>
+                <div class="panBase"></div>
+                <div class="panHandle"></div>
+            </div>
+            <div class="panShadow"></div>
         </div>
-        <div class="panShadow"></div>
     </div>
-</div>
-
-
 
     <div class="container">
         <header>
@@ -438,7 +421,6 @@
                 </div>
             </div>
             
-            <!-- Add lunch and dinner for Tuesday -->
             <div class="meal-section">
                 <h2>Lunch <span style="font-size: 0.8em;">(11:30 AM - 3:00 PM)</span></h2>
                 
@@ -480,158 +462,563 @@
             </div>
         </div>
         
-        <!-- Content for other days would follow the same pattern -->
+        <!-- Wednesday Menu -->
         <div id="wednesday" class="content">
-            <h2>Wednesday's Menu Coming Soon</h2>
-            <p>We're updating our menu for Wednesday. Please check back later!</p>
+            <div class="meal-section">
+                <h2>Breakfast <span style="font-size: 0.8em;">(7:00 AM - 10:30 AM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Blueberry Pancakes</div>
+                        <div class="item-description">Fluffy pancakes, fresh blueberries, maple syrup, and whipped butter</div>
+                    </div>
+                    <div class="item-price">10.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Spinach & Mushroom Omelette <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Three egg omelette, sautéed spinach, mushrooms, and cheddar cheese</div>
+                    </div>
+                    <div class="item-price">12.75</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Breakfast Burrito</div>
+                        <div class="item-description">Scrambled eggs, chorizo, avocado, salsa, and pepper jack cheese in a flour tortilla</div>
+                    </div>
+                    <div class="item-price">13.95</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Lunch <span style="font-size: 0.8em;">(11:30 AM - 3:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Caprese Salad <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Heirloom tomatoes, fresh mozzarella, basil, balsamic glaze, and olive oil</div>
+                    </div>
+                    <div class="item-price">12.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">BBQ Pulled Pork Sandwich</div>
+                        <div class="item-description">Slow-cooked pork, house BBQ sauce, coleslaw, on a brioche bun</div>
+                    </div>
+                    <div class="item-price">15.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Lentil Soup <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Hearty lentil soup with carrots, celery, and herbs, served with crusty bread</div>
+                    </div>
+                    <div class="item-price">9.25</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Dinner <span style="font-size: 0.8em;">(5:00 PM - 10:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Pan-Seared Cod <span class="special-tag">Signature</span></div>
+                        <div class="item-description">Fresh cod, herb crust, roasted potatoes, and lemon caper sauce</div>
+                    </div>
+                    <div class="item-price">23.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Stuffed Bell Peppers <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Bell peppers stuffed with quinoa, black beans, corn, and topped with cheese</div>
+                    </div>
+                    <div class="item-price">17.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Lamb Shank</div>
+                        <div class="item-description">Braised lamb shank, creamy polenta, and rosemary jus</div>
+                    </div>
+                    <div class="item-price">29.95</div>
+                </div>
+            </div>
         </div>
         
+        <!-- Thursday Menu -->
         <div id="thursday" class="content">
-            <h2>Thursday's Menu Coming Soon</h2>
-            <p>We're updating our menu for Thursday. Please check back later!</p>
+            <div class="meal-section">
+                <h2>Breakfast <span style="font-size: 0.8em;">(7:00 AM - 10:30 AM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">French Toast</div>
+                        <div class="item-description">Brioche bread, cinnamon batter, fresh strawberries, and powdered sugar</div>
+                    </div>
+                    <div class="item-price">11.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Chia Pudding <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Chia seeds, coconut milk, mango puree, and toasted almonds</div>
+                    </div>
+                    <div class="item-price">9.75</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Smoked Salmon Bagel</div>
+                        <div class="item-description">Toasted bagel, cream cheese, smoked salmon, capers, and red onion</div>
+                    </div>
+                    <div class="item-price">14.95</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Lunch <span style="font-size: 0.8em;">(11:30 AM - 3:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Falafel Pita <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Crispy falafel, cucumber, tomato, lettuce, and tahini in a warm pita</div>
+                    </div>
+                    <div class="item-price">13.25</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Chicken Quesadilla</div>
+                        <div class="item-description">Grilled chicken, cheddar cheese, bell peppers, and salsa with sour cream</div>
+                    </div>
+                    <div class="item-price">14.75</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Tomato Basil Soup <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Creamy tomato soup with fresh basil, served with garlic bread</div>
+                    </div>
+                    <div class="item-price">8.95</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Dinner <span style="font-size: 0.8em;">(5:00 PM - 10:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Pork Tenderloin</div>
+                        <div class="item-description">Roasted pork tenderloin, apple cider glaze, sweet potato mash, and green beans</div>
+                    </div>
+                    <div class="item-price">24.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Vegetable Lasagna <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Layers of zucchini, spinach, ricotta, and marinara with mozzarella</div>
+                    </div>
+                    <div class="item-price">18.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Seared Scallops <span class="special-tag">Signature</span></div>
+                        <div class="item-description">Pan-seared scallops, cauliflower puree, pancetta, and herb oil</div>
+                    </div>
+                    <div class="item-price">28.95</div>
+                </div>
+            </div>
         </div>
         
+        <!-- Friday Menu -->
         <div id="friday" class="content">
-            <h2>Friday's Menu Coming Soon</h2>
-            <p>We're updating our menu for Friday. Please check back later!</p>
+            <div class="meal-section">
+                <h2>Breakfast <span style="font-size: 0.8em;">(7:00 AM - 10:30 AM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Breakfast Tacos</div>
+                        <div class="item-description">Soft corn tortillas, scrambled eggs, bacon, avocado, and salsa fresca</div>
+                    </div>
+                    <div class="item-price">12.25</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Overnight Oats <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Rolled oats, almond milk, chia seeds, banana, and almond butter</div>
+                    </div>
+                    <div class="item-price">9.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Huevos Rancheros</div>
+                        <div class="item-description">Fried eggs, corn tortillas, black beans, ranchero sauce, and queso fresco</div>
+                    </div>
+                    <div class="item-price">13.75</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Lunch <span style="font-size: 0.8em;">(11:30 AM - 3:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Cobb Salad</div>
+                        <div class="item-description">Mixed greens, grilled chicken, bacon, egg, avocado, and blue cheese dressing</div>
+                    </div>
+                    <div class="item-price">16.25</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Veggie Burger <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">House-made patty, lettuce, tomato, pickles, and garlic aioli on a whole wheat bun</div>
+                    </div>
+                    <div class="item-price">14.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Minestrone Soup <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Vegetable broth, pasta, beans, and seasonal vegetables with focaccia</div>
+                    </div>
+                    <div class="item-price">9.95</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Dinner <span style="font-size: 0.8em;">(5:00 PM - 10:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Grilled Swordfish</div>
+                        <div class="item-description">Swordfish steak, mango salsa, jasmine rice, and grilled zucchini</div>
+                    </div>
+                    <div class="item-price">26.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Chickpea Curry <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Spiced chickpeas, coconut milk, spinach, served with basmati rice</div>
+                    </div>
+                    <div class="item-price">17.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Filet Mignon <span class="special-tag">Signature</span></div>
+                        <div class="item-description">6oz filet, garlic mashed potatoes, broccolini, and peppercorn sauce</div>
+                    </div>
+                    <div class="item-price">34.95</div>
+                </div>
+            </div>
         </div>
         
+        <!-- Saturday Menu -->
         <div id="saturday" class="content">
-            <h2>Saturday's Menu Coming Soon</h2>
-            <p>We're updating our menu for Saturday. Please check back later!</p>
+            <div class="meal-section">
+                <h2>Breakfast <span style="font-size: 0.8em;">(7:00 AM - 10:30 AM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Croissant Sandwich</div>
+                        <div class="item-description">Buttery croissant, fried egg, ham, and swiss cheese</div>
+                    </div>
+                    <div class="item-price">12.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Acai Bowl <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Acai blend, granola, fresh berries, coconut flakes, and chia seeds</div>
+                    </div>
+                    <div class="item-price">10.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Shakshuka <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Poached eggs, spicy tomato sauce, feta cheese, served with pita bread</div>
+                    </div>
+                    <div class="item-price">13.25</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Lunch <span style="font-size: 0.8em;">(11:30 AM - 3:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Shrimp Po’ Boy</div>
+                        <div class="item-description">Crispy shrimp, lettuce, tomato, pickles, and remoulade on a hoagie roll</div>
+                    </div>
+                    <div class="item-price">16.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Roasted Vegetable Panini <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Zucchini, eggplant, peppers, mozzarella, and pesto on ciabatta</div>
+                    </div>
+                    <div class="item-price">13.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Carrot Ginger Soup <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Pureed carrots, ginger, coconut milk, served with artisan bread</div>
+                    </div>
+                    <div class="item-price">9.25</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Dinner <span style="font-size: 0.8em;">(5:00 PM - 10:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Duck Confit</div>
+                        <div class="item-description">Slow-cooked duck leg, lentils, roasted root vegetables, and orange glaze</div>
+                    </div>
+                    <div class="item-price">27.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Butternut Squash Ravioli <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">House-made ravioli, sage brown butter, and toasted walnuts</div>
+                    </div>
+                    <div class="item-price">19.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Grilled Ribeye <span class="special-tag">Signature</span></div>
+                        <div class="item-description">12oz ribeye, truffle fries, arugula salad, and chimichurri</div>
+                    </div>
+                    <div class="item-price">36.95</div>
+                </div>
+            </div>
         </div>
         
+        <!-- Sunday Menu -->
         <div id="sunday" class="content">
-            <h2>Sunday's Menu Coming Soon</h2>
-            <p>We're updating our menu for Sunday. Please check back later!</p>
+            <div class="meal-section">
+                <h2>Breakfast <span style="font-size: 0.8em;">(7:00 AM - 10:30 AM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Banana Bread French Toast</div>
+                        <div class="item-description">House-made banana bread, caramelized bananas, and vanilla cream</div>
+                    </div>
+                    <div class="item-price">12.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Tofu Scramble <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Tofu, turmeric, bell peppers, onions, and spinach with sourdough toast</div>
+                    </div>
+                    <div class="item-price">11.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Breakfast Platter</div>
+                        <div class="item-description">Two eggs any style, bacon, sausage, home fries, and toast</div>
+                    </div>
+                    <div class="item-price">14.50</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Lunch <span style="font-size: 0.8em;">(11:30 AM - 3:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Lobster Roll</div>
+                        <div class="item-description">Fresh lobster, lemon aioli, celery, served on a toasted bun</div>
+                    </div>
+                    <div class="item-price">19.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Kale & Quinoa Salad <span class="special-tag">Vegan</span></div>
+                        <div class="item-description">Kale, quinoa, roasted beets, almonds, and lemon vinaigrette</div>
+                    </div>
+                    <div class="item-price">13.50</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">French Onion Soup <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Caramelized onions, beef broth, gruyere cheese, and crouton</div>
+                    </div>
+                    <div class="item-price">9.75</div>
+                </div>
+            </div>
+            
+            <div class="meal-section">
+                <h2>Dinner <span style="font-size: 0.8em;">(5:00 PM - 10:00 PM)</span></h2>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Roasted Rack of Lamb <span class="special-tag">Signature</span></div>
+                        <div class="item-description">Herb-crusted lamb, rosemary jus, roasted garlic mash, and asparagus</div>
+                    </div>
+                    <div class="item-price">32.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Mushroom Wellington <span class="special-tag">Vegetarian</span></div>
+                        <div class="item-description">Mushroom duxelles, spinach, puff pastry, served with red wine sauce</div>
+                    </div>
+                    <div class="item-price">20.95</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div>
+                        <div class="item-name">Grilled Mahi-Mahi</div>
+                        <div class="item-description">Mahi-mahi fillet, citrus beurre blanc, couscous, and grilled vegetables</div>
+                    </div>
+                    <div class="item-price">25.95</div>
+                </div>
+            </div>
         </div>
-        
-       
     </div>
 
-
-      <!-- Footer Section -->
-      <footer>
+    <!-- Footer Section -->
+    <footer>
         <div class="footer-content"
-          style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 20px; background-color: white; color: black;">
+            style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 20px; background-color: white; color: black;">
+            <!-- About Section -->
+            <div class="footer-section about"
+                style="flex: 2; min-width: 300px; display: flex; align-items:flex-start; margin: 10px; transition: transform 0.3s ease-in-out;"
+                onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="width: 100px; margin-right: 20px;">
+                <p style="margin: 0;">Tiffin Fusion connects customers with local tiffin centers, providing a seamless and
+                    delightful dining experience. Our shared passion for food and community drives us to bring quality meals
+                    directly to your doorstep.</p>
+            </div>
   
-          <!-- About Section -->
-          <div class="footer-section about"
-            style="flex: 2; min-width: 300px; display: flex; align-items:flex-start; margin: 10px; transition: transform 0.3s ease-in-out;"
-            onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="width: 100px; margin-right: 20px;">
-            <p style="margin: 0;">Tiffin Fusion connects customers with local tiffin centers, providing a seamless and
-              delightful dining experience. Our shared passion for food and community drives us to bring quality meals
-              directly to your doorstep.</p>
-          </div>
+            <!-- Tiffin Fusion Links -->
+            <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
+                <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Fusion</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="whoweare.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Who We Are</a></li>
+                    <li><a href="blog.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Blog</a></li>
+                    <li><a href="work_with_us/work-with-us.html"
+                        style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Work With Us</a></li>
+                    <li><a href="investor-relations.html"
+                        style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Investor Relations</a></li>
+                    <li><a href="#contact-us" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Contact Us</a></li>
+                    <li><a href="report-fraud/report-fraud.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Report Fraud</a></li>
+                </ul>
+            </div>
   
-          <!-- Tiffin Fusion Links -->
-          <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
-              onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Fusion</h2>
-            <ul style="list-style: none; padding: 0;">
-              <li><a href="whoweare.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Who We Are</a></li>
-              <li><a href="blog.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Blog</a></li>
-              <li><a href="work_with_us/work-with-us.html"
-                  style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Work With Us</a></li>
-              <li><a href="investor-relations.html"
-                  style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Investor Relations</a></li>
-              <li><a href="#contact-us" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Contact Us</a></li>
-                  <li><a href="report-fraud/report-fraud.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                    onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                    onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Report Fraud</a></li>
-            </ul>
-          </div>
+            <!-- Tiffin Plans Links -->
+            <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
+                <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Plans</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="dailyplans.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Daily Plan</a></li>
+                    <li><a href="studentplan.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Student Plan</a></li>
+                    <li><a href="corporateplans.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Corporate Plan</a></li>
+                </ul>
+                <!--payment options-->
+                <div class="payments" class="footer-section services" style="flex: 1; min-width: 150px; margin: -2px;">
+                    <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">We Accept</h2>
+                    <a href="https://pay.google.com/intl/en_in/about/" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:27px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black';"><i class="fa-brands fa-google-pay" title="Google pay" style="padding: 2px;"></i></a>
+                    <a href="https://www.apple.com/apple-pay/" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:27px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black';"><i class="fa-brands fa-apple-pay" title="Apple pay" style="padding: 2px;"></i></a>
+                    <a href="https://www.visa.co.in/" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:25px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black';"><i class="fa-brands fa-cc-visa" title="Visa pay" style="padding: 2px;"></i></a>
+                    <a href="https://www.mastercard.co.in/en-in.html" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:25px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black';"><i class="fa-brands fa-cc-mastercard" title="Master card" style="padding: 2px;"></i></a>
+                </div>
+            </div>
   
-          <!-- Tiffin Plans Links -->
-          <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
-              onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Plans</h2>
-            <ul style="list-style: none; padding: 0;">
-              <li><a href="dailyplans.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Daily Plan</a></li>
-              <li><a href="studentplan.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Student Plan</a></li>
-              <li><a href="corporateplans.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Corporate Plan</a></li>
-            </ul>
-            <!--payment options-->
-            <div class="payments" class="footer-section services"  style="flex: 1; min-width: 150px; margin: -2px;">
-              <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
-              onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">we Accept</h2>
-              <a href="https://pay.google.com/intl/en_in/about/" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:27px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black'";><i class="fa-brands fa-google-pay" title="Google pay" style="padding: 2px;"></i></a>
-             <a href="https://www.apple.com/apple-pay/"style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:27px"onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black'";><i class="fa-brands fa-apple-pay" title="Apple pay" style="padding: 2px;"></i></a>
-              <a href="https://www.visa.co.in/"style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:25px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black'";><i class="fa-brands fa-cc-visa" title="Visa pay" style="padding: 2px;"></i></a>
-              <a href="https://www.mastercard.co.in/en-in.html"style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:25px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black'";><i class="fa-brands fa-cc-mastercard" title="Master card" style="padding: 2px;"></i></a>
-          </div>
-          </div>
+            <!-- Learn More Links -->
+            <div class="footer-section learn-more" style="flex: 1; min-width: 150px; margin: 10px;">
+                <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Learn More</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="privacy.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Privacy Policy</a></li>
+                    <li><a href="security.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Security</a></li>
+                    <li><a href="Terms.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Terms of Service</a></li>
+                    <li><a href="lodgecomplaint.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Lodge Complaint</a></li>
+                    <li><a href="testimonial.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
+                        onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
+                        onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Testimonials</a></li>
+                </ul>
+            </div>
   
-          <!-- Learn More Links -->
-          <div class="footer-section learn-more" style="flex: 1; min-width: 150px; margin: 10px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
-              onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Learn More</h2>
-            <ul style="list-style: none; padding: 0;">
-              <li><a href="privacy.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Privacy Policy</a></li>
-              <li><a href="security.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Security</a></li>
-              <li><a href="Terms.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Terms of Service</a></li>
-              <li><a href="lodgecomplaint.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                  onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                  onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Lodge Complaint</a></li>
-              <li><a href="testimonial.html" style="color: black; text-decoration: none; transition: all 0.3s ease;"
-                    onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'"
-                    onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Testimonials</a></li>
-            </ul>
-          </div>
-  
-          <!-- Social Media Links -->
-          <div class="footer-section social-links" style="flex: 1; min-width: 150px; margin: 10px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
-              onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Follow Us</h2>
-            <ul class="social-icons" style="list-style: none; padding: 0; display: flex; gap: 10px;">
-              <li><a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"
-                  style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-                  aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer"
-                  style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-                  aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/saismrutiranjan/" target="_blank" rel="noopener noreferrer"
-                  style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-                  aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-              <li><a href="https://x.com/sai_smruti18" target="_blank" rel="noopener noreferrer"
-                  style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-                  aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer"
-                  style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
-                  aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
-            </ul>
-          </div>
+            <!-- Social Media Links -->
+            <div class="footer-section social-links" style="flex: 1; min-width: 150px; margin: 10px;">
+                <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
+                    onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Follow Us</h2>
+                <ul class="social-icons" style="list-style: none; padding: 0; display: flex; gap: 10px;">
+                    <li><a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"
+                        style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer"
+                        style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
+                        aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/saismrutiranjan/" target="_blank" rel="noopener noreferrer"
+                        style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://x.com/sai_smruti18" target="_blank" rel="noopener noreferrer"
+                        style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
+                        aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer"
+                        style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;"
+                        aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
         </div>
   
         <!-- Footer Bottom -->
         <div class="footer-bottom" style="margin:10px; padding: 10px; text-align: center;">
-          <p style="margin: 0; color: black; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'"
-            onmouseout="this.style.color='black'">© 2025 Tiffin Fusion. All rights reserved.</p>
+            <p style="margin: 0; color: black; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'"
+                onmouseout="this.style.color='black'">© 2025 Tiffin Fusion. All rights reserved.</p>
         </div>
-      </footer>
+    </footer>
     
     <script>
         function openDay(evt, dayName) {
@@ -652,23 +1039,18 @@
             evt.currentTarget.classList.add("active");
         }
 
-
-    //  Loader js 
-document.addEventListener('DOMContentLoaded', function() {
-    // Show loader for 1.5 seconds (1500 milliseconds)
-    setTimeout(function() {
-        // Hide loader
-        document.getElementById('loader').style.display = 'none';
-        // Show main content
-        document.getElementById('content').style.display = 'block';
-    }, 1500);
-});
-
-
-
-
+        // Loader js 
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show loader for 1.5 seconds (1500 milliseconds)
+            setTimeout(function() {
+                // Hide loader
+                document.getElementById('loader').style.display = 'none';
+                // Show main content
+                document.getElementById('content').style.display = 'block';
+            }, 1500);
+        });
     </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
