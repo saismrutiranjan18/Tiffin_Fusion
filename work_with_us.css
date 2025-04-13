@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,127 +6,331 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #fff;
+    color: #2d2d2d;
+    overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: #e67e22;
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Main Section */
-main {
-    padding: 40px;
-}
 
+
+/* Intro Section */
 .intro {
     text-align: center;
-    margin-bottom: 40px;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 .intro h1 {
-    font-size: 36px;
-    color: #333;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 .intro p {
-    font-size: 18px;
-    color: #555;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
 /* CTA Section */
 .cta {
-    background-color: #f5f5f5;
-    padding: 30px;
     text-align: center;
-    margin-bottom: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 60px 20px;
+    background-color: #fff;
 }
 
 .cta h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    color: #d32f2f;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 .cta p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #2d2d2d;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
-.cta .cta-button {
-    background-color: #e67e22;
-    color: white;
-    padding: 12px 30px;
-    font-size: 18px;
-    border-radius: 5px;
+.cta-button {
+    display: inline-block;
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    border-radius: 50px;
     text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
 }
 
-.cta .cta-button:hover {
-    background-color: #c35e1e;
+.cta-button:hover {
+    background-color: #b71c1c;
+    transform: translateY(-5px);
 }
 
 /* Job Listings */
 .job-listing {
-    background-color: whitesmoke;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 60px 20px;
+    background-color: #f9f9f9;
 }
 
 .job-listing h2 {
-    font-size: 28px;
     text-align: center;
+    font-size: 2.5rem;
+    color: #d32f2f;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.job-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.job-card:nth-child(1) { animation-delay: 0.1s; }
+.job-card:nth-child(2) { animation-delay: 0.2s; }
+.job-card:nth-child(3) { animation-delay: 0.3s; }
+
+.job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(211, 47, 47, 0.2);
+}
+
+.job-card h3 {
+    font-size: 1.8rem;
+    color: #2d2d2d;
+    margin-bottom: 15px;
+}
+
+.job-card p {
+    font-size: 1rem;
+    color: #555;
     margin-bottom: 20px;
 }
 
-.job-listing ul {
-    list-style: none;
-}
-
-.job-listing ul li {
-    margin-bottom: 30px;
-}
-
-.job-listing ul li h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.job-listing ul li p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.job-listing ul li .apply-link {
-    background-color: #e67e22;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 5px;
+.apply-link {
+    display: inline-block;
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
     text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.job-listing ul li .apply-link:hover {
-    background-color: #c35e1e;
+.apply-link:hover {
+    background-color: #b71c1c;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-footer p {
-    font-size: 14px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .cta h2, .job-listing h2 {
+        font-size: 1.8rem;
+    }
 }
+#signinbtn {
+    background-color: #f44336;
+    color: white !important;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 3px;
+  }
+
+
+
+  /* Dark Mode Styles */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode .navbar {
+    background-color: #8b0000; /* Darker red for navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .navbar .logo {
+    color: #fff;
+}
+
+.dark-mode .navbar .nav-menu .nav-link {
+    color: #e0e0e0;
+}
+
+.dark-mode .navbar .nav-menu .nav-link:hover {
+    background-color: #6b0000; /* Even darker red on hover */
+}
+
+.dark-mode .navbar .nav-menu .sign-in {
+    background-color: #e0e0e0;
+    color: #8b0000;
+}
+
+.dark-mode .navbar .nav-menu .sign-in:hover {
+    background-color: #c0c0c0;
+}
+
+.dark-mode .navbar .dropdown-menu {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .navbar .dropdown-menu a {
+    color: #e0e0e0;
+}
+
+.dark-mode .navbar .dropdown-menu a:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+.dark-mode .intro {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%); /* Darker red gradient */
+    color: #fff;
+}
+
+.dark-mode .intro h1,
+.dark-mode .intro p {
+    color: #fff;
+}
+
+.dark-mode .cta {
+    background-color: #2d2d2d;
+}
+
+.dark-mode .cta h2 {
+    color: #ff4d4d; /* Brighter red for emphasis */
+}
+
+.dark-mode .cta p {
+    color: #e0e0e0;
+}
+
+.dark-mode .cta .cta-button {
+    background-color: #ff4d4d;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+}
+
+.dark-mode .cta .cta-button:hover {
+    background-color: #cc0000;
+}
+
+.dark-mode .job-listing {
+    background-color: #222222;
+}
+
+.dark-mode .job-listing h2 {
+    color: #ff4d4d;
+}
+
+.dark-mode .job-listing .job-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .job-listing .job-card h3 {
+    color: #e0e0e0;
+}
+
+.dark-mode .job-listing .job-card p {
+    color: #b0b0b0;
+}
+
+.dark-mode .job-listing .job-card .apply-link {
+    background-color: #ff4d4d;
+}
+
+.dark-mode .job-listing .job-card .apply-link:hover {
+    background-color: #cc0000;
+}
+
+.dark-mode footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode footer .footer-section {
+    /* Assuming footer-section is a class for future footer expansion */
+    color: #e0e0e0;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .dark-mode-toggle {
+    color: #e0e0e0;
+}
+
+.dark-mode-toggle:hover {
+    color: #ff4d4d;
+}
+
+
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1); /* Makes the icon white */
+  }
+  
