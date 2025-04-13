@@ -398,6 +398,9 @@ body.dark {
   position: sticky;
   top: 0;
   z-index: 1;
+  background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+  padding: 1rem;
+  text-align: center;
 }
 
 .navbar-brand {
@@ -431,7 +434,16 @@ body.dark {
 .nav-item {
   margin: 0 5px; /* Reduce the space between the items */
   padding: 0; /* Remove padding */
-}
+    font-size: 1.125rem;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar-item:hover {
+    background-color: #e02d39; /* Accent color on hover */
+    color: white;
+    box-shadow: 0 4px 10px red;
+  }
 
 .nav-item a {
   color: black;
@@ -499,6 +511,11 @@ body.dark {
   transition: width 0.3s ease, left 0.3s ease;
 }
 
+.navbar-item.active {
+  background-color: #e43a46; /* Accent color for active item */
+  color: white;
+}
+
 .nav-item.meal-plan a:hover::after {
   width: 100%;
   left: 0;
@@ -523,8 +540,48 @@ body.dark {
 }
 
 .dropdown-menu {
-  min-width: 180px; /* Optional, you can adjust the width */
-}
+  min-width: 180px; 
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    background-color: #ffffff; /* White background for dropdown */
+    border: 1px solid #FE5E68; /* Accent color border */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-menu li {
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #FE5E68; /* Accent color on hover */
+    color: white;
+  }
+
+
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.5rem;
+    }
+  
+    .navbar-item {
+      padding: 0.25rem 0.5rem;
+    }
+  }
+  .navbar {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 /* sign in css */
 
