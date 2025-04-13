@@ -1590,7 +1590,10 @@ body {
 }
 
 .dark-mode .view-more-button:hover {
-  background-color: #ff4500;
+  background-color: #d94326;
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 87, 51, 0.5);
+  font-weight: 700;
 }
 
 /* Default Customize Menu Button Styling */
@@ -1621,6 +1624,7 @@ body {
   background-color: #d94326; /* Darker red for hover effect */
   color: white; /* White for better visibility */
   box-shadow: 0 4px 8px rgba(255, 87, 51, 0.5); /* Soft reddish glow in dark mode */
+  font-weight: 700;
 }
 
 /* Active (Click) Effects */
@@ -2609,11 +2613,17 @@ footer {
   font-size: 2rem;
   color: #1a1a1a;
   margin-bottom: 8px;
+  font-family: "Cosmic Sans MS",cursive,sans-serif;
+  font-weight: 700;
 }
 
 .title-container p {
   color: #666;
   font-size: 1.1rem;
+}
+
+.dark-mode .title-container h2{
+  color:white;
 }
 
 /* Search Container */
