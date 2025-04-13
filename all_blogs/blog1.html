@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Journey</title>
-    <link rel="icon" href="../Utils/20240921_154411.png" type="image/x-ixon">
+
+    <link rel="icon" href="/favicon.svg" type="image/x-ixon">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -23,7 +23,6 @@
             background-color: #f9f9f9;
         }
         .blog-detail {
-           
             align-items: center;
             max-width: 800px;
             margin: 0 auto;
@@ -31,6 +30,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none; /* Hidden initially */
         }
         .header {
             flex-direction: column;
@@ -38,11 +38,8 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-           
         }
         h1 {
-           
-            
             font-size: 2rem;
             color: #e94c3d;
             margin: 0;
@@ -74,78 +71,287 @@
             color: #333;
             font-size: 1rem;
         }
-        .payments i:hover{
+        .payments i:hover {
             transform: scale(1.2);
         }
+      /* Loader  */
+.pl {
+  width: 6em;
+  height: 6em;
+}
+
+.pl__ring {
+  animation: ringA 2s linear infinite;
+}
+
+.pl__ring--a {
+  stroke: #f42f25;
+}
+
+.pl__ring--b {
+  animation-name: ringB;
+  stroke: #f49725;
+}
+
+.pl__ring--c {
+  animation-name: ringC;
+  stroke: #255ff4;
+}
+
+.pl__ring--d {
+  animation-name: ringD;
+  stroke: #f42582;
+}
+
+/* Animations */
+@keyframes ringA {
+  from, 4% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+
+  12% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -335;
+  }
+
+  32% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -595;
+  }
+
+  40%, 54% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -660;
+  }
+
+  62% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -665;
+  }
+
+  82% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -925;
+  }
+
+  90%, to {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -990;
+  }
+}
+
+@keyframes ringB {
+  from, 12% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -110;
+  }
+
+  20% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -115;
+  }
+
+  40% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -195;
+  }
+
+  48%, 62% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  70% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  90% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -305;
+  }
+
+  98%, to {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+}
+
+@keyframes ringC {
+  from {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  8% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  28% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  36%, 58% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  66% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  86% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  94%, to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+
+@keyframes ringD {
+  from, 8% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  16% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  36% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  44%, 50% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  58% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  78% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  86%, to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
     </style>
     <link rel="stylesheet" href="../style.css">
-    
 </head>
 <body>
+    <!-- Loader -->
+ 
+    <div id="loader" class="loader" style="width: 100wh; height: 100vh ; background-color: white;">
+<svg class="pl" width="240" height="240" viewBox="0 0 240 240 ">
+	<circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+	<circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+	<circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+	<circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+</svg>
+</div>
+
     <!-- Navbar -->
     <nav class="navbar bg-light border-bottom border-body navbar-expand-lg">
         <div class="container-fluid">
-        
-        <!-- Logo -->
-        <a class="navbar-brand text-black" href="../index.html">
-            <img src="../Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
-            Tiffin Fusion
-        </a>
-    
-        <!-- Mobile Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-            <!-- Home Link -->
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="../index.html#home">Home</a>
-            </li>
-            
-            <!-- View Menu Link -->
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="../index.html#menu-section">View Menu</a>
-            </li>
-    
-            <!-- Meal Plan Dropdown -->
-            <li class="nav-item dropdown meal-plan">
-                <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
-                Meal Plans
-                </a>
-                <ul class="dropdown-menu" id="mealPlanMenu">
-                <li><a class="dropdown-item" href="../index.html#student-plan">Student Plan</a></li>
-                <li><a class="dropdown-item" href="../corporateplans.html">Corporate Plan</a></li>
-                <li><a class="dropdown-item" href="../dailyplans.html">Daily Plan</a></li>
+
+            <!-- Logo -->
+            <a class="navbar-brand text-black" href="../index.html">
+                <img src="/logo.svg" alt="Tiffin Fusion Logo" style="height: 40px; margin-right: 8px;">
+                <!-- Tiffin Fusion -->
+            </a>
+            <!-- Mobile Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Home Link -->
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="../index.html#home">Home</a>
+                    </li>
+                    <!-- View Menu Link -->
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="../index.html#menu-section">View Menu</a>
+                    </li>
+                    <!-- Meal Plan Dropdown -->
+                    <li class="nav-item dropdown meal-plan">
+                        <a class="nav-link mx-2" href="#" id="mealPlanToggle" role="button" aria-expanded="false">
+                            Meal Plans
+                        </a>
+                        <ul class="dropdown-menu" id="mealPlanMenu">
+                            <li><a class="dropdown-item" href="../index.html#student-plan">Student Plan</a></li>
+                            <li><a class="dropdown-item" href="../corporateplans.html">Corporate Plan</a></li>
+                            <li><a class="dropdown-item" href="../dailyplans.html">Daily Plan</a></li>
+                        </ul>
+                    </li>
+                    <!-- About Link -->
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="../index.html#who-we-are">About</a>
+                    </li>
+                    <!-- Contact Us Link -->
+                    <li class="nav-item">
+                        <a class="nav-link mx-2" href="../index.html#contact-us">Contact Us</a>
+                    </li>
+                    <!-- Contributors Link -->
+                    <li class="nav-item">
+                        <a href="../contributors/contributor.html" class="nav-link mx-2">Contributors</a>
+                    </li>
+                    <!-- Sign In Link -->
+                    <li class="nav-item">
+                        <a href="../signin.html" class="nav-link mx-2 signinbtn">Sign In</a>
+                    </li>
+
                 </ul>
-            </li>
-    
-            <!-- About Link -->
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="../index.html#who-we-are">About</a>
-            </li>
-            
-            <!-- Contact Us Link -->
-            <li class="nav-item">
-                <a class="nav-link mx-2" href="../index.html#contact-us">Contact Us</a>
-            </li>
-    
-            <!-- Contributors Link -->
-            <li class="nav-item">
-                <a href="../contributors/contributor.html" class="nav-link mx-2">Contributors</a>
-            </li>
-    
-            <!-- Sign In Link -->
-            <li class="nav-item">
-                <a href="../signin.html" class="nav-link mx-2 signinbtn">Sign In </a>
-            </li>
-            </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="blog-detail">
+    <div class="blog-detail" id="content">
         <div class="header">
             <a href="../blog.html" class="back-btn">Back to Blogs</a>
             <h1>Our Journey</h1>
@@ -165,72 +371,80 @@
     <!-- Footer Section -->
     <footer>
         <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; padding: 20px; background-color: white; color: black;">
-          
-          <!-- About Section -->
-          <div class="footer-section about" style="flex: 2; min-width: 300px; display: flex; align-items:flex-start; margin: 10px; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-            <img src="../Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="width: 100px; margin-right: 20px;">
-            <p style="margin: 0;">Tiffin Fusion connects customers with local tiffin centers, providing a seamless and delightful dining experience. Our shared passion for food and community drives us to bring quality meals directly to your doorstep.</p>
-          </div>
-      
-          <!-- Tiffin Fusion Links -->
-          <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Fusion</h2>
-            <ul style="list-style: none; padding: 0;">
-              <li><a href="../index.html#who-we-are" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Who We Are</a></li>
-              <li><a href="../blog.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Blog</a></li>
-              <li><a href="../work_with_us/work-with-us.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Work With Us</a></li>
-              <li><a href="../investor-relations.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Investor Relations</a></li>
-              <li><a href="../index.html#contact-us" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Contact Us</a></li>
-            </ul>
-          </div>
-      
-          <!-- Tiffin Plans Links -->
-          <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Plans</h2>
-            <ul style="list-style: none; padding: 0;">
-              <li><a href="../dailyplans.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Daily Plan</a></li>
-              <li><a href="../studentplan.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Student Plan</a></li>
-              <li><a href="../corporateplans.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Corporate Plan</a></li>
-            </ul>
-            <!--payment options-->
-          <div class="payments" class="footer-section services"  style="flex: 1; min-width: 150px; margin: -2px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;"
-            onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">we Accept</h2>
-            <a href="https://pay.google.com/intl/en_in/about/" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:27px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black'";><i class="fa-brands fa-google-pay" title="Google pay" style="padding: 2px;"></i></a>
-           <a href="https://www.apple.com/apple-pay/"style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:27px"onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black'";><i class="fa-brands fa-apple-pay" title="Apple pay" style="padding: 2px;"></i></a>
-            <a href="https://www.visa.co.in/"style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:25px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black'";><i class="fa-brands fa-cc-visa" title="Visa pay" style="padding: 2px;"></i></a>
-            <a href="https://www.mastercard.co.in/en-in.html"style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:25px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black'";><i class="fa-brands fa-cc-mastercard" title="Master card" style="padding: 2px;"></i></a>
+            <!-- About Section -->
+            <div class="footer-section about" style="flex: 2; min-width: 300px; display: flex; align-items:flex-start; margin: 10px; transition: transform 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="../Utils/20240921_154411.png" alt="Tiffin Fusion Logo" style="width: 100px; margin-right: 20px;">
+                <p style="margin: 0;">Tiffin Fusion connects customers with local tiffin centers, providing a seamless and delightful dining experience. Our shared passion for food and community drives us to bring quality meals directly to your doorstep.</p>
+            </div>
+            <!-- Tiffin Fusion Links -->
+            <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
+                <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Fusion</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="../index.html#who-we-are" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Who We Are</a></li>
+                    <li><a href="../blog.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Blog</a></li>
+                    <li><a href="../work_with_us/work-with-us.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Work With Us</a></li>
+                    <li><a href="../investor-relations.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Investor Relations</a></li>
+                    <li><a href="../index.html#contact-us" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Tiffin Plans Links -->
+            <div class="footer-section services" style="flex: 1; min-width: 150px; margin: 10px;">
+                <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Tiffin Plans</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="../dailyplans.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Daily Plan</a></li>
+                    <li><a href="../studentplan.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Student Plan</a></li>
+                    <li><a href="../corporateplans.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Corporate Plan</a></li>
+                </ul>
+                <!-- Payment Options -->
+                <div class="payments" style="flex: 1; min-width: 150px; margin: -2px;">
+                    <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">We Accept</h2>
+                    <a href="https://pay.google.com/intl/en_in/about/" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:27px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black';"><i class="fa-brands fa-google-pay" title="Google pay" style="padding: 2px;"></i></a>
+                    <a href="https://www.apple.com/apple-pay/" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:27px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black';"><i class="fa-brands fa-apple-pay" title="Apple pay" style="padding: 2px;"></i></a>
+                    <a href="https://www.visa.co.in/" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:25px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black';"><i class="fa-brands fa-cc-visa" title="Visa pay" style="padding: 2px;"></i></a>
+                    <a href="https://www.mastercard.co.in/en-in.html" style="color: black; text-decoration: none; transition: all 0.3s ease; font-size:25px" onmouseover="this.style.color='#e67e22';" onmouseout="this.style.color='black';"><i class="fa-brands fa-cc-mastercard" title="Master card" style="padding: 2px;"></i></a>
+                </div>
+            </div>
+            <!-- Learn More Links -->
+            <div class="footer-section learn-more" style="flex: 1; min-width: 150px; margin: 10px;">
+                <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Learn More</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="../privacy.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Privacy Policy</a></li>
+                    <li><a href="../security.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Security</a></li>
+                    <li><a href="../Terms.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Terms of Service</a></li>
+                    <li><a href="../lodgecomplaint.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Lodge Complaint</a></li>
+                </ul>
+            </div>
+            <!-- Social Media Links -->
+            <div class="footer-section social-links" style="flex: 1; min-width: 150px; margin: 10px;">
+                <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Follow Us</h2>
+                <ul class="social-icons" style="list-style: none; padding: 0; display: flex; gap: 10px;">
+                    <li><a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/saismrutiranjan/" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://x.com/sai_smruti18" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a></li>
+                    <li><a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
         </div>
-          </div>
-      
-          <!-- Learn More Links -->
-          <div class="footer-section learn-more" style="flex: 1; min-width: 150px; margin: 10px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Learn More</h2>
-            <ul style="list-style: none; padding: 0;">
-              <li><a href="../privacy.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Privacy Policy</a></li>
-              <li><a href="../security.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Security</a></li>
-              <li><a href="../Terms.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Terms of Service</a></li>
-              <li><a href="../lodgecomplaint.html" style="color: black; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='#e67e22'; this.style.paddingLeft='10px'" onmouseout="this.style.color='black'; this.style.paddingLeft='0'">Lodge Complaint</a></li>
-            </ul>
-          </div>
-      
-          <!-- Social Media Links -->
-          <div class="footer-section social-links" style="flex: 1; min-width: 150px; margin: 10px;">
-            <h2 style="font-size: 18px; margin-bottom: 10px; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">Follow Us</h2>
-            <ul class="social-icons" style="list-style: none; padding: 0; display: flex; gap: 10px;">
-              <li><a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/saismrutiranjan/" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-              <li><a href="https://x.com/sai_smruti18" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a></li>
-              <li><a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" style="color: black; text-decoration: none; font-size: 24px; transition: all 0.3s ease;" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      
         <!-- Footer Bottom -->
         <div class="footer-bottom" style="margin:10px; padding: 10px; text-align: center;">
-          <p style="margin: 0; color: black; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">© 2025 Tiffin Fusion. All rights reserved.</p>
+            <p style="margin: 0; color: black; transition: color 0.3s ease;" onmouseover="this.style.color='#e67e22'" onmouseout="this.style.color='black'">© 2025 Tiffin Fusion. All rights reserved.</p>
         </div>
-      </footer>
+    </footer>
+
+    <!-- JavaScript for Loader -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                const content = document.getElementById('content');
+                loader.classList.add('hidden');
+                content.style.display = 'block';
+            }, 1500);
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

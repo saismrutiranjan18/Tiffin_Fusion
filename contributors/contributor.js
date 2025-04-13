@@ -71,9 +71,9 @@ async function fetchContributors() {
 
 async function getMergedPRCount(username) {
   try {
-    // Define the date range (March 7, 2025 to April 6, 2025)
+    // Define the date range (March 7, 2025 to April 13, 2025)
     const startDate = "2025-03-07";
-    const endDate = "2025-04-06";
+    const endDate = "2025-04-13";
     const dateRange = `${startDate}..${endDate}`;
 
     // Fetch merged PRs within the specified date range
@@ -136,7 +136,7 @@ function generateCertificate(username, avatarUrl, mergedPRCount) {
     ctx.font = "35px Arial";
     const content = `This certificate is proudly presented to ${username} for their valuable 
 contribution to Tiffin_Fusion in Apertre 2.0 
-from March 7, 2025 to April 6, 2025.`;
+from March 7, 2025 to April 13, 2025.`;
 
     const contentLines = content.split("\n");
     contentLines.forEach((line, index) => {
