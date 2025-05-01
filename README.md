@@ -1,6 +1,6 @@
 # Tiffin Fusion
 
-Welcome to **Tiffin Fusion**, your one-stop solution for connecting with local tiffin centers to enjoy fresh, home-cooked meals. Our mission is to redefine dining experiences by blending the richness of traditional Indian flavors with a modern touch. Whether you’re a busy student, a working professional, or someone craving a taste of home, we have the perfect meal plan for you.
+Welcome to **Tiffin Fusion**, your one-stop solution for connecting with local tiffin centers to enjoy fresh, home-cooked meals. Our mission is to redefine dining experiences by blending the richness of traditional Indian flavors with a modern touch. Whether you’re a busy student, a working professional, or someone craving a taste of home, we have the perfect meal plan for you. 
 
 ---
 
