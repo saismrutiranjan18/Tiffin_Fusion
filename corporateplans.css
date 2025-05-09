@@ -178,11 +178,11 @@
 }
 .price {
     font-size: 0.9rem;
-    color: #dc2626;
+    color: #26c4dc;
     font-weight: 700;
 }
 .add-btn {
-    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    background: linear-gradient(90deg, #e44343, #b91c1c);
     color: white;
     padding: 0.5rem;
     border: none;
@@ -194,7 +194,8 @@
 }
 .add-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+    box-shadow: 0 4px 10px rgba(37, 3, 3, 0.3);
+    color: #390404;
 }
 .hidden {
     display: none;
@@ -234,3 +235,77 @@
         font-size: 1.25rem;
     }
 }
+
+.corporate-plans-section {
+    background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+    padding: 3rem 1rem;
+  }
+
+  .plans-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; /* Space between cards */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .plan-card {
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* For pseudo-elements */
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    font-size: 2rem; /* Section heading */
+    color: #FE5E68; /* Accent color */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .plan-title {
+    font-size: 1.5rem; /* Plan name */
+    color: #333;
+    margin: 0.5rem 0;
+  }
+  
+  .price {
+    font-size: 1.25rem; /* Price display */
+    color: #31c0da; /* Accent color */
+    font-weight: bold;
+  }
+  .plan-icon {
+    font-size: 3rem; /* Size for icons */
+    color: #FE5E68; /* Icon color */
+    margin-bottom: 10px; /* Space between icon and text */
+  }
+
+  .plan-card {
+    border: 1px solid #FE5E68; /* Border around the card */
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  }
+
+  .cta-button {
+    background-color: #FE5E68; /* Main button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block; /* Center button */
+    text-align: center;
+  }
+  
+  .cta-button:hover {
+    background-color: #e74c57; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }

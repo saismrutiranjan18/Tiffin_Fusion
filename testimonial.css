@@ -127,12 +127,17 @@ body {
 /* Styling for the testimonial section */
 .testimonial-section {
   padding: 3rem 1rem;
+    background: linear-gradient(135deg, #f9fafb, #e2e8f0);
 }
 
 .container {
   max-width: 1120px;
   margin: 0 auto;
   text-align: center;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff; 
 }
 
 /* Other sections like the sub-heading, CTA links, etc. remain unchanged */
@@ -210,6 +215,15 @@ body {
   flex-direction: column;
   justify-content: space-between;
   text-align: start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-content .rating .star {
@@ -222,7 +236,10 @@ body {
   margin-top: 1rem;
   font-size: 1rem;
   color: var(--quote-color);
-}
+    font-size: 1.125rem; /* Slightly larger for emphasis */
+    color: var(--quote-color);
+    font-style: italic; /* Italicize quotes for distinction */
+  }
 
 .profile {
   display: flex;
@@ -234,6 +251,15 @@ body {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
+  width: 3rem; /* Slightly larger for better visibility */
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid var(--name-color); /* Add a border */
+  transition: transform 0.3s;
+}
+
+.avatar:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 .profile-details {
@@ -245,11 +271,55 @@ body {
   font-size: 1rem;
   font-weight: 700;
   color: var(--name-color);
+  font-size: 1.125rem; /* Increase size for names */
+    font-weight: bold; 
 }
 
 .role {
   font-size: 0.875rem;
   color: var(--role-color);
+}
+
+
+.testimonial-card::before {
+  content: '“'; /* Opening quote */
+  font-size: 3rem;
+  color: var(--heading-color);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.testimonial-card::after {
+  content: '”'; /* Closing quote */
+  font-size: 3rem;
+  color: var(--heading-color);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack cards on mobile */
+  }
+
+  .testimonial-card {
+    margin: 1rem 0; /* Add vertical spacing */
+  }
+}
+
+.testimonial-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /**************************/
